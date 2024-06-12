@@ -1,0 +1,1438 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="odaninhthuanModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="odaninhthuanEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+    <EntitySet Name="iw_boviaviahe" EntityType="odaninhthuanModel.iw_boviaviahe" />
+    <EntitySet Name="iw_canal" EntityType="odaninhthuanModel.iw_canal" />
+    <EntitySet Name="iw_coc" EntityType="odaninhthuanModel.iw_coc" />
+    <EntitySet Name="iw_denchieusang" EntityType="odaninhthuanModel.iw_denchieusang" />
+    <EntitySet Name="iw_diemngap" EntityType="odaninhthuanModel.iw_diemngap" />
+    <EntitySet Name="iw_gieng" EntityType="odaninhthuanModel.iw_gieng" />
+    <EntitySet Name="iw_hoga" EntityType="odaninhthuanModel.iw_hoga" />
+    <EntitySet Name="iw_hotrongcay" EntityType="odaninhthuanModel.iw_hotrongcay" />
+    <EntitySet Name="iw_irrigation_sewer" EntityType="odaninhthuanModel.iw_irrigation_sewer" />
+    <EntitySet Name="iw_nhamayxulynuocthai" EntityType="odaninhthuanModel.iw_nhamayxulynuocthai" />
+    <EntitySet Name="iw_pump_station" EntityType="odaninhthuanModel.iw_pump_station" />
+    <EntitySet Name="iw_reservoir" EntityType="odaninhthuanModel.iw_reservoir" />
+    <EntitySet Name="iw_timduong" EntityType="odaninhthuanModel.iw_timduong" />
+    <EntitySet Name="iw_trucuuhoa" EntityType="odaninhthuanModel.iw_trucuuhoa" />
+    <EntitySet Name="iw_vuotnoi" EntityType="odaninhthuanModel.iw_vuotnoi" />
+    <EntitySet Name="tbl_danhmuc_duan" EntityType="odaninhthuanModel.tbl_danhmuc_duan" />
+    <EntitySet Name="tbl_danhmuc_hethong" EntityType="odaninhthuanModel.tbl_danhmuc_hethong" />
+    <EntitySet Name="bgmap_commune" EntityType="odaninhthuanModel.bgmap_commune" />
+    <EntitySet Name="bgmap_district" EntityType="odaninhthuanModel.bgmap_district" />
+    <EntitySet Name="bgmap_province" EntityType="odaninhthuanModel.bgmap_province" />
+    <AssociationSet Name="bgmap_commune_fk" Association="odaninhthuanModel.bgmap_commune_fk">
+      <End Role="bgmap_district" EntitySet="bgmap_district" />
+      <End Role="bgmap_commune" EntitySet="bgmap_commune" />
+    </AssociationSet>
+    <EntitySet Name="tbl_duytubaoduong" EntityType="odaninhthuanModel.tbl_duytubaoduong" />
+    <EntitySet Name="tbl_tutailieu_files" EntityType="odaninhthuanModel.tbl_tutailieu_files" />
+    <EntitySet Name="tbl_tutailieu_files_detail" EntityType="odaninhthuanModel.tbl_tutailieu_files_detail" />
+    <EntitySet Name="tbl_tutailieu_files_types" EntityType="odaninhthuanModel.tbl_tutailieu_files_types" />
+    <EntitySet Name="tbl_tutailieu_folder" EntityType="odaninhthuanModel.tbl_tutailieu_folder" />
+    <EntitySet Name="tbl_tutailieu_history" EntityType="odaninhthuanModel.tbl_tutailieu_history" />
+    <EntitySet Name="tbl_tutailieu_thuoctinh" EntityType="odaninhthuanModel.tbl_tutailieu_thuoctinh" />
+    <EntitySet Name="tbl_tutailieu_thuoctinh_danhmuc" EntityType="odaninhthuanModel.tbl_tutailieu_thuoctinh_danhmuc" />
+    <EntitySet Name="tbl_tutailieu_thuoctinh_detail" EntityType="odaninhthuanModel.tbl_tutailieu_thuoctinh_detail" />
+    <EntitySet Name="tbl_tutailieu_tree" EntityType="odaninhthuanModel.tbl_tutailieu_tree" />
+    <EntitySet Name="tbl_tutailieu_tree_default" EntityType="odaninhthuanModel.tbl_tutailieu_tree_default" />
+    <EntitySet Name="tbl_tutailieu_users_files_folder" EntityType="odaninhthuanModel.tbl_tutailieu_users_files_folder" />
+  </EntityContainer>
+  <EntityType Name="iw_boviaviahe">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="mahieu" Type="Guid" Nullable="false" />
+    <Property Name="ten" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="xa_id" Type="Int32" />
+    <Property Name="huyen_id" Type="Int32" />
+    <Property Name="tinh_id" Type="Int32" />
+    <Property Name="httn_id" Type="Int32" />
+    <Property Name="loaict_id" Type="Int32" />
+    <Property Name="dvql_id" Type="Int32" />
+    <Property Name="luuvucsong_id" Type="Int32" />
+    <Property Name="nguon_goc" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="donvi_tinh" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="loai_taisan_id" Type="Int32" />
+    <Property Name="nam_xaydung" Type="Int32" />
+    <Property Name="nam_khaithac" Type="Int32" />
+    <Property Name="nam_bangiao" Type="Int32" />
+    <Property Name="dientich_dat" Type="Single" />
+    <Property Name="dientich_san" Type="Single" />
+    <Property Name="nguyen_gia" Type="Single" />
+    <Property Name="tyle_haomon" Type="Single" />
+    <Property Name="giatri_conlai" Type="Single" />
+    <Property Name="tinhtrang_taisan" Type="Boolean" />
+    <Property Name="song_id" Type="Int32" />
+    <Property Name="ma_qhns" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="type_nguyengia" Type="Int32" />
+    <Property Name="isdangxaydung" Type="Int32" />
+    <Property Name="gtcanhbao_mnchancongtrinh" Type="Single" />
+    <Property Name="httn_config" Type="Guid" />
+    <Property Name="nangluc_lua" Type="Single" />
+    <Property Name="nangluc_raumau" Type="Single" />
+    <Property Name="nangluc_cndaingay" Type="Single" />
+    <Property Name="nangluc_thuysan" Type="Single" />
+    <Property Name="kinhdo" Type="Single" />
+    <Property Name="vido" Type="Single" />
+    <Property Name="duan_ref" Type="Guid" />
+    <Property Name="hethong_ref" Type="Guid" />
+    <Property Name="diadiem" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="thuockenh" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="loaict" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="loaigeom" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="tenduong" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="goithau" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="chieudai" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="chieuday" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="ketcau" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="dientich" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="chieurong" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="tuongchand" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="iw_canal">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="mahieu" Type="Guid" Nullable="false" />
+    <Property Name="ten" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="xa_id" Type="Int32" />
+    <Property Name="huyen_id" Type="Int32" />
+    <Property Name="tinh_id" Type="Int32" />
+    <Property Name="httn_id" Type="Int32" />
+    <Property Name="loaict_id" Type="Int32" />
+    <Property Name="dvql_id" Type="Int32" />
+    <Property Name="luuvucsong_id" Type="Int32" />
+    <Property Name="nguon_goc" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="donvi_tinh" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="loai_taisan_id" Type="Int32" />
+    <Property Name="nam_xaydung" Type="Int32" />
+    <Property Name="nam_khaithac" Type="Int32" />
+    <Property Name="nam_bangiao" Type="Int32" />
+    <Property Name="dientich_dat" Type="Single" />
+    <Property Name="dientich_san" Type="Single" />
+    <Property Name="nguyen_gia" Type="Single" />
+    <Property Name="tyle_haomon" Type="Single" />
+    <Property Name="giatri_conlai" Type="Single" />
+    <Property Name="tinhtrang_taisan" Type="Boolean" />
+    <Property Name="song_id" Type="Int32" />
+    <Property Name="ma_qhns" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="type_nguyengia" Type="Int32" />
+    <Property Name="isdangxaydung" Type="Int32" />
+    <Property Name="gtcanhbao_mnchancongtrinh" Type="Single" />
+    <Property Name="httn_config" Type="Guid" />
+    <Property Name="nangluc_lua" Type="Single" />
+    <Property Name="nangluc_raumau" Type="Single" />
+    <Property Name="nangluc_cndaingay" Type="Single" />
+    <Property Name="nangluc_thuysan" Type="Single" />
+    <Property Name="kinhdo" Type="Single" />
+    <Property Name="vido" Type="Single" />
+    <Property Name="duan_ref" Type="Guid" />
+    <Property Name="hethong_ref" Type="Guid" />
+    <Property Name="sohieukenh" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="caododay" Type="Single" />
+    <Property Name="dodoc_daykenh" Type="Single" />
+    <Property Name="ondinh_rori" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="cd_hieudung" Type="Single" />
+    <Property Name="cr_longkenh" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="cr_bokenh" Type="Single" />
+    <Property Name="cc_longkenh" Type="Single" />
+    <Property Name="chieuday_thanh" Type="Single" />
+    <Property Name="chieuday_day" Type="Single" />
+    <Property Name="cr_dayngoai" Type="Single" />
+    <Property Name="cd_kenhkiencohoa" Type="Single" />
+    <Property Name="loaikenh" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="capkenh" Type="Int32" />
+    <Property Name="chatlieu" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="caodo_tuoi" Type="Single" />
+    <Property Name="dientich_tuoi" Type="Single" />
+    <Property Name="luulg_tke" Type="Single" />
+    <Property Name="luulg_tte" Type="Single" />
+    <Property Name="kt_matcat" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="vttb_dongchay" Type="Single" />
+    <Property Name="reservoir_id" Type="Guid" />
+    <Property Name="diadiem" Type="String" MaxLength="350" Unicode="true" FixedLength="false" />
+    <Property Name="lytrinhtu" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="lytrinhden" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="vitri" Type="String" MaxLength="350" Unicode="true" FixedLength="false" />
+    <Property Name="dientich_tuoi_tichluy" Type="Single" />
+    <Property Name="luulg_toida" Type="Single" />
+    <Property Name="luulg_toithieu" Type="Single" />
+    <Property Name="canal_id" Type="Int32" />
+    <Property Name="taptoado" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="giaidoan_th" Type="Int32" />
+    <Property Name="loaimatcat" Type="Int32" />
+    <Property Name="hs_nham" Type="Single" />
+    <Property Name="hs_mai" Type="Single" />
+    <Property Name="docao_vuotantoan" Type="Single" />
+    <Property Name="dosau_mn_tk" Type="Single" />
+    <Property Name="dosau_mn_toida" Type="Single" />
+    <Property Name="dosau_mn_toithieu" Type="Single" />
+    <Property Name="vtdc_lonnhat" Type="Single" />
+    <Property Name="vtdc_nhonhat" Type="Single" />
+    <Property Name="ct_doandaukenh" Type="Single" />
+    <Property Name="dorong_botrai" Type="Single" />
+    <Property Name="dorong_bophai" Type="Single" />
+    <Property Name="trangthai" Type="Int32" />
+    <Property Name="ghichu" Type="String" MaxLength="350" Unicode="true" FixedLength="false" />
+    <Property Name="chieudai" Type="Double" />
+    <Property Name="chieucao" Type="Double" />
+    <Property Name="clndk_kichthuoc" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="clndk_hientrang" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="hientrang" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="temp_id" Type="Int32" />
+    <Property Name="donviquanly" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="capkenh_temp" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="sokm_kenhdat" Type="Single" />
+    <Property Name="sokm_daxuongcap" Type="Single" />
+    <Property Name="sokm_contot" Type="Single" />
+    <Property Name="capkenh_id" Type="Int32" />
+    <Property Name="nangluc" Type="Single" />
+    <Property Name="chieurong" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="kichthuoc" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="diemdau" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="diemcuoi" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="vitricoc" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="caitao" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="goithau" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="iw_coc">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="mahieu" Type="Guid" Nullable="false" />
+    <Property Name="ten" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="xa_id" Type="Int32" />
+    <Property Name="huyen_id" Type="Int32" />
+    <Property Name="tinh_id" Type="Int32" />
+    <Property Name="httn_id" Type="Int32" />
+    <Property Name="loaict_id" Type="Int32" />
+    <Property Name="dvql_id" Type="Int32" />
+    <Property Name="luuvucsong_id" Type="Int32" />
+    <Property Name="nguon_goc" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="donvi_tinh" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="loai_taisan_id" Type="Int32" />
+    <Property Name="nam_xaydung" Type="Int32" />
+    <Property Name="nam_khaithac" Type="Int32" />
+    <Property Name="nam_bangiao" Type="Int32" />
+    <Property Name="dientich_dat" Type="Single" />
+    <Property Name="dientich_san" Type="Single" />
+    <Property Name="nguyen_gia" Type="Single" />
+    <Property Name="tyle_haomon" Type="Single" />
+    <Property Name="giatri_conlai" Type="Single" />
+    <Property Name="tinhtrang_taisan" Type="Boolean" />
+    <Property Name="song_id" Type="Int32" />
+    <Property Name="ma_qhns" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="type_nguyengia" Type="Int32" />
+    <Property Name="isdangxaydung" Type="Int32" />
+    <Property Name="gtcanhbao_mnchancongtrinh" Type="Single" />
+    <Property Name="httn_config" Type="Guid" />
+    <Property Name="nangluc_lua" Type="Single" />
+    <Property Name="nangluc_raumau" Type="Single" />
+    <Property Name="nangluc_cndaingay" Type="Single" />
+    <Property Name="nangluc_thuysan" Type="Single" />
+    <Property Name="kinhdo" Type="Single" />
+    <Property Name="vido" Type="Single" />
+    <Property Name="duan_ref" Type="Guid" />
+    <Property Name="hethong_ref" Type="Guid" />
+    <Property Name="diadiem" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="thuockenh" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="loaict" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="goithau" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="iw_denchieusang">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="mahieu" Type="Guid" Nullable="false" />
+    <Property Name="ten" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="xa_id" Type="Int32" />
+    <Property Name="huyen_id" Type="Int32" />
+    <Property Name="tinh_id" Type="Int32" />
+    <Property Name="httn_id" Type="Int32" />
+    <Property Name="loaict_id" Type="Int32" />
+    <Property Name="dvql_id" Type="Int32" />
+    <Property Name="luuvucsong_id" Type="Int32" />
+    <Property Name="nguon_goc" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="donvi_tinh" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="loai_taisan_id" Type="Int32" />
+    <Property Name="nam_xaydung" Type="Int32" />
+    <Property Name="nam_khaithac" Type="Int32" />
+    <Property Name="nam_bangiao" Type="Int32" />
+    <Property Name="dientich_dat" Type="Single" />
+    <Property Name="dientich_san" Type="Single" />
+    <Property Name="nguyen_gia" Type="Single" />
+    <Property Name="tyle_haomon" Type="Single" />
+    <Property Name="giatri_conlai" Type="Single" />
+    <Property Name="tinhtrang_taisan" Type="Boolean" />
+    <Property Name="song_id" Type="Int32" />
+    <Property Name="ma_qhns" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="type_nguyengia" Type="Int32" />
+    <Property Name="isdangxaydung" Type="Int32" />
+    <Property Name="gtcanhbao_mnchancongtrinh" Type="Single" />
+    <Property Name="httn_config" Type="Guid" />
+    <Property Name="nangluc_lua" Type="Single" />
+    <Property Name="nangluc_raumau" Type="Single" />
+    <Property Name="nangluc_cndaingay" Type="Single" />
+    <Property Name="nangluc_thuysan" Type="Single" />
+    <Property Name="kinhdo" Type="Single" />
+    <Property Name="vido" Type="Single" />
+    <Property Name="duan_ref" Type="Guid" />
+    <Property Name="hethong_ref" Type="Guid" />
+    <Property Name="diadiem" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="thuockenh" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="thuocho" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="loaict" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="loaiden" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="chieucao" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="loaigeom" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="goithau" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="loai" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="tenduong" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="dongngat" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="iw_diemngap">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="mahieu" Type="Guid" Nullable="false" />
+    <Property Name="ten" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="xa_id" Type="Int32" />
+    <Property Name="huyen_id" Type="Int32" />
+    <Property Name="tinh_id" Type="Int32" />
+    <Property Name="httn_id" Type="Int32" />
+    <Property Name="loaict_id" Type="Int32" />
+    <Property Name="dvql_id" Type="Int32" />
+    <Property Name="luuvucsong_id" Type="Int32" />
+    <Property Name="nguon_goc" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="donvi_tinh" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="loai_taisan_id" Type="Int32" />
+    <Property Name="nam_xaydung" Type="Int32" />
+    <Property Name="nam_khaithac" Type="Int32" />
+    <Property Name="nam_bangiao" Type="Int32" />
+    <Property Name="dientich_dat" Type="Single" />
+    <Property Name="dientich_san" Type="Single" />
+    <Property Name="nguyen_gia" Type="Single" />
+    <Property Name="tyle_haomon" Type="Single" />
+    <Property Name="giatri_conlai" Type="Single" />
+    <Property Name="tinhtrang_taisan" Type="Boolean" />
+    <Property Name="song_id" Type="Int32" />
+    <Property Name="ma_qhns" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="type_nguyengia" Type="Int32" />
+    <Property Name="isdangxaydung" Type="Int32" />
+    <Property Name="gtcanhbao_mnchancongtrinh" Type="Single" />
+    <Property Name="httn_config" Type="Guid" />
+    <Property Name="nangluc_lua" Type="Single" />
+    <Property Name="nangluc_raumau" Type="Single" />
+    <Property Name="nangluc_cndaingay" Type="Single" />
+    <Property Name="nangluc_thuysan" Type="Single" />
+    <Property Name="kinhdo" Type="Single" />
+    <Property Name="vido" Type="Single" />
+    <Property Name="duan_ref" Type="Guid" />
+    <Property Name="hethong_ref" Type="Guid" />
+    <Property Name="diadiem" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="thuockenh" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="loaict" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="kichthuoc1" Type="String" MaxLength="24" Unicode="true" FixedLength="false" />
+    <Property Name="kichthuoc2" Type="String" MaxLength="24" Unicode="true" FixedLength="false" />
+    <Property Name="h" Type="Single" />
+    <Property Name="h1" Type="Single" />
+    <Property Name="h2" Type="Single" />
+    <Property Name="h3" Type="Single" />
+    <Property Name="h4" Type="Single" />
+    <Property Name="a1" Type="Single" />
+    <Property Name="a2" Type="Single" />
+    <Property Name="b" Type="Single" />
+    <Property Name="goithau" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="dientich" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="chieusau" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="thoigian" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="iw_gieng">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="mahieu" Type="Guid" Nullable="false" />
+    <Property Name="ten" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="xa_id" Type="Int32" />
+    <Property Name="huyen_id" Type="Int32" />
+    <Property Name="tinh_id" Type="Int32" />
+    <Property Name="httn_id" Type="Int32" />
+    <Property Name="loaict_id" Type="Int32" />
+    <Property Name="dvql_id" Type="Int32" />
+    <Property Name="luuvucsong_id" Type="Int32" />
+    <Property Name="nguon_goc" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="donvi_tinh" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="loai_taisan_id" Type="Int32" />
+    <Property Name="nam_xaydung" Type="Int32" />
+    <Property Name="nam_khaithac" Type="Int32" />
+    <Property Name="nam_bangiao" Type="Int32" />
+    <Property Name="dientich_dat" Type="Single" />
+    <Property Name="dientich_san" Type="Single" />
+    <Property Name="nguyen_gia" Type="Single" />
+    <Property Name="tyle_haomon" Type="Single" />
+    <Property Name="giatri_conlai" Type="Single" />
+    <Property Name="tinhtrang_taisan" Type="Boolean" />
+    <Property Name="song_id" Type="Int32" />
+    <Property Name="ma_qhns" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="type_nguyengia" Type="Int32" />
+    <Property Name="isdangxaydung" Type="Int32" />
+    <Property Name="gtcanhbao_mnchancongtrinh" Type="Single" />
+    <Property Name="httn_config" Type="Guid" />
+    <Property Name="nangluc_lua" Type="Single" />
+    <Property Name="nangluc_raumau" Type="Single" />
+    <Property Name="nangluc_cndaingay" Type="Single" />
+    <Property Name="nangluc_thuysan" Type="Single" />
+    <Property Name="kinhdo" Type="Single" />
+    <Property Name="vido" Type="Single" />
+    <Property Name="duan_ref" Type="Guid" />
+    <Property Name="hethong_ref" Type="Guid" />
+    <Property Name="diadiem" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="thuockenh" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="loaict" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="kichthuoc1" Type="String" MaxLength="24" Unicode="true" FixedLength="false" />
+    <Property Name="kichthuoc2" Type="String" MaxLength="24" Unicode="true" FixedLength="false" />
+    <Property Name="h" Type="Single" />
+    <Property Name="h1" Type="Single" />
+    <Property Name="h2" Type="Single" />
+    <Property Name="h3" Type="Single" />
+    <Property Name="h4" Type="Single" />
+    <Property Name="a1" Type="Single" />
+    <Property Name="a2" Type="Single" />
+    <Property Name="b" Type="Single" />
+    <Property Name="goithau" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="iw_hoga">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="mahieu" Type="Guid" Nullable="false" />
+    <Property Name="ten" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="xa_id" Type="Int32" />
+    <Property Name="huyen_id" Type="Int32" />
+    <Property Name="tinh_id" Type="Int32" />
+    <Property Name="httn_id" Type="Int32" />
+    <Property Name="loaict_id" Type="Int32" />
+    <Property Name="dvql_id" Type="Int32" />
+    <Property Name="luuvucsong_id" Type="Int32" />
+    <Property Name="nguon_goc" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="donvi_tinh" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="loai_taisan_id" Type="Int32" />
+    <Property Name="nam_xaydung" Type="Int32" />
+    <Property Name="nam_khaithac" Type="Int32" />
+    <Property Name="nam_bangiao" Type="Int32" />
+    <Property Name="dientich_dat" Type="Single" />
+    <Property Name="dientich_san" Type="Single" />
+    <Property Name="nguyen_gia" Type="Single" />
+    <Property Name="tyle_haomon" Type="Single" />
+    <Property Name="giatri_conlai" Type="Single" />
+    <Property Name="tinhtrang_taisan" Type="Boolean" />
+    <Property Name="song_id" Type="Int32" />
+    <Property Name="ma_qhns" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="type_nguyengia" Type="Int32" />
+    <Property Name="isdangxaydung" Type="Int32" />
+    <Property Name="gtcanhbao_mnchancongtrinh" Type="Single" />
+    <Property Name="httn_config" Type="Guid" />
+    <Property Name="nangluc_lua" Type="Single" />
+    <Property Name="nangluc_raumau" Type="Single" />
+    <Property Name="nangluc_cndaingay" Type="Single" />
+    <Property Name="nangluc_thuysan" Type="Single" />
+    <Property Name="kinhdo" Type="Single" />
+    <Property Name="vido" Type="Single" />
+    <Property Name="duan_ref" Type="Guid" />
+    <Property Name="hethong_ref" Type="Guid" />
+    <Property Name="diadiem" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="thuockenh" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="thuocho" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="loaict" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="loaihoga" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="chieucao" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="loaigeom" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="gocngoatd1d2" Type="String" MaxLength="53" Unicode="true" FixedLength="false" />
+    <Property Name="congvaod1" Type="String" MaxLength="53" Unicode="true" FixedLength="false" />
+    <Property Name="congrad2" Type="String" MaxLength="53" Unicode="true" FixedLength="false" />
+    <Property Name="caodomatdat" Type="String" MaxLength="53" Unicode="true" FixedLength="false" />
+    <Property Name="caododaycong" Type="String" MaxLength="53" Unicode="true" FixedLength="false" />
+    <Property Name="caododayga" Type="String" MaxLength="53" Unicode="true" FixedLength="false" />
+    <Property Name="chieucaoh1" Type="String" MaxLength="53" Unicode="true" FixedLength="false" />
+    <Property Name="ketcau" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="goithau" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="tenduong" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="thuoccong" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="congvaod3" Type="String" MaxLength="53" Unicode="true" FixedLength="false" />
+    <Property Name="ctu_r3_r5" Type="String" MaxLength="53" Unicode="true" FixedLength="false" />
+    <Property Name="ctu_r3_r6" Type="String" MaxLength="53" Unicode="true" FixedLength="false" />
+    <Property Name="caododay_e1" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="caododay_e2" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="caododay_e3" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="caododay_e4" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="caododay_e5" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="gocngoatd3d2" Type="String" MaxLength="53" Unicode="true" FixedLength="false" />
+    <Property Name="gocngoatd4d2" Type="String" MaxLength="53" Unicode="true" FixedLength="false" />
+    <Property Name="gocngoatd5d2" Type="String" MaxLength="53" Unicode="true" FixedLength="false" />
+    <Property Name="duongkinhd1" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="duongkinhd2" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="duongkinhd3" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="duongkinhd4" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="kyhieu" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="iw_hotrongcay">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="mahieu" Type="Guid" Nullable="false" />
+    <Property Name="ten" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="xa_id" Type="Int32" />
+    <Property Name="huyen_id" Type="Int32" />
+    <Property Name="tinh_id" Type="Int32" />
+    <Property Name="httn_id" Type="Int32" />
+    <Property Name="loaict_id" Type="Int32" />
+    <Property Name="dvql_id" Type="Int32" />
+    <Property Name="luuvucsong_id" Type="Int32" />
+    <Property Name="nguon_goc" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="donvi_tinh" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="loai_taisan_id" Type="Int32" />
+    <Property Name="nam_xaydung" Type="Int32" />
+    <Property Name="nam_khaithac" Type="Int32" />
+    <Property Name="nam_bangiao" Type="Int32" />
+    <Property Name="dientich_dat" Type="Single" />
+    <Property Name="dientich_san" Type="Single" />
+    <Property Name="nguyen_gia" Type="Single" />
+    <Property Name="tyle_haomon" Type="Single" />
+    <Property Name="giatri_conlai" Type="Single" />
+    <Property Name="tinhtrang_taisan" Type="Boolean" />
+    <Property Name="song_id" Type="Int32" />
+    <Property Name="ma_qhns" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="type_nguyengia" Type="Int32" />
+    <Property Name="isdangxaydung" Type="Int32" />
+    <Property Name="gtcanhbao_mnchancongtrinh" Type="Single" />
+    <Property Name="httn_config" Type="Guid" />
+    <Property Name="nangluc_lua" Type="Single" />
+    <Property Name="nangluc_raumau" Type="Single" />
+    <Property Name="nangluc_cndaingay" Type="Single" />
+    <Property Name="nangluc_thuysan" Type="Single" />
+    <Property Name="kinhdo" Type="Single" />
+    <Property Name="vido" Type="Single" />
+    <Property Name="duan_ref" Type="Guid" />
+    <Property Name="hethong_ref" Type="Guid" />
+    <Property Name="diadiem" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="thuockenh" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="thuocho" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="loaict" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="loaihoga" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="chieucao" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="loaigeom" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="tenduong" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="ghichu" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="kichthuoc" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="vatlieu" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="loaicay" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="goithau" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="iw_irrigation_sewer">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="mahieu" Type="Guid" Nullable="false" />
+    <Property Name="ten" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="xa_id" Type="Int32" />
+    <Property Name="huyen_id" Type="Int32" />
+    <Property Name="tinh_id" Type="Int32" />
+    <Property Name="httn_id" Type="Int32" />
+    <Property Name="loaict_id" Type="Int32" />
+    <Property Name="dvql_id" Type="Int32" />
+    <Property Name="luuvucsong_id" Type="Int32" />
+    <Property Name="nguon_goc" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="donvi_tinh" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="loai_taisan_id" Type="Int32" />
+    <Property Name="nam_xaydung" Type="Int32" />
+    <Property Name="nam_khaithac" Type="Int32" />
+    <Property Name="nam_bangiao" Type="Int32" />
+    <Property Name="dientich_dat" Type="Single" />
+    <Property Name="dientich_san" Type="Single" />
+    <Property Name="nguyen_gia" Type="Single" />
+    <Property Name="tyle_haomon" Type="Single" />
+    <Property Name="giatri_conlai" Type="Single" />
+    <Property Name="tinhtrang_taisan" Type="Boolean" />
+    <Property Name="song_id" Type="Int32" />
+    <Property Name="ma_qhns" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="type_nguyengia" Type="Int32" />
+    <Property Name="isdangxaydung" Type="Int32" />
+    <Property Name="gtcanhbao_mnchancongtrinh" Type="Single" />
+    <Property Name="httn_config" Type="Guid" />
+    <Property Name="nangluc_lua" Type="Single" />
+    <Property Name="nangluc_raumau" Type="Single" />
+    <Property Name="nangluc_cndaingay" Type="Single" />
+    <Property Name="nangluc_thuysan" Type="Single" />
+    <Property Name="kinhdo" Type="Single" />
+    <Property Name="vido" Type="Single" />
+    <Property Name="duan_ref" Type="Guid" />
+    <Property Name="hethong_ref" Type="Guid" />
+    <Property Name="dam_id" Type="Int32" />
+    <Property Name="luulg_tke" Type="Single" />
+    <Property Name="luulg_tte" Type="Single" />
+    <Property Name="loaicong" Type="Int32" />
+    <Property Name="ht_tieunang" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="tbi_tieunang" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="ketcau" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="khaudien" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="kt_cuavao" Type="Single" />
+    <Property Name="kt_cuara" Type="Single" />
+    <Property Name="chieudai" Type="Single" />
+    <Property Name="chedo_vanhanh" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="socuacong" Type="Int32" />
+    <Property Name="ct_daycong_thgluu" Type="Single" />
+    <Property Name="ct_daycong_haluu" Type="Single" />
+    <Property Name="ct_nguongcong" Type="Single" />
+    <Property Name="vvh_thgluu" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="vvh_haluu" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="kt_cuacong" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="cong_hongnang" Type="Boolean" />
+    <Property Name="cong_dangmo" Type="Boolean" />
+    <Property Name="htdm_thuongluu" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="hientrang" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="nam_hoanthanh" Type="Int32" />
+    <Property Name="nam_suachua" Type="Int32" />
+    <Property Name="canal_id" Type="Int32" />
+    <Property Name="diadiem" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+    <Property Name="vitri" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+    <Property Name="dttuoi_tke" Type="Single" />
+    <Property Name="dttieu_tke" Type="Single" />
+    <Property Name="dtnganman_tke" Type="Single" />
+    <Property Name="dttuoi_tte" Type="Single" />
+    <Property Name="dttieu_tte" Type="Single" />
+    <Property Name="dtnganman_tte" Type="Single" />
+    <Property Name="reservoir_id" Type="Guid" />
+    <Property Name="kichthuoc" Type="String" MaxLength="600" Unicode="true" FixedLength="false" />
+    <Property Name="hinhthuc" Type="String" MaxLength="600" Unicode="true" FixedLength="false" />
+    <Property Name="dam_uuid" Type="Guid" />
+    <Property Name="capcong" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="lytrinh" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="chatlieu" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="hinhdang_cong" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="ghichu" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="donviquanly" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="temp_id" Type="Int32" />
+    <Property Name="thuockenh" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="loaict" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="thuocho" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="chieucao_daycuaxa" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="chieucao_dinhke" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="diemdau" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="diemcuoi" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="loaicongten" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="thuocduong" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="tenduong" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="goithau" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="chieurong" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="chieucao" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="duongkinh" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="vatlieu" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="dosaucong" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="loai_1a1" Type="Double" />
+    <Property Name="loai_1a2" Type="Double" />
+    <Property Name="loai_1b1" Type="Double" />
+    <Property Name="loai_1b2" Type="Double" />
+    <Property Name="tong" Type="Double" />
+    <Property Name="h_z2_z3" Type="Double" />
+    <Property Name="htb_z0_z1" Type="Double" />
+  </EntityType>
+  <EntityType Name="iw_nhamayxulynuocthai">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="mahieu" Type="Guid" Nullable="false" />
+    <Property Name="ten" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="xa_id" Type="Int32" />
+    <Property Name="huyen_id" Type="Int32" />
+    <Property Name="tinh_id" Type="Int32" />
+    <Property Name="httn_id" Type="Int32" />
+    <Property Name="loaict_id" Type="Int32" />
+    <Property Name="dvql_id" Type="Int32" />
+    <Property Name="luuvucsong_id" Type="Int32" />
+    <Property Name="nguon_goc" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="donvi_tinh" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="loai_taisan_id" Type="Int32" />
+    <Property Name="nam_xaydung" Type="Int32" />
+    <Property Name="nam_khaithac" Type="Int32" />
+    <Property Name="nam_bangiao" Type="Int32" />
+    <Property Name="dientich_dat" Type="Single" />
+    <Property Name="dientich_san" Type="Single" />
+    <Property Name="nguyen_gia" Type="Single" />
+    <Property Name="tyle_haomon" Type="Single" />
+    <Property Name="giatri_conlai" Type="Single" />
+    <Property Name="tinhtrang_taisan" Type="Boolean" />
+    <Property Name="song_id" Type="Int32" />
+    <Property Name="ma_qhns" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="type_nguyengia" Type="Int32" />
+    <Property Name="isdangxaydung" Type="Int32" />
+    <Property Name="gtcanhbao_mnchancongtrinh" Type="Single" />
+    <Property Name="httn_config" Type="Guid" />
+    <Property Name="nangluc_lua" Type="Single" />
+    <Property Name="nangluc_raumau" Type="Single" />
+    <Property Name="nangluc_cndaingay" Type="Single" />
+    <Property Name="nangluc_thuysan" Type="Single" />
+    <Property Name="kinhdo" Type="Single" />
+    <Property Name="vido" Type="Single" />
+    <Property Name="duan_ref" Type="Guid" />
+    <Property Name="hethong_ref" Type="Guid" />
+    <Property Name="diadiem" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="thuockenh" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="thuocho" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="loaict" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="hientrang" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="congsuat" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="vitri" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="goithau" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="iw_pump_station">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="mahieu" Type="Guid" Nullable="false" />
+    <Property Name="ten" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="xa_id" Type="Int32" />
+    <Property Name="huyen_id" Type="Int32" />
+    <Property Name="tinh_id" Type="Int32" />
+    <Property Name="httn_id" Type="Int32" />
+    <Property Name="loaict_id" Type="Int32" />
+    <Property Name="dvql_id" Type="Int32" />
+    <Property Name="luuvucsong_id" Type="Int32" />
+    <Property Name="nguon_goc" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="donvi_tinh" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="loai_taisan_id" Type="Int32" />
+    <Property Name="nam_xaydung" Type="Int32" />
+    <Property Name="nam_khaithac" Type="Int32" />
+    <Property Name="nam_bangiao" Type="Int32" />
+    <Property Name="dientich_dat" Type="Single" />
+    <Property Name="dientich_san" Type="Single" />
+    <Property Name="nguyen_gia" Type="Single" />
+    <Property Name="tyle_haomon" Type="Single" />
+    <Property Name="giatri_conlai" Type="Single" />
+    <Property Name="tinhtrang_taisan" Type="Boolean" />
+    <Property Name="song_id" Type="Int32" />
+    <Property Name="ma_qhns" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="type_nguyengia" Type="Int32" />
+    <Property Name="isdangxaydung" Type="Int32" />
+    <Property Name="gtcanhbao_mnchancongtrinh" Type="Single" />
+    <Property Name="httn_config" Type="Guid" />
+    <Property Name="nangluc_lua" Type="Single" />
+    <Property Name="nangluc_raumau" Type="Single" />
+    <Property Name="nangluc_cndaingay" Type="Single" />
+    <Property Name="nangluc_thuysan" Type="Single" />
+    <Property Name="kinhdo" Type="Single" />
+    <Property Name="vido" Type="Single" />
+    <Property Name="duan_ref" Type="Guid" />
+    <Property Name="hethong_ref" Type="Guid" />
+    <Property Name="congtongbom" Type="Single" />
+    <Property Name="tongcongsuat" Type="Single" />
+    <Property Name="somaybom" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="dttuoi_tke" Type="Single" />
+    <Property Name="dttuoi_tte" Type="Single" />
+    <Property Name="ct_mucnuoctk" Type="Single" />
+    <Property Name="ct_daybehut" Type="Single" />
+    <Property Name="ct_mucnuocbx" Type="Single" />
+    <Property Name="ct_tamongxa" Type="Single" />
+    <Property Name="ct_thanhbx" Type="Single" />
+    <Property Name="ct_sanmay" Type="Single" />
+    <Property Name="cotnuoc" Type="Single" />
+    <Property Name="tbi_dieukhien" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="tietdien_duongday" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="chieudai_dgday" Type="Single" />
+    <Property Name="namxaydung" Type="Int32" />
+    <Property Name="diadiem" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+    <Property Name="dtcapns_tke" Type="Single" />
+    <Property Name="dttieu_tte" Type="Single" />
+    <Property Name="dtcapns_tte" Type="Single" />
+    <Property Name="dttieu_tke" Type="Single" />
+    <Property Name="loai_trambom" Type="Int32" />
+    <Property Name="congsuattk" Type="Single" />
+    <Property Name="congsuattk_tieu" Type="Single" />
+    <Property Name="reservoir_id" Type="Guid" />
+    <Property Name="chieu_rong" Type="Single" />
+    <Property Name="chieu_cao" Type="Single" />
+    <Property Name="loaimay" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="mahieumay" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="luuluong_motmay" Type="Double" />
+    <Property Name="ct_dongco" Type="Double" />
+    <Property Name="ct_mucnuocbh" Type="Double" />
+    <Property Name="chieudai_onghut" Type="Double" />
+    <Property Name="ct_tamonghut" Type="Double" />
+    <Property Name="dientich_behut" Type="Double" />
+    <Property Name="chieudai_ongxa" Type="Double" />
+    <Property Name="dientich_bexa" Type="Double" />
+    <Property Name="ly_trinh" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="clndk_kichthuoc" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="clndk_hientrang" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="hientrang" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="captrambom" Type="Int32" />
+    <Property Name="ghichu" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="temp_id" Type="Int64" />
+    <Property Name="donviquanly" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="quymo" Type="String" MaxLength="600" Unicode="true" FixedLength="false" />
+    <Property Name="dientichtuoi" Type="String" MaxLength="600" Unicode="true" FixedLength="false" />
+    <Property Name="dientichtieu" Type="String" MaxLength="600" Unicode="true" FixedLength="false" />
+    <Property Name="ketcau" Type="String" MaxLength="600" Unicode="true" FixedLength="false" />
+    <Property Name="dienthoai" Type="String" MaxLength="600" Unicode="true" FixedLength="false" />
+    <Property Name="fax" Type="String" MaxLength="600" Unicode="true" FixedLength="false" />
+    <Property Name="mucnuocbexa" Type="String" MaxLength="600" Unicode="true" FixedLength="false" />
+    <Property Name="mucnuocbehut" Type="String" MaxLength="600" Unicode="true" FixedLength="false" />
+    <Property Name="khoangcachtim" Type="String" MaxLength="600" Unicode="true" FixedLength="false" />
+    <Property Name="hieusuat" Type="String" MaxLength="600" Unicode="true" FixedLength="false" />
+    <Property Name="ct_sansuachua" Type="String" MaxLength="600" Unicode="true" FixedLength="false" />
+    <Property Name="ct_bobehut" Type="String" MaxLength="600" Unicode="true" FixedLength="false" />
+    <Property Name="chieudaibehut" Type="String" MaxLength="600" Unicode="true" FixedLength="false" />
+    <Property Name="chieurongbehut" Type="String" MaxLength="600" Unicode="true" FixedLength="false" />
+    <Property Name="ct_daybexa" Type="String" MaxLength="600" Unicode="true" FixedLength="false" />
+    <Property Name="ct_bobexa" Type="String" MaxLength="600" Unicode="true" FixedLength="false" />
+    <Property Name="chieudaibexa" Type="String" MaxLength="600" Unicode="true" FixedLength="false" />
+    <Property Name="chieurongbexa" Type="String" MaxLength="600" Unicode="true" FixedLength="false" />
+    <Property Name="ct_tuongbexa" Type="String" MaxLength="600" Unicode="true" FixedLength="false" />
+    <Property Name="congapluc" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="luuluongtt" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="congsuattb" Type="Single" />
+    <Property Name="vitri" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="cotap" Type="Single" />
+    <Property Name="goithau" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="iw_reservoir">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="mahieu" Type="Guid" Nullable="false" />
+    <Property Name="ten" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="xa_id" Type="Int32" />
+    <Property Name="huyen_id" Type="Int32" />
+    <Property Name="tinh_id" Type="Int32" />
+    <Property Name="httn_id" Type="Int32" />
+    <Property Name="loaict_id" Type="Int32" />
+    <Property Name="dvql_id" Type="Int32" />
+    <Property Name="luuvucsong_id" Type="Int32" />
+    <Property Name="nguon_goc" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="donvi_tinh" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="loai_taisan_id" Type="Int32" />
+    <Property Name="nam_xaydung" Type="Int32" />
+    <Property Name="nam_khaithac" Type="Int32" />
+    <Property Name="nam_bangiao" Type="Int32" />
+    <Property Name="dientich_dat" Type="Single" />
+    <Property Name="dientich_san" Type="Single" />
+    <Property Name="nguyen_gia" Type="Single" />
+    <Property Name="tyle_haomon" Type="Single" />
+    <Property Name="giatri_conlai" Type="Single" />
+    <Property Name="tinhtrang_taisan" Type="Boolean" />
+    <Property Name="song_id" Type="Int32" />
+    <Property Name="ma_qhns" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="type_nguyengia" Type="Int32" />
+    <Property Name="isdangxaydung" Type="Int32" />
+    <Property Name="gtcanhbao_mnchancongtrinh" Type="Single" />
+    <Property Name="httn_config" Type="Guid" />
+    <Property Name="nangluc_lua" Type="Single" />
+    <Property Name="nangluc_raumau" Type="Single" />
+    <Property Name="nangluc_cndaingay" Type="Single" />
+    <Property Name="nangluc_thuysan" Type="Single" />
+    <Property Name="kinhdo" Type="Single" />
+    <Property Name="vido" Type="Single" />
+    <Property Name="duan_ref" Type="Guid" />
+    <Property Name="hethong_ref" Type="Guid" />
+    <Property Name="diadiem" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="capcongtrinh" Type="Int32" />
+    <Property Name="tansuatlu_tk_tuoi" Type="Single" />
+    <Property Name="tansuatlu_tk" Type="Single" />
+    <Property Name="tansuatlu_kt" Type="Single" />
+    <Property Name="dungtich_tongcong" Type="Single" />
+    <Property Name="dungtich_mndbt" Type="Single" />
+    <Property Name="dungtich_huuich" Type="Single" />
+    <Property Name="dungtich_chet" Type="Single" />
+    <Property Name="mndbt" Type="Single" />
+    <Property Name="mnc" Type="Single" />
+    <Property Name="mndgc" Type="Single" />
+    <Property Name="mnlkt" Type="Single" />
+    <Property Name="mnltk" Type="Single" />
+    <Property Name="dungtich_phonglu" Type="Single" />
+    <Property Name="tgtichnuoc_mndbt" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="slg_dapchinh" Type="Int32" />
+    <Property Name="slg_dapphu" Type="Int32" />
+    <Property Name="slg_tran" Type="Int32" />
+    <Property Name="slg_congxasau" Type="Int32" />
+    <Property Name="slg_tuynen" Type="Int32" />
+    <Property Name="slg_conglaynuoc" Type="Int32" />
+    <Property Name="slg_authuyen" Type="Int32" />
+    <Property Name="f_luuvuc" Type="Single" />
+    <Property Name="luulg_dinhlu_tk" Type="Single" />
+    <Property Name="luulg_dinhlu_kt" Type="Single" />
+    <Property Name="nhiemvu" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="dtra_htho" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="dtra_nam" Type="Int32" />
+    <Property Name="dtra_mota" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="nam_hoanthanh" Type="Int32" />
+    <Property Name="nam_suachua" Type="Int32" />
+    <Property Name="dang_suachua" Type="Boolean" />
+    <Property Name="quytrinh_vanhanh" Type="Boolean" />
+    <Property Name="pp_baove" Type="Boolean" />
+    <Property Name="cuavan" Type="Boolean" />
+    <Property Name="xungyeu" Type="Boolean" />
+    <Property Name="quantrong" Type="Boolean" />
+    <Property Name="dactinhho" Type="Boolean" />
+    <Property Name="ghichu" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="f_tru" Type="Single" />
+    <Property Name="f_tuoi" Type="Single" />
+    <Property Name="slg_trambom" Type="Int32" />
+    <Property Name="slg_kenh" Type="Int32" />
+    <Property Name="slg_caumang" Type="Int32" />
+    <Property Name="slg_xiphong" Type="Int32" />
+    <Property Name="slg_cau" Type="Int32" />
+    <Property Name="slg_tramdomua" Type="Int32" />
+    <Property Name="slg_tramdomucnuoc" Type="Int32" />
+    <Property Name="slg_tramkttv" Type="Int32" />
+    <Property Name="lakecode_tlvn" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="ishothuydien" Type="Boolean" />
+    <Property Name="deleted_status" Type="Int32" />
+    <Property Name="kiemdinh_antoandap" Type="Boolean" />
+    <Property Name="trantudo" Type="Boolean" />
+    <Property Name="ketcaudap" Type="Int32" />
+    <Property Name="congtacquanly" Type="Int32" />
+    <Property Name="holientinh" Type="Int32" />
+    <Property Name="geomid" Type="Int32" />
+    <Property Name="nghidinhref" Type="Int32" />
+    <Property Name="loaihoref" Type="Int32" />
+    <Property Name="dubaolulut_id" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="tgmuakiettu" Type="DateTime" Precision="6" />
+    <Property Name="tgmuakietden" Type="DateTime" Precision="6" />
+    <Property Name="tgmualutu" Type="DateTime" Precision="6" />
+    <Property Name="tgmualuden" Type="DateTime" Precision="6" />
+    <Property Name="mncaonhattruoclu" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="mucnuocdonlu" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="duongphongphahoai" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="duonghanche" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="thoigiantichnuoc" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="luuluongxatoithieu" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="tansuatlu_tk_dandongthicong" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="tansuatlu_tk_thuysan" Type="Single" />
+    <Property Name="tansuatlu_tk_sinhhoat" Type="Single" />
+    <Property Name="tansuatlu_tk_congnghiep" Type="Single" />
+    <Property Name="tansuatlu_tk_moitruong" Type="Single" />
+    <Property Name="lat" Type="Single" />
+    <Property Name="lon" Type="Single" />
+    <Property Name="ma_anhxa" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="nguon_anhxa" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="mnlvkt" Type="Single" />
+    <Property Name="mucboilang" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="dungtich_boilang" Type="Single" />
+    <Property Name="dientichmatho_mndbt" Type="Single" />
+    <Property Name="dientichmatho_mnltk" Type="Single" />
+    <Property Name="dientichmatho_mnlkt" Type="Single" />
+    <Property Name="chedolamviec" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="dientich_luuvuc_tuyendap" Type="Single" />
+    <Property Name="luuluong_binhquannam" Type="Single" />
+    <Property Name="luuluong_dinhlu_10" Type="Single" />
+    <Property Name="luuluong_dinhlu_05" Type="Single" />
+    <Property Name="luuluong_dinhlu_01" Type="Single" />
+    <Property Name="luuluong_dinhlu_002" Type="Single" />
+    <Property Name="tongluonglu_10" Type="Single" />
+    <Property Name="tongluonglu_05" Type="Single" />
+    <Property Name="tongluonglu_01" Type="Single" />
+    <Property Name="tongluonglu_002" Type="Single" />
+    <Property Name="thuydien_hinhthuc" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="thuydien_congsuat" Type="Single" />
+    <Property Name="thuydien_soto" Type="Single" />
+    <Property Name="thuydien_chedo_lamviec" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="congsuatlapmay" Type="Single" />
+    <Property Name="dungtich_mnltk" Type="Single" />
+    <Property Name="dungtich_mnlkt" Type="Single" />
+    <Property Name="cogantram" Type="Int32" />
+    <Property Name="codieutietlienho" Type="Boolean" />
+    <Property Name="mamohinhmike11" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="immidiate_show" Type="Boolean" />
+    <Property Name="baocao_hientrangatd" Type="Boolean" />
+    <Property Name="kiemtra_cttruoclu" Type="Boolean" />
+    <Property Name="phuongan_pclb" Type="Boolean" />
+    <Property Name="phuongan_pcll" Type="Boolean" />
+    <Property Name="kinhphi_nangcapsuachua" Type="Double" />
+    <Property Name="hientrang_congtrinh" Type="String" MaxLength="8000" Unicode="true" FixedLength="false" />
+    <Property Name="isdapdang" Type="Int32" />
+    <Property Name="ishofortctl" Type="Int32" />
+    <Property Name="thoigiancapnhat" Type="Int32" />
+    <Property Name="tong_luonglu_tk" Type="Single" />
+    <Property Name="tong_luonglu_kt" Type="Single" />
+    <Property Name="isdubaolu" Type="Int32" />
+    <Property Name="luuvucho_id" Type="Int32" />
+    <Property Name="dubaongapluthadu_id" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="phanmemquanly_link" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+    <Property Name="vanhanhcoihu_id" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="donviquanly" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="isshow_fulldata_quantrac" Type="Boolean" />
+    <Property Name="temp_id" Type="Int32" />
+    <Property Name="ismoinhattrongngay" Type="Boolean" />
+    <Property Name="isdubaodaihan" Type="Boolean" />
+    <Property Name="tansuat_dambaotuoi" Type="Single" />
+    <Property Name="matke_ketcau" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="duongho" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="dientich" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="dientichmatnuoc" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="chieucaomatho" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="chieucaodayho" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="goithau" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="iw_timduong">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="mahieu" Type="Guid" Nullable="false" />
+    <Property Name="ten" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="xa_id" Type="Int32" />
+    <Property Name="huyen_id" Type="Int32" />
+    <Property Name="tinh_id" Type="Int32" />
+    <Property Name="httn_id" Type="Int32" />
+    <Property Name="loaict_id" Type="Int32" />
+    <Property Name="dvql_id" Type="Int32" />
+    <Property Name="luuvucsong_id" Type="Int32" />
+    <Property Name="nguon_goc" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="donvi_tinh" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="loai_taisan_id" Type="Int32" />
+    <Property Name="nam_xaydung" Type="Int32" />
+    <Property Name="nam_khaithac" Type="Int32" />
+    <Property Name="nam_bangiao" Type="Int32" />
+    <Property Name="dientich_dat" Type="Single" />
+    <Property Name="dientich_san" Type="Single" />
+    <Property Name="nguyen_gia" Type="Single" />
+    <Property Name="tyle_haomon" Type="Single" />
+    <Property Name="giatri_conlai" Type="Single" />
+    <Property Name="tinhtrang_taisan" Type="Boolean" />
+    <Property Name="song_id" Type="Int32" />
+    <Property Name="ma_qhns" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="type_nguyengia" Type="Int32" />
+    <Property Name="isdangxaydung" Type="Int32" />
+    <Property Name="gtcanhbao_mnchancongtrinh" Type="Single" />
+    <Property Name="httn_config" Type="Guid" />
+    <Property Name="nangluc_lua" Type="Single" />
+    <Property Name="nangluc_raumau" Type="Single" />
+    <Property Name="nangluc_cndaingay" Type="Single" />
+    <Property Name="nangluc_thuysan" Type="Single" />
+    <Property Name="kinhdo" Type="Single" />
+    <Property Name="vido" Type="Single" />
+    <Property Name="duan_ref" Type="Guid" />
+    <Property Name="hethong_ref" Type="Guid" />
+    <Property Name="diadiem" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="thuockenh" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="loaict" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="chieudai" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="diemdau" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="diemcuoi" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="hientrang" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="chieurong" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="dientich" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="khoiluongd" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="kl_dapcat" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="kl_dapdat" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="dt_cayxoi" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="goithau" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="iw_trucuuhoa">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="mahieu" Type="Guid" Nullable="false" />
+    <Property Name="ten" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="xa_id" Type="Int32" />
+    <Property Name="huyen_id" Type="Int32" />
+    <Property Name="tinh_id" Type="Int32" />
+    <Property Name="httn_id" Type="Int32" />
+    <Property Name="loaict_id" Type="Int32" />
+    <Property Name="dvql_id" Type="Int32" />
+    <Property Name="luuvucsong_id" Type="Int32" />
+    <Property Name="nguon_goc" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="donvi_tinh" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="loai_taisan_id" Type="Int32" />
+    <Property Name="nam_xaydung" Type="Int32" />
+    <Property Name="nam_khaithac" Type="Int32" />
+    <Property Name="nam_bangiao" Type="Int32" />
+    <Property Name="dientich_dat" Type="Single" />
+    <Property Name="dientich_san" Type="Single" />
+    <Property Name="nguyen_gia" Type="Single" />
+    <Property Name="tyle_haomon" Type="Single" />
+    <Property Name="giatri_conlai" Type="Single" />
+    <Property Name="tinhtrang_taisan" Type="Boolean" />
+    <Property Name="song_id" Type="Int32" />
+    <Property Name="ma_qhns" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="type_nguyengia" Type="Int32" />
+    <Property Name="isdangxaydung" Type="Int32" />
+    <Property Name="gtcanhbao_mnchancongtrinh" Type="Single" />
+    <Property Name="httn_config" Type="Guid" />
+    <Property Name="nangluc_lua" Type="Single" />
+    <Property Name="nangluc_raumau" Type="Single" />
+    <Property Name="nangluc_cndaingay" Type="Single" />
+    <Property Name="nangluc_thuysan" Type="Single" />
+    <Property Name="kinhdo" Type="Single" />
+    <Property Name="vido" Type="Single" />
+    <Property Name="duan_ref" Type="Guid" />
+    <Property Name="hethong_ref" Type="Guid" />
+    <Property Name="diadiem" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="thuockenh" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="thuocho" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="loaict" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="loaihoga" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="chieucao" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="loaigeom" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="gocngoat" Type="Double" />
+    <Property Name="congvao" Type="Double" />
+    <Property Name="congra" Type="Double" />
+    <Property Name="caodomatdat" Type="Double" />
+    <Property Name="caododaycong" Type="Double" />
+    <Property Name="caododayga" Type="Double" />
+    <Property Name="chieucaoh1" Type="Double" />
+    <Property Name="ketcau" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="goithau" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="tenduong" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="kichthuoc" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="iw_vuotnoi">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Name="mahieu" Type="Guid" Nullable="false" />
+    <Property Name="ten" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="xa_id" Type="Int32" />
+    <Property Name="huyen_id" Type="Int32" />
+    <Property Name="tinh_id" Type="Int32" />
+    <Property Name="httn_id" Type="Int32" />
+    <Property Name="loaict_id" Type="Int32" />
+    <Property Name="dvql_id" Type="Int32" />
+    <Property Name="luuvucsong_id" Type="Int32" />
+    <Property Name="nguon_goc" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="donvi_tinh" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="loai_taisan_id" Type="Int32" />
+    <Property Name="nam_xaydung" Type="Int32" />
+    <Property Name="nam_khaithac" Type="Int32" />
+    <Property Name="nam_bangiao" Type="Int32" />
+    <Property Name="dientich_dat" Type="Single" />
+    <Property Name="dientich_san" Type="Single" />
+    <Property Name="nguyen_gia" Type="Single" />
+    <Property Name="tyle_haomon" Type="Single" />
+    <Property Name="giatri_conlai" Type="Single" />
+    <Property Name="tinhtrang_taisan" Type="Boolean" />
+    <Property Name="song_id" Type="Int32" />
+    <Property Name="ma_qhns" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="type_nguyengia" Type="Int32" />
+    <Property Name="isdangxaydung" Type="Int32" />
+    <Property Name="gtcanhbao_mnchancongtrinh" Type="Single" />
+    <Property Name="httn_config" Type="Guid" />
+    <Property Name="nangluc_lua" Type="Single" />
+    <Property Name="nangluc_raumau" Type="Single" />
+    <Property Name="nangluc_cndaingay" Type="Single" />
+    <Property Name="nangluc_thuysan" Type="Single" />
+    <Property Name="kinhdo" Type="Single" />
+    <Property Name="vido" Type="Single" />
+    <Property Name="duan_ref" Type="Guid" />
+    <Property Name="hethong_ref" Type="Guid" />
+    <Property Name="diadiem" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="thuockenh" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="loaict" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="tenduong" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="r" Type="Double" />
+    <Property Name="t" Type="Double" />
+    <Property Name="p" Type="Double" />
+    <Property Name="k" Type="Double" />
+    <Property Name="sq" Type="Double" />
+    <Property Name="b2" Type="Double" />
+    <Property Name="bovia" Type="Double" />
+    <Property Name="dientichmorong" Type="Double" />
+    <Property Name="dangnutgiao" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="bi" Type="Double" />
+    <Property Name="goithau" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tbl_danhmuc_duan">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Type="Guid" Name="mahieu" Nullable="false" />
+    <Property Type="String" Name="ten" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ghichu" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Guid" Name="hethong_ref" />
+  </EntityType>
+  <EntityType Name="tbl_danhmuc_hethong">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Type="Guid" Name="mahieu" Nullable="false" />
+    <Property Type="String" Name="ten" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ghichu" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="bgmap_commune">
+    <Key>
+      <PropertyRef Name="gid" />
+    </Key>
+    <Property Type="Int32" Name="gid" Nullable="false" />
+    <Property Type="String" Name="ten_xa" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="huyen_id" />
+    <Property Type="Int32" Name="tinh_id" />
+    <Property Type="Single" Name="hesokhau" />
+    <Property Type="Double" Name="x_vido" />
+    <Property Type="Double" Name="y_kinhdo" />
+    <NavigationProperty Name="bgmap_district" Relationship="odaninhthuanModel.bgmap_commune_fk" FromRole="bgmap_commune" ToRole="bgmap_district" />
+  </EntityType>
+  <EntityType Name="bgmap_district">
+    <Key>
+      <PropertyRef Name="gid" />
+    </Key>
+    <Property Type="Int32" Name="gid" Nullable="false" />
+    <Property Type="String" Name="ten_huyen" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="tinh_id" />
+    <Property Type="Int32" Name="danso" />
+    <Property Type="Single" Name="dinhmucsudungnuoc" />
+    <NavigationProperty Name="bgmap_commune" Relationship="odaninhthuanModel.bgmap_commune_fk" FromRole="bgmap_district" ToRole="bgmap_commune" />
+  </EntityType>
+  <EntityType Name="bgmap_province">
+    <Key>
+      <PropertyRef Name="gid" />
+    </Key>
+    <Property Type="Int32" Name="gid" Nullable="false" />
+    <Property Type="String" Name="ten_tinh" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="orderindex" />
+    <Property Type="Int32" Name="vungid" />
+    <Property Type="String" Name="luuvucid" MaxLength="8000" FixedLength="false" Unicode="true" />
+    <Property Type="Guid" Name="tinh_uuid" Nullable="false" />
+    <Property Type="Int32" Name="ordervung" />
+    <Property Type="Int32" Name="luuvuc_ngaplut_id" />
+    <Property Type="Int32" Name="matinh_satlo" />
+  </EntityType>
+  <Association Name="bgmap_commune_fk">
+    <End Type="odaninhthuanModel.bgmap_district" Role="bgmap_district" Multiplicity="0..1" />
+    <End Type="odaninhthuanModel.bgmap_commune" Role="bgmap_commune" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bgmap_district">
+        <PropertyRef Name="gid" />
+      </Principal>
+      <Dependent Role="bgmap_commune">
+        <PropertyRef Name="huyen_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tbl_duytubaoduong">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int64" Name="id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Guid" Name="ct_uuid" Nullable="false" />
+    <Property Type="String" Name="kyhieu" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="phanloairef" />
+    <Property Type="String" Name="loaicongtrinh" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="tinh_id" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="huyen_id" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="diadiem" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Single" Name="tongchieudai" />
+    <Property Type="String" Name="giaiphapkythuat" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="vatlieuxaydung" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Single" Name="kinhphi" />
+    <Property Type="Int32" Name="namkehoach" />
+    <Property Type="Int32" Name="namthuchien" />
+    <Property Type="Int32" Name="namhoanthanh" />
+    <Property Type="Int32" Name="nguon" />
+    <Property Type="Int32" Name="duyet" />
+    <Property Type="String" Name="soqd" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ngayqd" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="anhtruoc" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="anhsau" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="createdby" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="createdat" Precision="6" />
+    <Property Type="String" Name="lastmodifiedby" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="lastmodifiedat" Precision="6" />
+  </EntityType>
+  <EntityType Name="tbl_tutailieu_files">
+    <Key>
+      <PropertyRef Name="ttl_tree_id" />
+    </Key>
+    <Property Type="Int64" Name="ttl_tree_id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="ttl_tree_ten" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Guid" Name="ttl_tree_user_creator" />
+    <Property Type="DateTime" Name="ttl_tree_date_created" Precision="6" />
+    <Property Type="Guid" Name="ttl_tree_user_modifier" />
+    <Property Type="DateTime" Name="ttl_tree_date_modified" Precision="6" />
+    <Property Type="Int32" Name="ttl_tree_form" />
+    <Property Type="Int32" Name="ttl_tree_type" Nullable="false" />
+    <Property Type="Int32" Name="ttl_tree_tochucid" />
+    <Property Type="Guid" Name="ttl_tree_object" />
+    <Property Type="Int32" Name="ttl_tree_object_type" />
+    <Property Type="Int32" Name="ttl_tree_df_id" />
+    <Property Type="Int32" Name="ttl_files_id" />
+  </EntityType>
+  <EntityType Name="tbl_tutailieu_files_detail">
+    <Key>
+      <PropertyRef Name="ttl_files_detail_id" />
+    </Key>
+    <Property Type="Int64" Name="ttl_files_detail_id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="ttl_files_detail_localpath" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ttl_files_detail_remotepath" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ttl_files_detail_resize_localpath" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ttl_files_detail_resize_remotepath" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ttl_files_detail_type" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="ttl_files_detail_size" />
+    <Property Type="Int32" Name="ttl_files_detail_viewed" />
+    <Property Type="Int32" Name="ttl_files_detail_downloaded" />
+  </EntityType>
+  <EntityType Name="tbl_tutailieu_files_types">
+    <Key>
+      <PropertyRef Name="ttl_ftype_id" />
+    </Key>
+    <Property Type="Int64" Name="ttl_ftype_id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="ttl_ftype_type" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ttl_ftype_name" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_tutailieu_folder">
+    <Key>
+      <PropertyRef Name="ttl_tree_id" />
+    </Key>
+    <Property Type="Int64" Name="ttl_tree_id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="ttl_tree_ten" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Guid" Name="ttl_tree_user_creator" />
+    <Property Type="DateTime" Name="ttl_tree_date_created" Precision="6" />
+    <Property Type="Guid" Name="ttl_tree_user_modifier" />
+    <Property Type="DateTime" Name="ttl_tree_date_modified" Precision="6" />
+    <Property Type="Int32" Name="ttl_tree_form" />
+    <Property Type="Int32" Name="ttl_tree_type" Nullable="false" />
+    <Property Type="Int32" Name="ttl_tree_tochucid" />
+    <Property Type="Guid" Name="ttl_tree_object" />
+    <Property Type="Int32" Name="ttl_tree_object_type" />
+    <Property Type="Int32" Name="ttl_tree_df_id" />
+    <Property Type="Int32" Name="ttl_folder_origin" />
+    <Property Type="Int32" Name="ttl_folder_icon" />
+    <Property Type="String" Name="ttl_folder_localpath" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ttl_folder_remotepath" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_tutailieu_history">
+    <Key>
+      <PropertyRef Name="ttl_ls_id" />
+    </Key>
+    <Property Type="Int64" Name="ttl_ls_id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int64" Name="ttl_ls_ttl_tree_id" />
+    <Property Type="String" Name="ttl_ls_tbl_tutailieu_files" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ttl_ls_tbl_tutailieu_folder" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ttl_ls_tbl_tutailieu_users_files_folder" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Guid" Name="ttl_ls_users" />
+    <Property Type="DateTime" Name="ttl_ls_thoigian" Precision="6" />
+    <Property Type="Int64" Name="ttl_ls_folder_id" />
+    <Property Type="String" Name="ttl_ls_folder_name" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="ttl_ls_type" />
+  </EntityType>
+  <EntityType Name="tbl_tutailieu_thuoctinh">
+    <Key>
+      <PropertyRef Name="tt_id" />
+    </Key>
+    <Property Type="Int64" Name="tt_id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="tt_name" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="tt_form" />
+    <Property Type="Int32" Name="tt_parentid" />
+    <Property Type="String" Name="tt_map_table" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="tt_map_column" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="tt_field_table" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="tt_field_id" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="tt_field_name" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="tt_field_where" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="tt_field_order" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="tt_field_changer" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="tt_field_holder" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="tt_orderby" />
+    <Property Type="Int32" Name="tt_type" />
+    <Property Type="Int32" Name="tt_data_type" />
+    <Property Type="String" Name="tt_unit" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="tt_default" Nullable="false" />
+    <Property Type="Boolean" Name="tt_search" Nullable="false" />
+    <Property Type="Boolean" Name="tt_show" Nullable="false" />
+    <Property Type="DateTime" Name="created_at" Precision="6" />
+    <Property Type="String" Name="created_by" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="last_modified_at" Precision="6" />
+    <Property Type="String" Name="last_modified_by" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="deleted_status" />
+  </EntityType>
+  <EntityType Name="tbl_tutailieu_thuoctinh_danhmuc">
+    <Key>
+      <PropertyRef Name="ttdm_id" />
+    </Key>
+    <Property Type="Int64" Name="ttdm_id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="ttdm_name" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="ttdm_tt_id" />
+    <Property Type="String" Name="ttdm_kyhieu" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="ttdm_orderby" />
+    <Property Type="DateTime" Name="created_at" Precision="6" />
+    <Property Type="String" Name="created_by" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="last_modified_at" Precision="6" />
+    <Property Type="String" Name="last_modified_by" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="deleted_status" />
+  </EntityType>
+  <EntityType Name="tbl_tutailieu_thuoctinh_detail">
+    <Key>
+      <PropertyRef Name="ttdt_id" />
+    </Key>
+    <Property Type="Int64" Name="ttdt_id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Int64" Name="ttdt_tt_id" />
+    <Property Type="Int64" Name="ttdt_tree_id" />
+    <Property Type="String" Name="ttdt_value" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="ttdt_display" />
+    <Property Type="Int32" Name="ttdt_orderby" />
+    <Property Type="DateTime" Name="created_at" Precision="6" />
+    <Property Type="String" Name="created_by" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="last_modified_at" Precision="6" />
+    <Property Type="String" Name="last_modified_by" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="deleted_status" />
+  </EntityType>
+  <EntityType Name="tbl_tutailieu_tree">
+    <Key>
+      <PropertyRef Name="ttl_tree_id" />
+    </Key>
+    <Property Type="Int64" Name="ttl_tree_id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="ttl_tree_ten" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Guid" Name="ttl_tree_user_creator" />
+    <Property Type="DateTime" Name="ttl_tree_date_created" Precision="6" />
+    <Property Type="Guid" Name="ttl_tree_user_modifier" />
+    <Property Type="DateTime" Name="ttl_tree_date_modified" Precision="6" />
+    <Property Type="Int32" Name="ttl_tree_form" />
+    <Property Type="Int32" Name="ttl_tree_type" Nullable="false" />
+    <Property Type="Int32" Name="ttl_tree_tochucid" />
+    <Property Type="Guid" Name="ttl_tree_object" />
+    <Property Type="Int32" Name="ttl_tree_object_type" />
+    <Property Type="Int32" Name="ttl_tree_df_id" />
+  </EntityType>
+  <EntityType Name="tbl_tutailieu_tree_default">
+    <Key>
+      <PropertyRef Name="ttl_tree_df_id" />
+    </Key>
+    <Property Type="Int64" Name="ttl_tree_df_id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="String" Name="ttl_tree_df_ten" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int64" Name="ttl_tree_df_pid" />
+    <Property Type="Int32" Name="ttl_tree_df_sort" />
+    <Property Type="Int32" Name="ttl_tree_df_form" />
+    <Property Type="Int32" Name="ttl_tree_df_type" Nullable="false" />
+    <Property Type="Int32" Name="ttl_tree_df_tochucid" />
+    <Property Type="Int32" Name="ttl_tree_df_object_type" />
+    <Property Type="Boolean" Name="ttl_tree_df_default" />
+    <Property Type="Int32" Name="ttl_tree_df_origin" />
+    <Property Type="Int32" Name="ttl_tree_df_icon" />
+    <Property Type="String" Name="ttl_tree_df_localpath" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ttl_tree_df_remotepath" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_tutailieu_users_files_folder">
+    <Key>
+      <PropertyRef Name="ttl_uf_id" />
+    </Key>
+    <Property Type="Int64" Name="ttl_uf_id" Nullable="false" a:StoreGeneratedPattern="Identity" xmlns:a="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+    <Property Type="Guid" Name="ttl_uf_users" />
+    <Property Type="Int64" Name="ttl_uf_files_folder" />
+    <Property Type="Int32" Name="ttl_uf_role" />
+    <Property Type="Int32" Name="ttl_uf_status" Nullable="false" />
+    <Property Type="Boolean" Name="ttl_uf_star" Nullable="false" />
+  </EntityType>
+</Schema>

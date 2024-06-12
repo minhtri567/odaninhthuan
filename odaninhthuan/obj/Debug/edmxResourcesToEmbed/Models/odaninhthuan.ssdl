@@ -1,0 +1,1519 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="odaninhthuanModel.Store" Alias="Self" Provider="Npgsql" ProviderManifestToken="10.17" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="odaninhthuanModelStoreContainer">
+    <EntitySet Name="bgmap_commune" EntityType="odaninhthuanModel.Store.bgmap_commune" store:Type="Tables" Schema="public" />
+    <EntitySet Name="bgmap_district" EntityType="odaninhthuanModel.Store.bgmap_district" store:Type="Tables" Schema="public" />
+    <EntitySet Name="bgmap_province" EntityType="odaninhthuanModel.Store.bgmap_province" store:Type="Tables" Schema="public" />
+    <EntitySet Name="iw_boviaviahe" EntityType="odaninhthuanModel.Store.iw_boviaviahe" store:Type="Tables" Schema="public" />
+    <EntitySet Name="iw_canal" EntityType="odaninhthuanModel.Store.iw_canal" store:Type="Tables" Schema="public" />
+    <EntitySet Name="iw_coc" EntityType="odaninhthuanModel.Store.iw_coc" store:Type="Tables" Schema="public" />
+    <EntitySet Name="iw_denchieusang" EntityType="odaninhthuanModel.Store.iw_denchieusang" store:Type="Tables" Schema="public" />
+    <EntitySet Name="iw_diemngap" EntityType="odaninhthuanModel.Store.iw_diemngap" store:Type="Tables" Schema="public" />
+    <EntitySet Name="iw_gieng" EntityType="odaninhthuanModel.Store.iw_gieng" store:Type="Tables" Schema="public" />
+    <EntitySet Name="iw_hoga" EntityType="odaninhthuanModel.Store.iw_hoga" store:Type="Tables" Schema="public" />
+    <EntitySet Name="iw_hotrongcay" EntityType="odaninhthuanModel.Store.iw_hotrongcay" store:Type="Tables" Schema="public" />
+    <EntitySet Name="iw_irrigation_sewer" EntityType="odaninhthuanModel.Store.iw_irrigation_sewer" store:Type="Tables" Schema="public" />
+    <EntitySet Name="iw_nhamayxulynuocthai" EntityType="odaninhthuanModel.Store.iw_nhamayxulynuocthai" store:Type="Tables" Schema="public" />
+    <EntitySet Name="iw_pump_station" EntityType="odaninhthuanModel.Store.iw_pump_station" store:Type="Tables" Schema="public" />
+    <EntitySet Name="iw_reservoir" EntityType="odaninhthuanModel.Store.iw_reservoir" store:Type="Tables" Schema="public" />
+    <EntitySet Name="iw_timduong" EntityType="odaninhthuanModel.Store.iw_timduong" store:Type="Tables" Schema="public" />
+    <EntitySet Name="iw_trucuuhoa" EntityType="odaninhthuanModel.Store.iw_trucuuhoa" store:Type="Tables" Schema="public" />
+    <EntitySet Name="iw_vuotnoi" EntityType="odaninhthuanModel.Store.iw_vuotnoi" store:Type="Tables" Schema="public" />
+    <EntitySet Name="tbl_danhmuc_duan" EntityType="odaninhthuanModel.Store.tbl_danhmuc_duan" store:Type="Tables" Schema="public" />
+    <EntitySet Name="tbl_danhmuc_hethong" EntityType="odaninhthuanModel.Store.tbl_danhmuc_hethong" store:Type="Tables" Schema="public" />
+    <EntitySet Name="tbl_duytubaoduong" EntityType="odaninhthuanModel.Store.tbl_duytubaoduong" store:Type="Tables" Schema="public" />
+    <EntitySet Name="tbl_tutailieu_files" EntityType="odaninhthuanModel.Store.tbl_tutailieu_files" store:Type="Tables" Schema="public" />
+    <EntitySet Name="tbl_tutailieu_files_detail" EntityType="odaninhthuanModel.Store.tbl_tutailieu_files_detail" store:Type="Tables" Schema="public" />
+    <EntitySet Name="tbl_tutailieu_files_types" EntityType="odaninhthuanModel.Store.tbl_tutailieu_files_types" store:Type="Tables" Schema="public" />
+    <EntitySet Name="tbl_tutailieu_folder" EntityType="odaninhthuanModel.Store.tbl_tutailieu_folder" store:Type="Tables" Schema="public" />
+    <EntitySet Name="tbl_tutailieu_history" EntityType="odaninhthuanModel.Store.tbl_tutailieu_history" store:Type="Tables" Schema="public" />
+    <EntitySet Name="tbl_tutailieu_thuoctinh" EntityType="odaninhthuanModel.Store.tbl_tutailieu_thuoctinh" store:Type="Tables" Schema="public" />
+    <EntitySet Name="tbl_tutailieu_thuoctinh_danhmuc" EntityType="odaninhthuanModel.Store.tbl_tutailieu_thuoctinh_danhmuc" store:Type="Tables" Schema="public" />
+    <EntitySet Name="tbl_tutailieu_thuoctinh_detail" EntityType="odaninhthuanModel.Store.tbl_tutailieu_thuoctinh_detail" store:Type="Tables" Schema="public" />
+    <EntitySet Name="tbl_tutailieu_tree" EntityType="odaninhthuanModel.Store.tbl_tutailieu_tree" store:Type="Tables" Schema="public" />
+    <EntitySet Name="tbl_tutailieu_tree_default" EntityType="odaninhthuanModel.Store.tbl_tutailieu_tree_default" store:Type="Tables" Schema="public" />
+    <EntitySet Name="tbl_tutailieu_users_files_folder" EntityType="odaninhthuanModel.Store.tbl_tutailieu_users_files_folder" store:Type="Tables" Schema="public" />
+    <AssociationSet Name="bgmap_commune_fk" Association="odaninhthuanModel.Store.bgmap_commune_fk">
+      <End Role="bgmap_district" EntitySet="bgmap_district" />
+      <End Role="bgmap_commune" EntitySet="bgmap_commune" />
+    </AssociationSet>
+  </EntityContainer>
+  <!--Errors Found During Generation:
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3857' in table 'odaninhthuan.public.bgmap_commune' was excluded.
+      -->
+  <EntityType Name="bgmap_commune">
+    <Key>
+      <PropertyRef Name="gid" />
+    </Key>
+    <Property Name="gid" Type="int4" Nullable="false" />
+    <Property Name="ten_xa" Type="varchar" MaxLength="200" />
+    <Property Name="huyen_id" Type="int4" />
+    <Property Name="tinh_id" Type="int4" />
+    <Property Name="hesokhau" Type="float4" />
+    <Property Name="x_vido" Type="float8" />
+    <Property Name="y_kinhdo" Type="float8" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3405' in table 'odaninhthuan.public.bgmap_district' was excluded.
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3857' in table 'odaninhthuan.public.bgmap_district' was excluded.
+      -->
+  <EntityType Name="bgmap_district">
+    <Key>
+      <PropertyRef Name="gid" />
+    </Key>
+    <Property Name="gid" Type="int4" Nullable="false" />
+    <Property Name="ten_huyen" Type="varchar" MaxLength="200" />
+    <Property Name="tinh_id" Type="int4" />
+    <Property Name="danso" Type="int4" />
+    <Property Name="dinhmucsudungnuoc" Type="float4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3405' in table 'odaninhthuan.public.bgmap_province' was excluded.
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3857' in table 'odaninhthuan.public.bgmap_province' was excluded.
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3857_point' in table 'odaninhthuan.public.bgmap_province' was excluded.
+      -->
+  <EntityType Name="bgmap_province">
+    <Key>
+      <PropertyRef Name="gid" />
+    </Key>
+    <Property Name="gid" Type="int4" Nullable="false" />
+    <Property Name="ten_tinh" Type="varchar" MaxLength="200" />
+    <Property Name="orderindex" Type="int4" />
+    <Property Name="vungid" Type="int4" />
+    <Property Name="luuvucid" Type="varchar" />
+    <Property Name="tinh_uuid" Type="uuid" Nullable="false" />
+    <Property Name="ordervung" Type="int4" />
+    <Property Name="luuvuc_ngaplut_id" Type="int4" />
+    <Property Name="matinh_satlo" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3857' in table 'odaninhthuan.public.iw_boviaviahe' was excluded.
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3405' in table 'odaninhthuan.public.iw_boviaviahe' was excluded.
+      -->
+  <EntityType Name="iw_boviaviahe">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Name="id" Type="int8" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="mahieu" Type="uuid" Nullable="false" />
+    <Property Name="ten" Type="varchar" MaxLength="250" />
+    <Property Name="xa_id" Type="int4" />
+    <Property Name="huyen_id" Type="int4" />
+    <Property Name="tinh_id" Type="int4" />
+    <Property Name="httn_id" Type="int4" />
+    <Property Name="loaict_id" Type="int4" />
+    <Property Name="dvql_id" Type="int4" />
+    <Property Name="luuvucsong_id" Type="int4" />
+    <Property Name="nguon_goc" Type="varchar" MaxLength="200" />
+    <Property Name="donvi_tinh" Type="varchar" MaxLength="50" />
+    <Property Name="loai_taisan_id" Type="int4" />
+    <Property Name="nam_xaydung" Type="int4" />
+    <Property Name="nam_khaithac" Type="int4" />
+    <Property Name="nam_bangiao" Type="int4" />
+    <Property Name="dientich_dat" Type="float4" />
+    <Property Name="dientich_san" Type="float4" />
+    <Property Name="nguyen_gia" Type="float4" />
+    <Property Name="tyle_haomon" Type="float4" />
+    <Property Name="giatri_conlai" Type="float4" />
+    <Property Name="tinhtrang_taisan" Type="bool" />
+    <Property Name="song_id" Type="int4" />
+    <Property Name="ma_qhns" Type="varchar" MaxLength="200" />
+    <Property Name="type_nguyengia" Type="int4" />
+    <Property Name="isdangxaydung" Type="int4" />
+    <Property Name="gtcanhbao_mnchancongtrinh" Type="float4" />
+    <Property Name="httn_config" Type="uuid" />
+    <Property Name="nangluc_lua" Type="float4" />
+    <Property Name="nangluc_raumau" Type="float4" />
+    <Property Name="nangluc_cndaingay" Type="float4" />
+    <Property Name="nangluc_thuysan" Type="float4" />
+    <Property Name="kinhdo" Type="float4" />
+    <Property Name="vido" Type="float4" />
+    <Property Name="duan_ref" Type="uuid" />
+    <Property Name="hethong_ref" Type="uuid" />
+    <Property Name="diadiem" Type="varchar" MaxLength="250" />
+    <Property Name="thuockenh" Type="varchar" MaxLength="255" />
+    <Property Name="loaict" Type="varchar" MaxLength="255" />
+    <Property Name="loaigeom" Type="varchar" MaxLength="255" />
+    <Property Name="tenduong" Type="varchar" MaxLength="255" />
+    <Property Name="goithau" Type="varchar" MaxLength="255" />
+    <Property Name="chieudai" Type="varchar" MaxLength="255" />
+    <Property Name="chieuday" Type="varchar" MaxLength="255" />
+    <Property Name="ketcau" Type="varchar" MaxLength="255" />
+    <Property Name="dientich" Type="varchar" MaxLength="255" />
+    <Property Name="chieurong" Type="varchar" MaxLength="255" />
+    <Property Name="tuongchand" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3857' in table 'odaninhthuan.public.iw_canal' was excluded.
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3405' in table 'odaninhthuan.public.iw_canal' was excluded.
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3857_polygon' in table 'odaninhthuan.public.iw_canal' was excluded.
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3405_polygon' in table 'odaninhthuan.public.iw_canal' was excluded.
+      -->
+  <EntityType Name="iw_canal">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Name="id" Type="int8" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="mahieu" Type="uuid" Nullable="false" />
+    <Property Name="ten" Type="varchar" MaxLength="250" />
+    <Property Name="xa_id" Type="int4" />
+    <Property Name="huyen_id" Type="int4" />
+    <Property Name="tinh_id" Type="int4" />
+    <Property Name="httn_id" Type="int4" />
+    <Property Name="loaict_id" Type="int4" />
+    <Property Name="dvql_id" Type="int4" />
+    <Property Name="luuvucsong_id" Type="int4" />
+    <Property Name="nguon_goc" Type="varchar" MaxLength="200" />
+    <Property Name="donvi_tinh" Type="varchar" MaxLength="50" />
+    <Property Name="loai_taisan_id" Type="int4" />
+    <Property Name="nam_xaydung" Type="int4" />
+    <Property Name="nam_khaithac" Type="int4" />
+    <Property Name="nam_bangiao" Type="int4" />
+    <Property Name="dientich_dat" Type="float4" />
+    <Property Name="dientich_san" Type="float4" />
+    <Property Name="nguyen_gia" Type="float4" />
+    <Property Name="tyle_haomon" Type="float4" />
+    <Property Name="giatri_conlai" Type="float4" />
+    <Property Name="tinhtrang_taisan" Type="bool" />
+    <Property Name="song_id" Type="int4" />
+    <Property Name="ma_qhns" Type="varchar" MaxLength="200" />
+    <Property Name="type_nguyengia" Type="int4" />
+    <Property Name="isdangxaydung" Type="int4" />
+    <Property Name="gtcanhbao_mnchancongtrinh" Type="float4" />
+    <Property Name="httn_config" Type="uuid" />
+    <Property Name="nangluc_lua" Type="float4" />
+    <Property Name="nangluc_raumau" Type="float4" />
+    <Property Name="nangluc_cndaingay" Type="float4" />
+    <Property Name="nangluc_thuysan" Type="float4" />
+    <Property Name="kinhdo" Type="float4" />
+    <Property Name="vido" Type="float4" />
+    <Property Name="duan_ref" Type="uuid" />
+    <Property Name="hethong_ref" Type="uuid" />
+    <Property Name="sohieukenh" Type="varchar" MaxLength="100" />
+    <Property Name="caododay" Type="float4" />
+    <Property Name="dodoc_daykenh" Type="float4" />
+    <Property Name="ondinh_rori" Type="varchar" MaxLength="150" />
+    <Property Name="cd_hieudung" Type="float4" />
+    <Property Name="cr_longkenh" Type="varchar" MaxLength="150" />
+    <Property Name="cr_bokenh" Type="float4" />
+    <Property Name="cc_longkenh" Type="float4" />
+    <Property Name="chieuday_thanh" Type="float4" />
+    <Property Name="chieuday_day" Type="float4" />
+    <Property Name="cr_dayngoai" Type="float4" />
+    <Property Name="cd_kenhkiencohoa" Type="float4" />
+    <Property Name="loaikenh" Type="varchar" MaxLength="100" />
+    <Property Name="capkenh" Type="int4" />
+    <Property Name="chatlieu" Type="varchar" MaxLength="150" />
+    <Property Name="caodo_tuoi" Type="float4" />
+    <Property Name="dientich_tuoi" Type="float4" />
+    <Property Name="luulg_tke" Type="float4" />
+    <Property Name="luulg_tte" Type="float4" />
+    <Property Name="kt_matcat" Type="varchar" MaxLength="200" />
+    <Property Name="vttb_dongchay" Type="float4" />
+    <Property Name="reservoir_id" Type="uuid" />
+    <Property Name="diadiem" Type="varchar" MaxLength="350" />
+    <Property Name="lytrinhtu" Type="varchar" MaxLength="100" />
+    <Property Name="lytrinhden" Type="varchar" MaxLength="100" />
+    <Property Name="vitri" Type="varchar" MaxLength="350" />
+    <Property Name="dientich_tuoi_tichluy" Type="float4" />
+    <Property Name="luulg_toida" Type="float4" />
+    <Property Name="luulg_toithieu" Type="float4" />
+    <Property Name="canal_id" Type="int4" />
+    <Property Name="taptoado" Type="text" />
+    <Property Name="giaidoan_th" Type="int4" />
+    <Property Name="loaimatcat" Type="int4" />
+    <Property Name="hs_nham" Type="float4" />
+    <Property Name="hs_mai" Type="float4" />
+    <Property Name="docao_vuotantoan" Type="float4" />
+    <Property Name="dosau_mn_tk" Type="float4" />
+    <Property Name="dosau_mn_toida" Type="float4" />
+    <Property Name="dosau_mn_toithieu" Type="float4" />
+    <Property Name="vtdc_lonnhat" Type="float4" />
+    <Property Name="vtdc_nhonhat" Type="float4" />
+    <Property Name="ct_doandaukenh" Type="float4" />
+    <Property Name="dorong_botrai" Type="float4" />
+    <Property Name="dorong_bophai" Type="float4" />
+    <Property Name="trangthai" Type="int4" />
+    <Property Name="ghichu" Type="varchar" MaxLength="350" />
+    <Property Name="chieudai" Type="float8" />
+    <Property Name="chieucao" Type="float8" />
+    <Property Name="clndk_kichthuoc" Type="varchar" MaxLength="150" />
+    <Property Name="clndk_hientrang" Type="varchar" MaxLength="150" />
+    <Property Name="hientrang" Type="text" />
+    <Property Name="temp_id" Type="int4" />
+    <Property Name="donviquanly" Type="varchar" MaxLength="100" />
+    <Property Name="capkenh_temp" Type="varchar" MaxLength="150" />
+    <Property Name="sokm_kenhdat" Type="float4" />
+    <Property Name="sokm_daxuongcap" Type="float4" />
+    <Property Name="sokm_contot" Type="float4" />
+    <Property Name="capkenh_id" Type="int4" />
+    <Property Name="nangluc" Type="float4" />
+    <Property Name="chieurong" Type="varchar" MaxLength="255" />
+    <Property Name="kichthuoc" Type="varchar" MaxLength="255" />
+    <Property Name="diemdau" Type="varchar" MaxLength="255" />
+    <Property Name="diemcuoi" Type="varchar" MaxLength="255" />
+    <Property Name="vitricoc" Type="varchar" MaxLength="255" />
+    <Property Name="caitao" Type="varchar" MaxLength="255" />
+    <Property Name="goithau" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3857' in table 'odaninhthuan.public.iw_coc' was excluded.
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3405' in table 'odaninhthuan.public.iw_coc' was excluded.
+      -->
+  <EntityType Name="iw_coc">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Name="id" Type="int8" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="mahieu" Type="uuid" Nullable="false" />
+    <Property Name="ten" Type="varchar" MaxLength="250" />
+    <Property Name="xa_id" Type="int4" />
+    <Property Name="huyen_id" Type="int4" />
+    <Property Name="tinh_id" Type="int4" />
+    <Property Name="httn_id" Type="int4" />
+    <Property Name="loaict_id" Type="int4" />
+    <Property Name="dvql_id" Type="int4" />
+    <Property Name="luuvucsong_id" Type="int4" />
+    <Property Name="nguon_goc" Type="varchar" MaxLength="200" />
+    <Property Name="donvi_tinh" Type="varchar" MaxLength="50" />
+    <Property Name="loai_taisan_id" Type="int4" />
+    <Property Name="nam_xaydung" Type="int4" />
+    <Property Name="nam_khaithac" Type="int4" />
+    <Property Name="nam_bangiao" Type="int4" />
+    <Property Name="dientich_dat" Type="float4" />
+    <Property Name="dientich_san" Type="float4" />
+    <Property Name="nguyen_gia" Type="float4" />
+    <Property Name="tyle_haomon" Type="float4" />
+    <Property Name="giatri_conlai" Type="float4" />
+    <Property Name="tinhtrang_taisan" Type="bool" />
+    <Property Name="song_id" Type="int4" />
+    <Property Name="ma_qhns" Type="varchar" MaxLength="200" />
+    <Property Name="type_nguyengia" Type="int4" />
+    <Property Name="isdangxaydung" Type="int4" />
+    <Property Name="gtcanhbao_mnchancongtrinh" Type="float4" />
+    <Property Name="httn_config" Type="uuid" />
+    <Property Name="nangluc_lua" Type="float4" />
+    <Property Name="nangluc_raumau" Type="float4" />
+    <Property Name="nangluc_cndaingay" Type="float4" />
+    <Property Name="nangluc_thuysan" Type="float4" />
+    <Property Name="kinhdo" Type="float4" />
+    <Property Name="vido" Type="float4" />
+    <Property Name="duan_ref" Type="uuid" />
+    <Property Name="hethong_ref" Type="uuid" />
+    <Property Name="diadiem" Type="varchar" MaxLength="250" />
+    <Property Name="thuockenh" Type="varchar" MaxLength="255" />
+    <Property Name="loaict" Type="varchar" MaxLength="255" />
+    <Property Name="goithau" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3857' in table 'odaninhthuan.public.iw_denchieusang' was excluded.
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3405' in table 'odaninhthuan.public.iw_denchieusang' was excluded.
+      -->
+  <EntityType Name="iw_denchieusang">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Name="id" Type="int8" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="mahieu" Type="uuid" Nullable="false" />
+    <Property Name="ten" Type="varchar" MaxLength="250" />
+    <Property Name="xa_id" Type="int4" />
+    <Property Name="huyen_id" Type="int4" />
+    <Property Name="tinh_id" Type="int4" />
+    <Property Name="httn_id" Type="int4" />
+    <Property Name="loaict_id" Type="int4" />
+    <Property Name="dvql_id" Type="int4" />
+    <Property Name="luuvucsong_id" Type="int4" />
+    <Property Name="nguon_goc" Type="varchar" MaxLength="200" />
+    <Property Name="donvi_tinh" Type="varchar" MaxLength="50" />
+    <Property Name="loai_taisan_id" Type="int4" />
+    <Property Name="nam_xaydung" Type="int4" />
+    <Property Name="nam_khaithac" Type="int4" />
+    <Property Name="nam_bangiao" Type="int4" />
+    <Property Name="dientich_dat" Type="float4" />
+    <Property Name="dientich_san" Type="float4" />
+    <Property Name="nguyen_gia" Type="float4" />
+    <Property Name="tyle_haomon" Type="float4" />
+    <Property Name="giatri_conlai" Type="float4" />
+    <Property Name="tinhtrang_taisan" Type="bool" />
+    <Property Name="song_id" Type="int4" />
+    <Property Name="ma_qhns" Type="varchar" MaxLength="200" />
+    <Property Name="type_nguyengia" Type="int4" />
+    <Property Name="isdangxaydung" Type="int4" />
+    <Property Name="gtcanhbao_mnchancongtrinh" Type="float4" />
+    <Property Name="httn_config" Type="uuid" />
+    <Property Name="nangluc_lua" Type="float4" />
+    <Property Name="nangluc_raumau" Type="float4" />
+    <Property Name="nangluc_cndaingay" Type="float4" />
+    <Property Name="nangluc_thuysan" Type="float4" />
+    <Property Name="kinhdo" Type="float4" />
+    <Property Name="vido" Type="float4" />
+    <Property Name="duan_ref" Type="uuid" />
+    <Property Name="hethong_ref" Type="uuid" />
+    <Property Name="diadiem" Type="varchar" MaxLength="250" />
+    <Property Name="thuockenh" Type="varchar" MaxLength="255" />
+    <Property Name="thuocho" Type="varchar" MaxLength="255" />
+    <Property Name="loaict" Type="varchar" MaxLength="255" />
+    <Property Name="loaiden" Type="varchar" MaxLength="255" />
+    <Property Name="chieucao" Type="varchar" MaxLength="255" />
+    <Property Name="loaigeom" Type="varchar" MaxLength="255" />
+    <Property Name="goithau" Type="varchar" MaxLength="255" />
+    <Property Name="loai" Type="varchar" MaxLength="255" />
+    <Property Name="tenduong" Type="varchar" MaxLength="255" />
+    <Property Name="dongngat" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3857' in table 'odaninhthuan.public.iw_diemngap' was excluded.
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3405' in table 'odaninhthuan.public.iw_diemngap' was excluded.
+      -->
+  <EntityType Name="iw_diemngap">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Name="id" Type="int8" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="mahieu" Type="uuid" Nullable="false" />
+    <Property Name="ten" Type="varchar" MaxLength="250" />
+    <Property Name="xa_id" Type="int4" />
+    <Property Name="huyen_id" Type="int4" />
+    <Property Name="tinh_id" Type="int4" />
+    <Property Name="httn_id" Type="int4" />
+    <Property Name="loaict_id" Type="int4" />
+    <Property Name="dvql_id" Type="int4" />
+    <Property Name="luuvucsong_id" Type="int4" />
+    <Property Name="nguon_goc" Type="varchar" MaxLength="200" />
+    <Property Name="donvi_tinh" Type="varchar" MaxLength="50" />
+    <Property Name="loai_taisan_id" Type="int4" />
+    <Property Name="nam_xaydung" Type="int4" />
+    <Property Name="nam_khaithac" Type="int4" />
+    <Property Name="nam_bangiao" Type="int4" />
+    <Property Name="dientich_dat" Type="float4" />
+    <Property Name="dientich_san" Type="float4" />
+    <Property Name="nguyen_gia" Type="float4" />
+    <Property Name="tyle_haomon" Type="float4" />
+    <Property Name="giatri_conlai" Type="float4" />
+    <Property Name="tinhtrang_taisan" Type="bool" />
+    <Property Name="song_id" Type="int4" />
+    <Property Name="ma_qhns" Type="varchar" MaxLength="200" />
+    <Property Name="type_nguyengia" Type="int4" />
+    <Property Name="isdangxaydung" Type="int4" />
+    <Property Name="gtcanhbao_mnchancongtrinh" Type="float4" />
+    <Property Name="httn_config" Type="uuid" />
+    <Property Name="nangluc_lua" Type="float4" />
+    <Property Name="nangluc_raumau" Type="float4" />
+    <Property Name="nangluc_cndaingay" Type="float4" />
+    <Property Name="nangluc_thuysan" Type="float4" />
+    <Property Name="kinhdo" Type="float4" />
+    <Property Name="vido" Type="float4" />
+    <Property Name="duan_ref" Type="uuid" />
+    <Property Name="hethong_ref" Type="uuid" />
+    <Property Name="diadiem" Type="varchar" MaxLength="250" />
+    <Property Name="thuockenh" Type="varchar" MaxLength="255" />
+    <Property Name="loaict" Type="varchar" MaxLength="255" />
+    <Property Name="kichthuoc1" Type="varchar" MaxLength="24" />
+    <Property Name="kichthuoc2" Type="varchar" MaxLength="24" />
+    <Property Name="h" Type="float4" />
+    <Property Name="h1" Type="float4" />
+    <Property Name="h2" Type="float4" />
+    <Property Name="h3" Type="float4" />
+    <Property Name="h4" Type="float4" />
+    <Property Name="a1" Type="float4" />
+    <Property Name="a2" Type="float4" />
+    <Property Name="b" Type="float4" />
+    <Property Name="goithau" Type="varchar" MaxLength="255" />
+    <Property Name="dientich" Type="varchar" MaxLength="255" />
+    <Property Name="chieusau" Type="varchar" MaxLength="255" />
+    <Property Name="thoigian" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3857' in table 'odaninhthuan.public.iw_gieng' was excluded.
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3405' in table 'odaninhthuan.public.iw_gieng' was excluded.
+      -->
+  <EntityType Name="iw_gieng">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Name="id" Type="int8" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="mahieu" Type="uuid" Nullable="false" />
+    <Property Name="ten" Type="varchar" MaxLength="250" />
+    <Property Name="xa_id" Type="int4" />
+    <Property Name="huyen_id" Type="int4" />
+    <Property Name="tinh_id" Type="int4" />
+    <Property Name="httn_id" Type="int4" />
+    <Property Name="loaict_id" Type="int4" />
+    <Property Name="dvql_id" Type="int4" />
+    <Property Name="luuvucsong_id" Type="int4" />
+    <Property Name="nguon_goc" Type="varchar" MaxLength="200" />
+    <Property Name="donvi_tinh" Type="varchar" MaxLength="50" />
+    <Property Name="loai_taisan_id" Type="int4" />
+    <Property Name="nam_xaydung" Type="int4" />
+    <Property Name="nam_khaithac" Type="int4" />
+    <Property Name="nam_bangiao" Type="int4" />
+    <Property Name="dientich_dat" Type="float4" />
+    <Property Name="dientich_san" Type="float4" />
+    <Property Name="nguyen_gia" Type="float4" />
+    <Property Name="tyle_haomon" Type="float4" />
+    <Property Name="giatri_conlai" Type="float4" />
+    <Property Name="tinhtrang_taisan" Type="bool" />
+    <Property Name="song_id" Type="int4" />
+    <Property Name="ma_qhns" Type="varchar" MaxLength="200" />
+    <Property Name="type_nguyengia" Type="int4" />
+    <Property Name="isdangxaydung" Type="int4" />
+    <Property Name="gtcanhbao_mnchancongtrinh" Type="float4" />
+    <Property Name="httn_config" Type="uuid" />
+    <Property Name="nangluc_lua" Type="float4" />
+    <Property Name="nangluc_raumau" Type="float4" />
+    <Property Name="nangluc_cndaingay" Type="float4" />
+    <Property Name="nangluc_thuysan" Type="float4" />
+    <Property Name="kinhdo" Type="float4" />
+    <Property Name="vido" Type="float4" />
+    <Property Name="duan_ref" Type="uuid" />
+    <Property Name="hethong_ref" Type="uuid" />
+    <Property Name="diadiem" Type="varchar" MaxLength="250" />
+    <Property Name="thuockenh" Type="varchar" MaxLength="255" />
+    <Property Name="loaict" Type="varchar" MaxLength="255" />
+    <Property Name="kichthuoc1" Type="varchar" MaxLength="24" />
+    <Property Name="kichthuoc2" Type="varchar" MaxLength="24" />
+    <Property Name="h" Type="float4" />
+    <Property Name="h1" Type="float4" />
+    <Property Name="h2" Type="float4" />
+    <Property Name="h3" Type="float4" />
+    <Property Name="h4" Type="float4" />
+    <Property Name="a1" Type="float4" />
+    <Property Name="a2" Type="float4" />
+    <Property Name="b" Type="float4" />
+    <Property Name="goithau" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3857' in table 'odaninhthuan.public.iw_hoga' was excluded.
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3405' in table 'odaninhthuan.public.iw_hoga' was excluded.
+      -->
+  <EntityType Name="iw_hoga">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Name="id" Type="int8" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="mahieu" Type="uuid" Nullable="false" />
+    <Property Name="ten" Type="varchar" MaxLength="250" />
+    <Property Name="xa_id" Type="int4" />
+    <Property Name="huyen_id" Type="int4" />
+    <Property Name="tinh_id" Type="int4" />
+    <Property Name="httn_id" Type="int4" />
+    <Property Name="loaict_id" Type="int4" />
+    <Property Name="dvql_id" Type="int4" />
+    <Property Name="luuvucsong_id" Type="int4" />
+    <Property Name="nguon_goc" Type="varchar" MaxLength="200" />
+    <Property Name="donvi_tinh" Type="varchar" MaxLength="50" />
+    <Property Name="loai_taisan_id" Type="int4" />
+    <Property Name="nam_xaydung" Type="int4" />
+    <Property Name="nam_khaithac" Type="int4" />
+    <Property Name="nam_bangiao" Type="int4" />
+    <Property Name="dientich_dat" Type="float4" />
+    <Property Name="dientich_san" Type="float4" />
+    <Property Name="nguyen_gia" Type="float4" />
+    <Property Name="tyle_haomon" Type="float4" />
+    <Property Name="giatri_conlai" Type="float4" />
+    <Property Name="tinhtrang_taisan" Type="bool" />
+    <Property Name="song_id" Type="int4" />
+    <Property Name="ma_qhns" Type="varchar" MaxLength="200" />
+    <Property Name="type_nguyengia" Type="int4" />
+    <Property Name="isdangxaydung" Type="int4" />
+    <Property Name="gtcanhbao_mnchancongtrinh" Type="float4" />
+    <Property Name="httn_config" Type="uuid" />
+    <Property Name="nangluc_lua" Type="float4" />
+    <Property Name="nangluc_raumau" Type="float4" />
+    <Property Name="nangluc_cndaingay" Type="float4" />
+    <Property Name="nangluc_thuysan" Type="float4" />
+    <Property Name="kinhdo" Type="float4" />
+    <Property Name="vido" Type="float4" />
+    <Property Name="duan_ref" Type="uuid" />
+    <Property Name="hethong_ref" Type="uuid" />
+    <Property Name="diadiem" Type="varchar" MaxLength="250" />
+    <Property Name="thuockenh" Type="varchar" MaxLength="255" />
+    <Property Name="thuocho" Type="varchar" MaxLength="255" />
+    <Property Name="loaict" Type="varchar" MaxLength="255" />
+    <Property Name="loaihoga" Type="varchar" MaxLength="255" />
+    <Property Name="chieucao" Type="varchar" MaxLength="255" />
+    <Property Name="loaigeom" Type="varchar" MaxLength="255" />
+    <Property Name="gocngoatd1d2" Type="varchar" MaxLength="53" />
+    <Property Name="congvaod1" Type="varchar" MaxLength="53" />
+    <Property Name="congrad2" Type="varchar" MaxLength="53" />
+    <Property Name="caodomatdat" Type="varchar" MaxLength="53" />
+    <Property Name="caododaycong" Type="varchar" MaxLength="53" />
+    <Property Name="caododayga" Type="varchar" MaxLength="53" />
+    <Property Name="chieucaoh1" Type="varchar" MaxLength="53" />
+    <Property Name="ketcau" Type="varchar" MaxLength="255" />
+    <Property Name="goithau" Type="varchar" MaxLength="255" />
+    <Property Name="tenduong" Type="varchar" MaxLength="255" />
+    <Property Name="thuoccong" Type="varchar" MaxLength="255" />
+    <Property Name="congvaod3" Type="varchar" MaxLength="53" />
+    <Property Name="ctu_r3_r5" Type="varchar" MaxLength="53" />
+    <Property Name="ctu_r3_r6" Type="varchar" MaxLength="53" />
+    <Property Name="caododay_e1" Type="varchar" MaxLength="255" />
+    <Property Name="caododay_e2" Type="varchar" MaxLength="255" />
+    <Property Name="caododay_e3" Type="varchar" MaxLength="255" />
+    <Property Name="caododay_e4" Type="varchar" MaxLength="255" />
+    <Property Name="caododay_e5" Type="varchar" MaxLength="255" />
+    <Property Name="gocngoatd3d2" Type="varchar" MaxLength="53" />
+    <Property Name="gocngoatd4d2" Type="varchar" MaxLength="53" />
+    <Property Name="gocngoatd5d2" Type="varchar" MaxLength="53" />
+    <Property Name="duongkinhd1" Type="varchar" MaxLength="255" />
+    <Property Name="duongkinhd2" Type="varchar" MaxLength="255" />
+    <Property Name="duongkinhd3" Type="varchar" MaxLength="255" />
+    <Property Name="duongkinhd4" Type="varchar" MaxLength="255" />
+    <Property Name="kyhieu" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3857' in table 'odaninhthuan.public.iw_hotrongcay' was excluded.
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3405' in table 'odaninhthuan.public.iw_hotrongcay' was excluded.
+      -->
+  <EntityType Name="iw_hotrongcay">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Name="id" Type="int8" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="mahieu" Type="uuid" Nullable="false" />
+    <Property Name="ten" Type="varchar" MaxLength="250" />
+    <Property Name="xa_id" Type="int4" />
+    <Property Name="huyen_id" Type="int4" />
+    <Property Name="tinh_id" Type="int4" />
+    <Property Name="httn_id" Type="int4" />
+    <Property Name="loaict_id" Type="int4" />
+    <Property Name="dvql_id" Type="int4" />
+    <Property Name="luuvucsong_id" Type="int4" />
+    <Property Name="nguon_goc" Type="varchar" MaxLength="200" />
+    <Property Name="donvi_tinh" Type="varchar" MaxLength="50" />
+    <Property Name="loai_taisan_id" Type="int4" />
+    <Property Name="nam_xaydung" Type="int4" />
+    <Property Name="nam_khaithac" Type="int4" />
+    <Property Name="nam_bangiao" Type="int4" />
+    <Property Name="dientich_dat" Type="float4" />
+    <Property Name="dientich_san" Type="float4" />
+    <Property Name="nguyen_gia" Type="float4" />
+    <Property Name="tyle_haomon" Type="float4" />
+    <Property Name="giatri_conlai" Type="float4" />
+    <Property Name="tinhtrang_taisan" Type="bool" />
+    <Property Name="song_id" Type="int4" />
+    <Property Name="ma_qhns" Type="varchar" MaxLength="200" />
+    <Property Name="type_nguyengia" Type="int4" />
+    <Property Name="isdangxaydung" Type="int4" />
+    <Property Name="gtcanhbao_mnchancongtrinh" Type="float4" />
+    <Property Name="httn_config" Type="uuid" />
+    <Property Name="nangluc_lua" Type="float4" />
+    <Property Name="nangluc_raumau" Type="float4" />
+    <Property Name="nangluc_cndaingay" Type="float4" />
+    <Property Name="nangluc_thuysan" Type="float4" />
+    <Property Name="kinhdo" Type="float4" />
+    <Property Name="vido" Type="float4" />
+    <Property Name="duan_ref" Type="uuid" />
+    <Property Name="hethong_ref" Type="uuid" />
+    <Property Name="diadiem" Type="varchar" MaxLength="250" />
+    <Property Name="thuockenh" Type="varchar" MaxLength="255" />
+    <Property Name="thuocho" Type="varchar" MaxLength="255" />
+    <Property Name="loaict" Type="varchar" MaxLength="255" />
+    <Property Name="loaihoga" Type="varchar" MaxLength="255" />
+    <Property Name="chieucao" Type="varchar" MaxLength="255" />
+    <Property Name="loaigeom" Type="varchar" MaxLength="255" />
+    <Property Name="tenduong" Type="varchar" MaxLength="255" />
+    <Property Name="ghichu" Type="varchar" MaxLength="255" />
+    <Property Name="kichthuoc" Type="varchar" MaxLength="255" />
+    <Property Name="vatlieu" Type="varchar" MaxLength="255" />
+    <Property Name="loaicay" Type="varchar" MaxLength="255" />
+    <Property Name="goithau" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3857' in table 'odaninhthuan.public.iw_irrigation_sewer' was excluded.
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3405' in table 'odaninhthuan.public.iw_irrigation_sewer' was excluded.
+      -->
+  <EntityType Name="iw_irrigation_sewer">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Name="id" Type="int8" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="mahieu" Type="uuid" Nullable="false" />
+    <Property Name="ten" Type="varchar" MaxLength="250" />
+    <Property Name="xa_id" Type="int4" />
+    <Property Name="huyen_id" Type="int4" />
+    <Property Name="tinh_id" Type="int4" />
+    <Property Name="httn_id" Type="int4" />
+    <Property Name="loaict_id" Type="int4" />
+    <Property Name="dvql_id" Type="int4" />
+    <Property Name="luuvucsong_id" Type="int4" />
+    <Property Name="nguon_goc" Type="varchar" MaxLength="200" />
+    <Property Name="donvi_tinh" Type="varchar" MaxLength="50" />
+    <Property Name="loai_taisan_id" Type="int4" />
+    <Property Name="nam_xaydung" Type="int4" />
+    <Property Name="nam_khaithac" Type="int4" />
+    <Property Name="nam_bangiao" Type="int4" />
+    <Property Name="dientich_dat" Type="float4" />
+    <Property Name="dientich_san" Type="float4" />
+    <Property Name="nguyen_gia" Type="float4" />
+    <Property Name="tyle_haomon" Type="float4" />
+    <Property Name="giatri_conlai" Type="float4" />
+    <Property Name="tinhtrang_taisan" Type="bool" />
+    <Property Name="song_id" Type="int4" />
+    <Property Name="ma_qhns" Type="varchar" MaxLength="200" />
+    <Property Name="type_nguyengia" Type="int4" />
+    <Property Name="isdangxaydung" Type="int4" />
+    <Property Name="gtcanhbao_mnchancongtrinh" Type="float4" />
+    <Property Name="httn_config" Type="uuid" />
+    <Property Name="nangluc_lua" Type="float4" />
+    <Property Name="nangluc_raumau" Type="float4" />
+    <Property Name="nangluc_cndaingay" Type="float4" />
+    <Property Name="nangluc_thuysan" Type="float4" />
+    <Property Name="kinhdo" Type="float4" />
+    <Property Name="vido" Type="float4" />
+    <Property Name="duan_ref" Type="uuid" />
+    <Property Name="hethong_ref" Type="uuid" />
+    <Property Name="dam_id" Type="int4" />
+    <Property Name="luulg_tke" Type="float4" />
+    <Property Name="luulg_tte" Type="float4" />
+    <Property Name="loaicong" Type="int4" />
+    <Property Name="ht_tieunang" Type="varchar" MaxLength="200" />
+    <Property Name="tbi_tieunang" Type="varchar" MaxLength="200" />
+    <Property Name="ketcau" Type="varchar" MaxLength="200" />
+    <Property Name="khaudien" Type="varchar" MaxLength="200" />
+    <Property Name="kt_cuavao" Type="float4" />
+    <Property Name="kt_cuara" Type="float4" />
+    <Property Name="chieudai" Type="float4" />
+    <Property Name="chedo_vanhanh" Type="varchar" MaxLength="200" />
+    <Property Name="socuacong" Type="int4" />
+    <Property Name="ct_daycong_thgluu" Type="float4" />
+    <Property Name="ct_daycong_haluu" Type="float4" />
+    <Property Name="ct_nguongcong" Type="float4" />
+    <Property Name="vvh_thgluu" Type="varchar" MaxLength="200" />
+    <Property Name="vvh_haluu" Type="varchar" MaxLength="200" />
+    <Property Name="kt_cuacong" Type="varchar" MaxLength="200" />
+    <Property Name="cong_hongnang" Type="bool" />
+    <Property Name="cong_dangmo" Type="bool" />
+    <Property Name="htdm_thuongluu" Type="varchar" MaxLength="200" />
+    <Property Name="hientrang" Type="varchar" MaxLength="200" />
+    <Property Name="nam_hoanthanh" Type="int4" />
+    <Property Name="nam_suachua" Type="int4" />
+    <Property Name="canal_id" Type="int4" />
+    <Property Name="diadiem" Type="varchar" MaxLength="300" />
+    <Property Name="vitri" Type="varchar" MaxLength="300" />
+    <Property Name="dttuoi_tke" Type="float4" />
+    <Property Name="dttieu_tke" Type="float4" />
+    <Property Name="dtnganman_tke" Type="float4" />
+    <Property Name="dttuoi_tte" Type="float4" />
+    <Property Name="dttieu_tte" Type="float4" />
+    <Property Name="dtnganman_tte" Type="float4" />
+    <Property Name="reservoir_id" Type="uuid" />
+    <Property Name="kichthuoc" Type="varchar" MaxLength="600" />
+    <Property Name="hinhthuc" Type="varchar" MaxLength="600" />
+    <Property Name="dam_uuid" Type="uuid" />
+    <Property Name="capcong" Type="varchar" MaxLength="255" />
+    <Property Name="lytrinh" Type="varchar" MaxLength="250" />
+    <Property Name="chatlieu" Type="varchar" MaxLength="150" />
+    <Property Name="hinhdang_cong" Type="varchar" MaxLength="150" />
+    <Property Name="ghichu" Type="varchar" MaxLength="100" />
+    <Property Name="donviquanly" Type="varchar" MaxLength="100" />
+    <Property Name="temp_id" Type="int4" />
+    <Property Name="thuockenh" Type="varchar" MaxLength="255" />
+    <Property Name="loaict" Type="varchar" MaxLength="255" />
+    <Property Name="thuocho" Type="varchar" MaxLength="255" />
+    <Property Name="chieucao_daycuaxa" Type="varchar" MaxLength="255" />
+    <Property Name="chieucao_dinhke" Type="varchar" MaxLength="255" />
+    <Property Name="diemdau" Type="varchar" MaxLength="255" />
+    <Property Name="diemcuoi" Type="varchar" MaxLength="255" />
+    <Property Name="loaicongten" Type="varchar" MaxLength="255" />
+    <Property Name="thuocduong" Type="text" />
+    <Property Name="tenduong" Type="varchar" MaxLength="255" />
+    <Property Name="goithau" Type="varchar" MaxLength="255" />
+    <Property Name="chieurong" Type="varchar" MaxLength="255" />
+    <Property Name="chieucao" Type="varchar" MaxLength="255" />
+    <Property Name="duongkinh" Type="varchar" MaxLength="255" />
+    <Property Name="vatlieu" Type="varchar" MaxLength="255" />
+    <Property Name="dosaucong" Type="varchar" MaxLength="255" />
+    <Property Name="loai_1a1" Type="float8" />
+    <Property Name="loai_1a2" Type="float8" />
+    <Property Name="loai_1b1" Type="float8" />
+    <Property Name="loai_1b2" Type="float8" />
+    <Property Name="tong" Type="float8" />
+    <Property Name="h_z2_z3" Type="float8" />
+    <Property Name="htb_z0_z1" Type="float8" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3857' in table 'odaninhthuan.public.iw_nhamayxulynuocthai' was excluded.
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3405' in table 'odaninhthuan.public.iw_nhamayxulynuocthai' was excluded.
+      -->
+  <EntityType Name="iw_nhamayxulynuocthai">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Name="id" Type="int8" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="mahieu" Type="uuid" Nullable="false" />
+    <Property Name="ten" Type="varchar" MaxLength="250" />
+    <Property Name="xa_id" Type="int4" />
+    <Property Name="huyen_id" Type="int4" />
+    <Property Name="tinh_id" Type="int4" />
+    <Property Name="httn_id" Type="int4" />
+    <Property Name="loaict_id" Type="int4" />
+    <Property Name="dvql_id" Type="int4" />
+    <Property Name="luuvucsong_id" Type="int4" />
+    <Property Name="nguon_goc" Type="varchar" MaxLength="200" />
+    <Property Name="donvi_tinh" Type="varchar" MaxLength="50" />
+    <Property Name="loai_taisan_id" Type="int4" />
+    <Property Name="nam_xaydung" Type="int4" />
+    <Property Name="nam_khaithac" Type="int4" />
+    <Property Name="nam_bangiao" Type="int4" />
+    <Property Name="dientich_dat" Type="float4" />
+    <Property Name="dientich_san" Type="float4" />
+    <Property Name="nguyen_gia" Type="float4" />
+    <Property Name="tyle_haomon" Type="float4" />
+    <Property Name="giatri_conlai" Type="float4" />
+    <Property Name="tinhtrang_taisan" Type="bool" />
+    <Property Name="song_id" Type="int4" />
+    <Property Name="ma_qhns" Type="varchar" MaxLength="200" />
+    <Property Name="type_nguyengia" Type="int4" />
+    <Property Name="isdangxaydung" Type="int4" />
+    <Property Name="gtcanhbao_mnchancongtrinh" Type="float4" />
+    <Property Name="httn_config" Type="uuid" />
+    <Property Name="nangluc_lua" Type="float4" />
+    <Property Name="nangluc_raumau" Type="float4" />
+    <Property Name="nangluc_cndaingay" Type="float4" />
+    <Property Name="nangluc_thuysan" Type="float4" />
+    <Property Name="kinhdo" Type="float4" />
+    <Property Name="vido" Type="float4" />
+    <Property Name="duan_ref" Type="uuid" />
+    <Property Name="hethong_ref" Type="uuid" />
+    <Property Name="diadiem" Type="varchar" MaxLength="250" />
+    <Property Name="thuockenh" Type="varchar" MaxLength="255" />
+    <Property Name="thuocho" Type="varchar" MaxLength="255" />
+    <Property Name="loaict" Type="varchar" MaxLength="255" />
+    <Property Name="hientrang" Type="varchar" MaxLength="255" />
+    <Property Name="congsuat" Type="varchar" MaxLength="255" />
+    <Property Name="vitri" Type="varchar" MaxLength="255" />
+    <Property Name="goithau" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3857' in table 'odaninhthuan.public.iw_pump_station' was excluded.
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3405' in table 'odaninhthuan.public.iw_pump_station' was excluded.
+      -->
+  <EntityType Name="iw_pump_station">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Name="id" Type="int8" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="mahieu" Type="uuid" Nullable="false" />
+    <Property Name="ten" Type="varchar" MaxLength="250" />
+    <Property Name="xa_id" Type="int4" />
+    <Property Name="huyen_id" Type="int4" />
+    <Property Name="tinh_id" Type="int4" />
+    <Property Name="httn_id" Type="int4" />
+    <Property Name="loaict_id" Type="int4" />
+    <Property Name="dvql_id" Type="int4" />
+    <Property Name="luuvucsong_id" Type="int4" />
+    <Property Name="nguon_goc" Type="varchar" MaxLength="200" />
+    <Property Name="donvi_tinh" Type="varchar" MaxLength="50" />
+    <Property Name="loai_taisan_id" Type="int4" />
+    <Property Name="nam_xaydung" Type="int4" />
+    <Property Name="nam_khaithac" Type="int4" />
+    <Property Name="nam_bangiao" Type="int4" />
+    <Property Name="dientich_dat" Type="float4" />
+    <Property Name="dientich_san" Type="float4" />
+    <Property Name="nguyen_gia" Type="float4" />
+    <Property Name="tyle_haomon" Type="float4" />
+    <Property Name="giatri_conlai" Type="float4" />
+    <Property Name="tinhtrang_taisan" Type="bool" />
+    <Property Name="song_id" Type="int4" />
+    <Property Name="ma_qhns" Type="varchar" MaxLength="200" />
+    <Property Name="type_nguyengia" Type="int4" />
+    <Property Name="isdangxaydung" Type="int4" />
+    <Property Name="gtcanhbao_mnchancongtrinh" Type="float4" />
+    <Property Name="httn_config" Type="uuid" />
+    <Property Name="nangluc_lua" Type="float4" />
+    <Property Name="nangluc_raumau" Type="float4" />
+    <Property Name="nangluc_cndaingay" Type="float4" />
+    <Property Name="nangluc_thuysan" Type="float4" />
+    <Property Name="kinhdo" Type="float4" />
+    <Property Name="vido" Type="float4" />
+    <Property Name="duan_ref" Type="uuid" />
+    <Property Name="hethong_ref" Type="uuid" />
+    <Property Name="congtongbom" Type="float4" />
+    <Property Name="tongcongsuat" Type="float4" />
+    <Property Name="somaybom" Type="varchar" MaxLength="255" />
+    <Property Name="dttuoi_tke" Type="float4" />
+    <Property Name="dttuoi_tte" Type="float4" />
+    <Property Name="ct_mucnuoctk" Type="float4" />
+    <Property Name="ct_daybehut" Type="float4" />
+    <Property Name="ct_mucnuocbx" Type="float4" />
+    <Property Name="ct_tamongxa" Type="float4" />
+    <Property Name="ct_thanhbx" Type="float4" />
+    <Property Name="ct_sanmay" Type="float4" />
+    <Property Name="cotnuoc" Type="float4" />
+    <Property Name="tbi_dieukhien" Type="varchar" MaxLength="200" />
+    <Property Name="tietdien_duongday" Type="varchar" MaxLength="200" />
+    <Property Name="chieudai_dgday" Type="float4" />
+    <Property Name="namxaydung" Type="int4" />
+    <Property Name="diadiem" Type="varchar" MaxLength="300" />
+    <Property Name="dtcapns_tke" Type="float4" />
+    <Property Name="dttieu_tte" Type="float4" />
+    <Property Name="dtcapns_tte" Type="float4" />
+    <Property Name="dttieu_tke" Type="float4" />
+    <Property Name="loai_trambom" Type="int4" />
+    <Property Name="congsuattk" Type="float4" />
+    <Property Name="congsuattk_tieu" Type="float4" />
+    <Property Name="reservoir_id" Type="uuid" />
+    <Property Name="chieu_rong" Type="float4" />
+    <Property Name="chieu_cao" Type="float4" />
+    <Property Name="loaimay" Type="varchar" MaxLength="150" />
+    <Property Name="mahieumay" Type="varchar" MaxLength="150" />
+    <Property Name="luuluong_motmay" Type="float8" />
+    <Property Name="ct_dongco" Type="float8" />
+    <Property Name="ct_mucnuocbh" Type="float8" />
+    <Property Name="chieudai_onghut" Type="float8" />
+    <Property Name="ct_tamonghut" Type="float8" />
+    <Property Name="dientich_behut" Type="float8" />
+    <Property Name="chieudai_ongxa" Type="float8" />
+    <Property Name="dientich_bexa" Type="float8" />
+    <Property Name="ly_trinh" Type="varchar" MaxLength="150" />
+    <Property Name="clndk_kichthuoc" Type="varchar" MaxLength="150" />
+    <Property Name="clndk_hientrang" Type="varchar" MaxLength="150" />
+    <Property Name="hientrang" Type="varchar" MaxLength="150" />
+    <Property Name="captrambom" Type="int4" />
+    <Property Name="ghichu" Type="varchar" MaxLength="100" />
+    <Property Name="temp_id" Type="int8" />
+    <Property Name="donviquanly" Type="varchar" MaxLength="150" />
+    <Property Name="quymo" Type="varchar" MaxLength="600" />
+    <Property Name="dientichtuoi" Type="varchar" MaxLength="600" />
+    <Property Name="dientichtieu" Type="varchar" MaxLength="600" />
+    <Property Name="ketcau" Type="varchar" MaxLength="600" />
+    <Property Name="dienthoai" Type="varchar" MaxLength="600" />
+    <Property Name="fax" Type="varchar" MaxLength="600" />
+    <Property Name="mucnuocbexa" Type="varchar" MaxLength="600" />
+    <Property Name="mucnuocbehut" Type="varchar" MaxLength="600" />
+    <Property Name="khoangcachtim" Type="varchar" MaxLength="600" />
+    <Property Name="hieusuat" Type="varchar" MaxLength="600" />
+    <Property Name="ct_sansuachua" Type="varchar" MaxLength="600" />
+    <Property Name="ct_bobehut" Type="varchar" MaxLength="600" />
+    <Property Name="chieudaibehut" Type="varchar" MaxLength="600" />
+    <Property Name="chieurongbehut" Type="varchar" MaxLength="600" />
+    <Property Name="ct_daybexa" Type="varchar" MaxLength="600" />
+    <Property Name="ct_bobexa" Type="varchar" MaxLength="600" />
+    <Property Name="chieudaibexa" Type="varchar" MaxLength="600" />
+    <Property Name="chieurongbexa" Type="varchar" MaxLength="600" />
+    <Property Name="ct_tuongbexa" Type="varchar" MaxLength="600" />
+    <Property Name="congapluc" Type="varchar" MaxLength="255" />
+    <Property Name="luuluongtt" Type="varchar" MaxLength="255" />
+    <Property Name="congsuattb" Type="float4" />
+    <Property Name="vitri" Type="varchar" MaxLength="255" />
+    <Property Name="cotap" Type="float4" />
+    <Property Name="goithau" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3857' in table 'odaninhthuan.public.iw_reservoir' was excluded.
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3405' in table 'odaninhthuan.public.iw_reservoir' was excluded.
+      -->
+  <EntityType Name="iw_reservoir">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Name="id" Type="int8" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="mahieu" Type="uuid" Nullable="false" />
+    <Property Name="ten" Type="varchar" MaxLength="250" />
+    <Property Name="xa_id" Type="int4" />
+    <Property Name="huyen_id" Type="int4" />
+    <Property Name="tinh_id" Type="int4" />
+    <Property Name="httn_id" Type="int4" />
+    <Property Name="loaict_id" Type="int4" />
+    <Property Name="dvql_id" Type="int4" />
+    <Property Name="luuvucsong_id" Type="int4" />
+    <Property Name="nguon_goc" Type="varchar" MaxLength="200" />
+    <Property Name="donvi_tinh" Type="varchar" MaxLength="50" />
+    <Property Name="loai_taisan_id" Type="int4" />
+    <Property Name="nam_xaydung" Type="int4" />
+    <Property Name="nam_khaithac" Type="int4" />
+    <Property Name="nam_bangiao" Type="int4" />
+    <Property Name="dientich_dat" Type="float4" />
+    <Property Name="dientich_san" Type="float4" />
+    <Property Name="nguyen_gia" Type="float4" />
+    <Property Name="tyle_haomon" Type="float4" />
+    <Property Name="giatri_conlai" Type="float4" />
+    <Property Name="tinhtrang_taisan" Type="bool" />
+    <Property Name="song_id" Type="int4" />
+    <Property Name="ma_qhns" Type="varchar" MaxLength="200" />
+    <Property Name="type_nguyengia" Type="int4" />
+    <Property Name="isdangxaydung" Type="int4" />
+    <Property Name="gtcanhbao_mnchancongtrinh" Type="float4" />
+    <Property Name="httn_config" Type="uuid" />
+    <Property Name="nangluc_lua" Type="float4" />
+    <Property Name="nangluc_raumau" Type="float4" />
+    <Property Name="nangluc_cndaingay" Type="float4" />
+    <Property Name="nangluc_thuysan" Type="float4" />
+    <Property Name="kinhdo" Type="float4" />
+    <Property Name="vido" Type="float4" />
+    <Property Name="duan_ref" Type="uuid" />
+    <Property Name="hethong_ref" Type="uuid" />
+    <Property Name="diadiem" Type="varchar" MaxLength="250" />
+    <Property Name="capcongtrinh" Type="int4" />
+    <Property Name="tansuatlu_tk_tuoi" Type="float4" />
+    <Property Name="tansuatlu_tk" Type="float4" />
+    <Property Name="tansuatlu_kt" Type="float4" />
+    <Property Name="dungtich_tongcong" Type="float4" />
+    <Property Name="dungtich_mndbt" Type="float4" />
+    <Property Name="dungtich_huuich" Type="float4" />
+    <Property Name="dungtich_chet" Type="float4" />
+    <Property Name="mndbt" Type="float4" />
+    <Property Name="mnc" Type="float4" />
+    <Property Name="mndgc" Type="float4" />
+    <Property Name="mnlkt" Type="float4" />
+    <Property Name="mnltk" Type="float4" />
+    <Property Name="dungtich_phonglu" Type="float4" />
+    <Property Name="tgtichnuoc_mndbt" Type="varchar" MaxLength="100" />
+    <Property Name="slg_dapchinh" Type="int4" />
+    <Property Name="slg_dapphu" Type="int4" />
+    <Property Name="slg_tran" Type="int4" />
+    <Property Name="slg_congxasau" Type="int4" />
+    <Property Name="slg_tuynen" Type="int4" />
+    <Property Name="slg_conglaynuoc" Type="int4" />
+    <Property Name="slg_authuyen" Type="int4" />
+    <Property Name="f_luuvuc" Type="float4" />
+    <Property Name="luulg_dinhlu_tk" Type="float4" />
+    <Property Name="luulg_dinhlu_kt" Type="float4" />
+    <Property Name="nhiemvu" Type="text" />
+    <Property Name="dtra_htho" Type="varchar" MaxLength="200" />
+    <Property Name="dtra_nam" Type="int4" />
+    <Property Name="dtra_mota" Type="text" />
+    <Property Name="nam_hoanthanh" Type="int4" />
+    <Property Name="nam_suachua" Type="int4" />
+    <Property Name="dang_suachua" Type="bool" />
+    <Property Name="quytrinh_vanhanh" Type="bool" />
+    <Property Name="pp_baove" Type="bool" />
+    <Property Name="cuavan" Type="bool" />
+    <Property Name="xungyeu" Type="bool" />
+    <Property Name="quantrong" Type="bool" />
+    <Property Name="dactinhho" Type="bool" />
+    <Property Name="ghichu" Type="text" />
+    <Property Name="f_tru" Type="float4" />
+    <Property Name="f_tuoi" Type="float4" />
+    <Property Name="slg_trambom" Type="int4" />
+    <Property Name="slg_kenh" Type="int4" />
+    <Property Name="slg_caumang" Type="int4" />
+    <Property Name="slg_xiphong" Type="int4" />
+    <Property Name="slg_cau" Type="int4" />
+    <Property Name="slg_tramdomua" Type="int4" />
+    <Property Name="slg_tramdomucnuoc" Type="int4" />
+    <Property Name="slg_tramkttv" Type="int4" />
+    <Property Name="lakecode_tlvn" Type="text" />
+    <Property Name="ishothuydien" Type="bool" />
+    <Property Name="deleted_status" Type="int4" />
+    <Property Name="kiemdinh_antoandap" Type="bool" />
+    <Property Name="trantudo" Type="bool" />
+    <Property Name="ketcaudap" Type="int4" />
+    <Property Name="congtacquanly" Type="int4" />
+    <Property Name="holientinh" Type="int4" />
+    <Property Name="geomid" Type="int4" />
+    <Property Name="nghidinhref" Type="int4" />
+    <Property Name="loaihoref" Type="int4" />
+    <Property Name="dubaolulut_id" Type="varchar" MaxLength="50" />
+    <Property Name="tgmuakiettu" Type="timestamp" />
+    <Property Name="tgmuakietden" Type="timestamp" />
+    <Property Name="tgmualutu" Type="timestamp" />
+    <Property Name="tgmualuden" Type="timestamp" />
+    <Property Name="mncaonhattruoclu" Type="text" />
+    <Property Name="mucnuocdonlu" Type="text" />
+    <Property Name="duongphongphahoai" Type="text" />
+    <Property Name="duonghanche" Type="text" />
+    <Property Name="thoigiantichnuoc" Type="text" />
+    <Property Name="luuluongxatoithieu" Type="text" />
+    <Property Name="tansuatlu_tk_dandongthicong" Type="text" />
+    <Property Name="tansuatlu_tk_thuysan" Type="float4" />
+    <Property Name="tansuatlu_tk_sinhhoat" Type="float4" />
+    <Property Name="tansuatlu_tk_congnghiep" Type="float4" />
+    <Property Name="tansuatlu_tk_moitruong" Type="float4" />
+    <Property Name="lat" Type="float4" />
+    <Property Name="lon" Type="float4" />
+    <Property Name="ma_anhxa" Type="varchar" MaxLength="150" />
+    <Property Name="nguon_anhxa" Type="varchar" MaxLength="250" />
+    <Property Name="mnlvkt" Type="float4" />
+    <Property Name="mucboilang" Type="text" />
+    <Property Name="dungtich_boilang" Type="float4" />
+    <Property Name="dientichmatho_mndbt" Type="float4" />
+    <Property Name="dientichmatho_mnltk" Type="float4" />
+    <Property Name="dientichmatho_mnlkt" Type="float4" />
+    <Property Name="chedolamviec" Type="text" />
+    <Property Name="dientich_luuvuc_tuyendap" Type="float4" />
+    <Property Name="luuluong_binhquannam" Type="float4" />
+    <Property Name="luuluong_dinhlu_10" Type="float4" />
+    <Property Name="luuluong_dinhlu_05" Type="float4" />
+    <Property Name="luuluong_dinhlu_01" Type="float4" />
+    <Property Name="luuluong_dinhlu_002" Type="float4" />
+    <Property Name="tongluonglu_10" Type="float4" />
+    <Property Name="tongluonglu_05" Type="float4" />
+    <Property Name="tongluonglu_01" Type="float4" />
+    <Property Name="tongluonglu_002" Type="float4" />
+    <Property Name="thuydien_hinhthuc" Type="text" />
+    <Property Name="thuydien_congsuat" Type="float4" />
+    <Property Name="thuydien_soto" Type="float4" />
+    <Property Name="thuydien_chedo_lamviec" Type="text" />
+    <Property Name="congsuatlapmay" Type="float4" />
+    <Property Name="dungtich_mnltk" Type="float4" />
+    <Property Name="dungtich_mnlkt" Type="float4" />
+    <Property Name="cogantram" Type="int4" />
+    <Property Name="codieutietlienho" Type="bool" />
+    <Property Name="mamohinhmike11" Type="varchar" MaxLength="150" />
+    <Property Name="immidiate_show" Type="bool" />
+    <Property Name="baocao_hientrangatd" Type="bool" />
+    <Property Name="kiemtra_cttruoclu" Type="bool" />
+    <Property Name="phuongan_pclb" Type="bool" />
+    <Property Name="phuongan_pcll" Type="bool" />
+    <Property Name="kinhphi_nangcapsuachua" Type="float8" />
+    <Property Name="hientrang_congtrinh" Type="varchar" />
+    <Property Name="isdapdang" Type="int4" />
+    <Property Name="ishofortctl" Type="int4" />
+    <Property Name="thoigiancapnhat" Type="int4" />
+    <Property Name="tong_luonglu_tk" Type="float4" />
+    <Property Name="tong_luonglu_kt" Type="float4" />
+    <Property Name="isdubaolu" Type="int4" />
+    <Property Name="luuvucho_id" Type="int4" />
+    <Property Name="dubaongapluthadu_id" Type="varchar" MaxLength="50" />
+    <Property Name="phanmemquanly_link" Type="varchar" MaxLength="300" />
+    <Property Name="vanhanhcoihu_id" Type="varchar" MaxLength="50" />
+    <Property Name="donviquanly" Type="varchar" MaxLength="100" />
+    <Property Name="isshow_fulldata_quantrac" Type="bool" />
+    <Property Name="temp_id" Type="int4" />
+    <Property Name="ismoinhattrongngay" Type="bool" />
+    <Property Name="isdubaodaihan" Type="bool" />
+    <Property Name="tansuat_dambaotuoi" Type="float4" />
+    <Property Name="matke_ketcau" Type="varchar" MaxLength="255" />
+    <Property Name="duongho" Type="varchar" MaxLength="255" />
+    <Property Name="dientich" Type="varchar" MaxLength="255" />
+    <Property Name="dientichmatnuoc" Type="varchar" MaxLength="255" />
+    <Property Name="chieucaomatho" Type="varchar" MaxLength="255" />
+    <Property Name="chieucaodayho" Type="varchar" MaxLength="255" />
+    <Property Name="goithau" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3857' in table 'odaninhthuan.public.iw_timduong' was excluded.
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3405' in table 'odaninhthuan.public.iw_timduong' was excluded.
+      -->
+  <EntityType Name="iw_timduong">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Name="id" Type="int8" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="mahieu" Type="uuid" Nullable="false" />
+    <Property Name="ten" Type="varchar" MaxLength="250" />
+    <Property Name="xa_id" Type="int4" />
+    <Property Name="huyen_id" Type="int4" />
+    <Property Name="tinh_id" Type="int4" />
+    <Property Name="httn_id" Type="int4" />
+    <Property Name="loaict_id" Type="int4" />
+    <Property Name="dvql_id" Type="int4" />
+    <Property Name="luuvucsong_id" Type="int4" />
+    <Property Name="nguon_goc" Type="varchar" MaxLength="200" />
+    <Property Name="donvi_tinh" Type="varchar" MaxLength="50" />
+    <Property Name="loai_taisan_id" Type="int4" />
+    <Property Name="nam_xaydung" Type="int4" />
+    <Property Name="nam_khaithac" Type="int4" />
+    <Property Name="nam_bangiao" Type="int4" />
+    <Property Name="dientich_dat" Type="float4" />
+    <Property Name="dientich_san" Type="float4" />
+    <Property Name="nguyen_gia" Type="float4" />
+    <Property Name="tyle_haomon" Type="float4" />
+    <Property Name="giatri_conlai" Type="float4" />
+    <Property Name="tinhtrang_taisan" Type="bool" />
+    <Property Name="song_id" Type="int4" />
+    <Property Name="ma_qhns" Type="varchar" MaxLength="200" />
+    <Property Name="type_nguyengia" Type="int4" />
+    <Property Name="isdangxaydung" Type="int4" />
+    <Property Name="gtcanhbao_mnchancongtrinh" Type="float4" />
+    <Property Name="httn_config" Type="uuid" />
+    <Property Name="nangluc_lua" Type="float4" />
+    <Property Name="nangluc_raumau" Type="float4" />
+    <Property Name="nangluc_cndaingay" Type="float4" />
+    <Property Name="nangluc_thuysan" Type="float4" />
+    <Property Name="kinhdo" Type="float4" />
+    <Property Name="vido" Type="float4" />
+    <Property Name="duan_ref" Type="uuid" />
+    <Property Name="hethong_ref" Type="uuid" />
+    <Property Name="diadiem" Type="varchar" MaxLength="250" />
+    <Property Name="thuockenh" Type="varchar" MaxLength="255" />
+    <Property Name="loaict" Type="varchar" MaxLength="255" />
+    <Property Name="chieudai" Type="varchar" MaxLength="255" />
+    <Property Name="diemdau" Type="varchar" MaxLength="255" />
+    <Property Name="diemcuoi" Type="varchar" MaxLength="255" />
+    <Property Name="hientrang" Type="varchar" MaxLength="255" />
+    <Property Name="chieurong" Type="varchar" MaxLength="255" />
+    <Property Name="dientich" Type="varchar" MaxLength="255" />
+    <Property Name="khoiluongd" Type="varchar" MaxLength="255" />
+    <Property Name="kl_dapcat" Type="varchar" MaxLength="255" />
+    <Property Name="kl_dapdat" Type="varchar" MaxLength="255" />
+    <Property Name="dt_cayxoi" Type="varchar" MaxLength="255" />
+    <Property Name="goithau" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3857' in table 'odaninhthuan.public.iw_trucuuhoa' was excluded.
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3405' in table 'odaninhthuan.public.iw_trucuuhoa' was excluded.
+      -->
+  <EntityType Name="iw_trucuuhoa">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Name="id" Type="int8" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="mahieu" Type="uuid" Nullable="false" />
+    <Property Name="ten" Type="varchar" MaxLength="250" />
+    <Property Name="xa_id" Type="int4" />
+    <Property Name="huyen_id" Type="int4" />
+    <Property Name="tinh_id" Type="int4" />
+    <Property Name="httn_id" Type="int4" />
+    <Property Name="loaict_id" Type="int4" />
+    <Property Name="dvql_id" Type="int4" />
+    <Property Name="luuvucsong_id" Type="int4" />
+    <Property Name="nguon_goc" Type="varchar" MaxLength="200" />
+    <Property Name="donvi_tinh" Type="varchar" MaxLength="50" />
+    <Property Name="loai_taisan_id" Type="int4" />
+    <Property Name="nam_xaydung" Type="int4" />
+    <Property Name="nam_khaithac" Type="int4" />
+    <Property Name="nam_bangiao" Type="int4" />
+    <Property Name="dientich_dat" Type="float4" />
+    <Property Name="dientich_san" Type="float4" />
+    <Property Name="nguyen_gia" Type="float4" />
+    <Property Name="tyle_haomon" Type="float4" />
+    <Property Name="giatri_conlai" Type="float4" />
+    <Property Name="tinhtrang_taisan" Type="bool" />
+    <Property Name="song_id" Type="int4" />
+    <Property Name="ma_qhns" Type="varchar" MaxLength="200" />
+    <Property Name="type_nguyengia" Type="int4" />
+    <Property Name="isdangxaydung" Type="int4" />
+    <Property Name="gtcanhbao_mnchancongtrinh" Type="float4" />
+    <Property Name="httn_config" Type="uuid" />
+    <Property Name="nangluc_lua" Type="float4" />
+    <Property Name="nangluc_raumau" Type="float4" />
+    <Property Name="nangluc_cndaingay" Type="float4" />
+    <Property Name="nangluc_thuysan" Type="float4" />
+    <Property Name="kinhdo" Type="float4" />
+    <Property Name="vido" Type="float4" />
+    <Property Name="duan_ref" Type="uuid" />
+    <Property Name="hethong_ref" Type="uuid" />
+    <Property Name="diadiem" Type="varchar" MaxLength="250" />
+    <Property Name="thuockenh" Type="varchar" MaxLength="255" />
+    <Property Name="thuocho" Type="varchar" MaxLength="255" />
+    <Property Name="loaict" Type="varchar" MaxLength="255" />
+    <Property Name="loaihoga" Type="varchar" MaxLength="255" />
+    <Property Name="chieucao" Type="varchar" MaxLength="255" />
+    <Property Name="loaigeom" Type="varchar" MaxLength="255" />
+    <Property Name="gocngoat" Type="float8" />
+    <Property Name="congvao" Type="float8" />
+    <Property Name="congra" Type="float8" />
+    <Property Name="caodomatdat" Type="float8" />
+    <Property Name="caododaycong" Type="float8" />
+    <Property Name="caododayga" Type="float8" />
+    <Property Name="chieucaoh1" Type="float8" />
+    <Property Name="ketcau" Type="varchar" MaxLength="255" />
+    <Property Name="goithau" Type="varchar" MaxLength="255" />
+    <Property Name="tenduong" Type="varchar" MaxLength="255" />
+    <Property Name="kichthuoc" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3857' in table 'odaninhthuan.public.iw_vuotnoi' was excluded.
+      warning 6005: The data type 'geometry' is currently not supported for the target .NET Framework version; the column 'geom3405' in table 'odaninhthuan.public.iw_vuotnoi' was excluded.
+      -->
+  <EntityType Name="iw_vuotnoi">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Name="id" Type="int8" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="mahieu" Type="uuid" Nullable="false" />
+    <Property Name="ten" Type="varchar" MaxLength="250" />
+    <Property Name="xa_id" Type="int4" />
+    <Property Name="huyen_id" Type="int4" />
+    <Property Name="tinh_id" Type="int4" />
+    <Property Name="httn_id" Type="int4" />
+    <Property Name="loaict_id" Type="int4" />
+    <Property Name="dvql_id" Type="int4" />
+    <Property Name="luuvucsong_id" Type="int4" />
+    <Property Name="nguon_goc" Type="varchar" MaxLength="200" />
+    <Property Name="donvi_tinh" Type="varchar" MaxLength="50" />
+    <Property Name="loai_taisan_id" Type="int4" />
+    <Property Name="nam_xaydung" Type="int4" />
+    <Property Name="nam_khaithac" Type="int4" />
+    <Property Name="nam_bangiao" Type="int4" />
+    <Property Name="dientich_dat" Type="float4" />
+    <Property Name="dientich_san" Type="float4" />
+    <Property Name="nguyen_gia" Type="float4" />
+    <Property Name="tyle_haomon" Type="float4" />
+    <Property Name="giatri_conlai" Type="float4" />
+    <Property Name="tinhtrang_taisan" Type="bool" />
+    <Property Name="song_id" Type="int4" />
+    <Property Name="ma_qhns" Type="varchar" MaxLength="200" />
+    <Property Name="type_nguyengia" Type="int4" />
+    <Property Name="isdangxaydung" Type="int4" />
+    <Property Name="gtcanhbao_mnchancongtrinh" Type="float4" />
+    <Property Name="httn_config" Type="uuid" />
+    <Property Name="nangluc_lua" Type="float4" />
+    <Property Name="nangluc_raumau" Type="float4" />
+    <Property Name="nangluc_cndaingay" Type="float4" />
+    <Property Name="nangluc_thuysan" Type="float4" />
+    <Property Name="kinhdo" Type="float4" />
+    <Property Name="vido" Type="float4" />
+    <Property Name="duan_ref" Type="uuid" />
+    <Property Name="hethong_ref" Type="uuid" />
+    <Property Name="diadiem" Type="varchar" MaxLength="250" />
+    <Property Name="thuockenh" Type="varchar" MaxLength="255" />
+    <Property Name="loaict" Type="varchar" MaxLength="255" />
+    <Property Name="tenduong" Type="varchar" MaxLength="255" />
+    <Property Name="r" Type="float8" />
+    <Property Name="t" Type="float8" />
+    <Property Name="p" Type="float8" />
+    <Property Name="k" Type="float8" />
+    <Property Name="sq" Type="float8" />
+    <Property Name="b2" Type="float8" />
+    <Property Name="bovia" Type="float8" />
+    <Property Name="dientichmorong" Type="float8" />
+    <Property Name="dangnutgiao" Type="varchar" MaxLength="255" />
+    <Property Name="bi" Type="float8" />
+    <Property Name="goithau" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="tbl_danhmuc_duan">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Name="mahieu" Type="uuid" Nullable="false" />
+    <Property Name="ten" Type="varchar" MaxLength="250" />
+    <Property Name="ghichu" Type="text" />
+    <Property Name="hethong_ref" Type="uuid" />
+  </EntityType>
+  <EntityType Name="tbl_danhmuc_hethong">
+    <Key>
+      <PropertyRef Name="mahieu" />
+    </Key>
+    <Property Name="mahieu" Type="uuid" Nullable="false" />
+    <Property Name="ten" Type="varchar" MaxLength="250" />
+    <Property Name="ghichu" Type="text" />
+  </EntityType>
+  <EntityType Name="tbl_duytubaoduong">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int8" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ct_uuid" Type="uuid" Nullable="false" />
+    <Property Name="kyhieu" Type="varchar" MaxLength="250" />
+    <Property Name="phanloairef" Type="int4" />
+    <Property Name="loaicongtrinh" Type="varchar" MaxLength="250" />
+    <Property Name="tinh_id" Type="varchar" MaxLength="50" />
+    <Property Name="huyen_id" Type="varchar" MaxLength="50" />
+    <Property Name="diadiem" Type="text" />
+    <Property Name="tongchieudai" Type="float4" />
+    <Property Name="giaiphapkythuat" Type="text" />
+    <Property Name="vatlieuxaydung" Type="text" />
+    <Property Name="kinhphi" Type="float4" />
+    <Property Name="namkehoach" Type="int4" />
+    <Property Name="namthuchien" Type="int4" />
+    <Property Name="namhoanthanh" Type="int4" />
+    <Property Name="nguon" Type="int4" />
+    <Property Name="duyet" Type="int4" />
+    <Property Name="soqd" Type="varchar" MaxLength="250" />
+    <Property Name="ngayqd" Type="varchar" MaxLength="250" />
+    <Property Name="anhtruoc" Type="varchar" MaxLength="250" />
+    <Property Name="anhsau" Type="varchar" MaxLength="250" />
+    <Property Name="createdby" Type="varchar" MaxLength="50" />
+    <Property Name="createdat" Type="timestamp" />
+    <Property Name="lastmodifiedby" Type="varchar" MaxLength="50" />
+    <Property Name="lastmodifiedat" Type="timestamp" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6005: The data type 'ltree' is currently not supported for the target .NET Framework version; the column 'ttl_tree_path' in table 'odaninhthuan.public.tbl_tutailieu_files' was excluded.
+      -->
+  <EntityType Name="tbl_tutailieu_files">
+    <Key>
+      <PropertyRef Name="ttl_tree_id" />
+    </Key>
+    <Property Name="ttl_tree_id" Type="int8" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ttl_tree_ten" Type="text" />
+    <Property Name="ttl_tree_user_creator" Type="uuid" />
+    <Property Name="ttl_tree_date_created" Type="timestamp" />
+    <Property Name="ttl_tree_user_modifier" Type="uuid" />
+    <Property Name="ttl_tree_date_modified" Type="timestamp" />
+    <Property Name="ttl_tree_form" Type="int4" />
+    <Property Name="ttl_tree_type" Type="int4" Nullable="false" />
+    <Property Name="ttl_tree_tochucid" Type="int4" />
+    <Property Name="ttl_tree_object" Type="uuid" />
+    <Property Name="ttl_tree_object_type" Type="int4" />
+    <Property Name="ttl_tree_df_id" Type="int4" />
+    <Property Name="ttl_files_id" Type="int4" />
+  </EntityType>
+  <EntityType Name="tbl_tutailieu_files_detail">
+    <Key>
+      <PropertyRef Name="ttl_files_detail_id" />
+    </Key>
+    <Property Name="ttl_files_detail_id" Type="int8" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ttl_files_detail_localpath" Type="text" />
+    <Property Name="ttl_files_detail_remotepath" Type="text" />
+    <Property Name="ttl_files_detail_resize_localpath" Type="text" />
+    <Property Name="ttl_files_detail_resize_remotepath" Type="text" />
+    <Property Name="ttl_files_detail_type" Type="text" />
+    <Property Name="ttl_files_detail_size" Type="int8" />
+    <Property Name="ttl_files_detail_viewed" Type="int4" />
+    <Property Name="ttl_files_detail_downloaded" Type="int4" />
+  </EntityType>
+  <EntityType Name="tbl_tutailieu_files_types">
+    <Key>
+      <PropertyRef Name="ttl_ftype_id" />
+    </Key>
+    <Property Name="ttl_ftype_id" Type="int8" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ttl_ftype_type" Type="text" />
+    <Property Name="ttl_ftype_name" Type="text" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6005: The data type 'ltree' is currently not supported for the target .NET Framework version; the column 'ttl_tree_path' in table 'odaninhthuan.public.tbl_tutailieu_folder' was excluded.
+      -->
+  <EntityType Name="tbl_tutailieu_folder">
+    <Key>
+      <PropertyRef Name="ttl_tree_id" />
+    </Key>
+    <Property Name="ttl_tree_id" Type="int8" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ttl_tree_ten" Type="text" />
+    <Property Name="ttl_tree_user_creator" Type="uuid" />
+    <Property Name="ttl_tree_date_created" Type="timestamp" />
+    <Property Name="ttl_tree_user_modifier" Type="uuid" />
+    <Property Name="ttl_tree_date_modified" Type="timestamp" />
+    <Property Name="ttl_tree_form" Type="int4" />
+    <Property Name="ttl_tree_type" Type="int4" Nullable="false" />
+    <Property Name="ttl_tree_tochucid" Type="int4" />
+    <Property Name="ttl_tree_object" Type="uuid" />
+    <Property Name="ttl_tree_object_type" Type="int4" />
+    <Property Name="ttl_tree_df_id" Type="int4" />
+    <Property Name="ttl_folder_origin" Type="int4" />
+    <Property Name="ttl_folder_icon" Type="int4" />
+    <Property Name="ttl_folder_localpath" Type="text" />
+    <Property Name="ttl_folder_remotepath" Type="text" />
+  </EntityType>
+  <EntityType Name="tbl_tutailieu_history">
+    <Key>
+      <PropertyRef Name="ttl_ls_id" />
+    </Key>
+    <Property Name="ttl_ls_id" Type="int8" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ttl_ls_ttl_tree_id" Type="int8" />
+    <Property Name="ttl_ls_tbl_tutailieu_files" Type="text" />
+    <Property Name="ttl_ls_tbl_tutailieu_folder" Type="text" />
+    <Property Name="ttl_ls_tbl_tutailieu_users_files_folder" Type="text" />
+    <Property Name="ttl_ls_users" Type="uuid" />
+    <Property Name="ttl_ls_thoigian" Type="timestamp" />
+    <Property Name="ttl_ls_folder_id" Type="int8" />
+    <Property Name="ttl_ls_folder_name" Type="text" />
+    <Property Name="ttl_ls_type" Type="int4" />
+  </EntityType>
+  <EntityType Name="tbl_tutailieu_thuoctinh">
+    <Key>
+      <PropertyRef Name="tt_id" />
+    </Key>
+    <Property Name="tt_id" Type="int8" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="tt_name" Type="text" />
+    <Property Name="tt_form" Type="int4" />
+    <Property Name="tt_parentid" Type="int4" />
+    <Property Name="tt_map_table" Type="text" />
+    <Property Name="tt_map_column" Type="text" />
+    <Property Name="tt_field_table" Type="text" />
+    <Property Name="tt_field_id" Type="text" />
+    <Property Name="tt_field_name" Type="text" />
+    <Property Name="tt_field_where" Type="text" />
+    <Property Name="tt_field_order" Type="text" />
+    <Property Name="tt_field_changer" Type="text" />
+    <Property Name="tt_field_holder" Type="text" />
+    <Property Name="tt_orderby" Type="int4" />
+    <Property Name="tt_type" Type="int4" />
+    <Property Name="tt_data_type" Type="int4" />
+    <Property Name="tt_unit" Type="text" />
+    <Property Name="tt_default" Type="bool" Nullable="false" />
+    <Property Name="tt_search" Type="bool" Nullable="false" />
+    <Property Name="tt_show" Type="bool" Nullable="false" />
+    <Property Name="created_at" Type="timestamp" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="last_modified_at" Type="timestamp" />
+    <Property Name="last_modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="deleted_status" Type="int4" />
+  </EntityType>
+  <EntityType Name="tbl_tutailieu_thuoctinh_danhmuc">
+    <Key>
+      <PropertyRef Name="ttdm_id" />
+    </Key>
+    <Property Name="ttdm_id" Type="int8" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ttdm_name" Type="text" />
+    <Property Name="ttdm_tt_id" Type="int8" />
+    <Property Name="ttdm_kyhieu" Type="text" />
+    <Property Name="ttdm_orderby" Type="int4" />
+    <Property Name="created_at" Type="timestamp" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="last_modified_at" Type="timestamp" />
+    <Property Name="last_modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="deleted_status" Type="int4" />
+  </EntityType>
+  <EntityType Name="tbl_tutailieu_thuoctinh_detail">
+    <Key>
+      <PropertyRef Name="ttdt_id" />
+    </Key>
+    <Property Name="ttdt_id" Type="int8" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ttdt_tt_id" Type="int8" />
+    <Property Name="ttdt_tree_id" Type="int8" />
+    <Property Name="ttdt_value" Type="text" />
+    <Property Name="ttdt_display" Type="bool" />
+    <Property Name="ttdt_orderby" Type="int4" />
+    <Property Name="created_at" Type="timestamp" />
+    <Property Name="created_by" Type="varchar" MaxLength="50" />
+    <Property Name="last_modified_at" Type="timestamp" />
+    <Property Name="last_modified_by" Type="varchar" MaxLength="50" />
+    <Property Name="deleted_status" Type="int4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6005: The data type 'ltree' is currently not supported for the target .NET Framework version; the column 'ttl_tree_path' in table 'odaninhthuan.public.tbl_tutailieu_tree' was excluded.
+      -->
+  <EntityType Name="tbl_tutailieu_tree">
+    <Key>
+      <PropertyRef Name="ttl_tree_id" />
+    </Key>
+    <Property Name="ttl_tree_id" Type="int8" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ttl_tree_ten" Type="text" />
+    <Property Name="ttl_tree_user_creator" Type="uuid" />
+    <Property Name="ttl_tree_date_created" Type="timestamp" />
+    <Property Name="ttl_tree_user_modifier" Type="uuid" />
+    <Property Name="ttl_tree_date_modified" Type="timestamp" />
+    <Property Name="ttl_tree_form" Type="int4" />
+    <Property Name="ttl_tree_type" Type="int4" Nullable="false" />
+    <Property Name="ttl_tree_tochucid" Type="int4" />
+    <Property Name="ttl_tree_object" Type="uuid" />
+    <Property Name="ttl_tree_object_type" Type="int4" />
+    <Property Name="ttl_tree_df_id" Type="int4" />
+  </EntityType>
+  <EntityType Name="tbl_tutailieu_tree_default">
+    <Key>
+      <PropertyRef Name="ttl_tree_df_id" />
+    </Key>
+    <Property Name="ttl_tree_df_id" Type="int8" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ttl_tree_df_ten" Type="text" />
+    <Property Name="ttl_tree_df_pid" Type="int8" />
+    <Property Name="ttl_tree_df_sort" Type="int4" />
+    <Property Name="ttl_tree_df_form" Type="int4" />
+    <Property Name="ttl_tree_df_type" Type="int4" Nullable="false" />
+    <Property Name="ttl_tree_df_tochucid" Type="int4" />
+    <Property Name="ttl_tree_df_object_type" Type="int4" />
+    <Property Name="ttl_tree_df_default" Type="bool" />
+    <Property Name="ttl_tree_df_origin" Type="int4" />
+    <Property Name="ttl_tree_df_icon" Type="int4" />
+    <Property Name="ttl_tree_df_localpath" Type="text" />
+    <Property Name="ttl_tree_df_remotepath" Type="text" />
+  </EntityType>
+  <EntityType Name="tbl_tutailieu_users_files_folder">
+    <Key>
+      <PropertyRef Name="ttl_uf_id" />
+    </Key>
+    <Property Name="ttl_uf_id" Type="int8" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ttl_uf_users" Type="uuid" />
+    <Property Name="ttl_uf_files_folder" Type="int8" />
+    <Property Name="ttl_uf_role" Type="int4" />
+    <Property Name="ttl_uf_status" Type="int4" Nullable="false" />
+    <Property Name="ttl_uf_star" Type="bool" Nullable="false" />
+  </EntityType>
+  <Association Name="bgmap_commune_fk">
+    <End Role="bgmap_district" Type="odaninhthuanModel.Store.bgmap_district" Multiplicity="0..1" />
+    <End Role="bgmap_commune" Type="odaninhthuanModel.Store.bgmap_commune" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bgmap_district">
+        <PropertyRef Name="gid" />
+      </Principal>
+      <Dependent Role="bgmap_commune">
+        <PropertyRef Name="huyen_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

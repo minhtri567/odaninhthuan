@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="029108f97e664b1f92cb4c6666cdc378" Name="Diagram1" ZoomLevel="50">
+        <EntityTypeShape EntityType="odaninhthuanModel.iw_boviaviahe" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="odaninhthuanModel.iw_canal" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="odaninhthuanModel.iw_coc" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="odaninhthuanModel.iw_denchieusang" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="odaninhthuanModel.iw_diemngap" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="odaninhthuanModel.iw_gieng" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="odaninhthuanModel.iw_hoga" Width="1.5" PointX="4.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="odaninhthuanModel.iw_hotrongcay" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="odaninhthuanModel.iw_irrigation_sewer" Width="1.5" PointX="6.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="odaninhthuanModel.iw_nhamayxulynuocthai" Width="1.5" PointX="8.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="odaninhthuanModel.iw_pump_station" Width="1.5" PointX="10.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="odaninhthuanModel.iw_reservoir" Width="1.5" PointX="12.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="odaninhthuanModel.iw_timduong" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="odaninhthuanModel.iw_trucuuhoa" Width="1.5" PointX="14.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="odaninhthuanModel.iw_vuotnoi" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="odaninhthuanModel.tbl_danhmuc_duan" Width="1.5" PointX="2.75" PointY="21.625" />
+        <EntityTypeShape EntityType="odaninhthuanModel.tbl_danhmuc_hethong" Width="1.5" PointX="8.75" PointY="22.625" />
+        <EntityTypeShape EntityType="odaninhthuanModel.bgmap_commune" Width="1.5" PointX="18.625" PointY="0.75" />
+        <EntityTypeShape EntityType="odaninhthuanModel.bgmap_district" Width="1.5" PointX="18.625" PointY="3.625" />
+        <EntityTypeShape EntityType="odaninhthuanModel.bgmap_province" Width="1.5" PointX="18.625" PointY="6.25" />
+        <AssociationConnector Association="odaninhthuanModel.bgmap_commune_fk" />
+        <EntityTypeShape EntityType="odaninhthuanModel.tbl_duytubaoduong" Width="1.5" PointX="0.75" PointY="16.875" />
+        <EntityTypeShape EntityType="odaninhthuanModel.tbl_tutailieu_files" Width="1.5" PointX="0.75" PointY="11.25" />
+        <EntityTypeShape EntityType="odaninhthuanModel.tbl_tutailieu_files_detail" Width="1.5" PointX="4.875" PointY="26.625" />
+        <EntityTypeShape EntityType="odaninhthuanModel.tbl_tutailieu_files_types" Width="1.5" PointX="0.75" PointY="15.125" />
+        <EntityTypeShape EntityType="odaninhthuanModel.tbl_tutailieu_folder" Width="1.5" PointX="8.75" PointY="24.375" />
+        <EntityTypeShape EntityType="odaninhthuanModel.tbl_tutailieu_history" Width="1.5" PointX="14.75" PointY="24.625" />
+        <EntityTypeShape EntityType="odaninhthuanModel.tbl_tutailieu_thuoctinh" Width="1.5" PointX="0.75" PointY="23" />
+        <EntityTypeShape EntityType="odaninhthuanModel.tbl_tutailieu_thuoctinh_danhmuc" Width="1.5" PointX="14.75" PointY="27.875" />
+        <EntityTypeShape EntityType="odaninhthuanModel.tbl_tutailieu_thuoctinh_detail" Width="1.5" PointX="2.75" PointY="23.75" />
+        <EntityTypeShape EntityType="odaninhthuanModel.tbl_tutailieu_tree" Width="1.5" PointX="2.75" PointY="27.125" />
+        <EntityTypeShape EntityType="odaninhthuanModel.tbl_tutailieu_tree_default" Width="1.5" PointX="8.75" PointY="28.75" />
+        <EntityTypeShape EntityType="odaninhthuanModel.tbl_tutailieu_users_files_folder" Width="1.5" PointX="16.75" PointY="12" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

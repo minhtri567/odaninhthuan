@@ -1,0 +1,607 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div id="map"></div>
+<div id="style-selector">
+    <div id="current-style">
+        <img src="/Images/streets.png" data-style="mapbox://styles/mapbox/streets-v11" alt="Streets" title="Streets" class="selected">
+    </div>
+    <div class="style-list">
+        <img src="/Images/streets.png" data-style="mapbox://styles/mapbox/streets-v11" alt="Streets" title="Streets">
+        <img src="/Images/darkmap.png" data-style="mapbox://styles/mapbox/dark-v10" alt="Dark" title="Dark">
+        <img src="/Images/satellite.png" data-style="mapbox://styles/mapbox/satellite-v9" alt="Satellite" title="Satellite">
+        <img src="/Images/ESRImaps.png" data-style="https://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer" alt="Esri World Street" title="Esri World Street">
+    </div>
+</div>
+<a class="btn btn-primary sup-toggle-layer" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+    <i class="fa-solid fa-layer-group"></i>
+</a>  
+
+<div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+    <a class="btn btn-primary toggle-layer show" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+        <i class="fa-solid fa-layer-group"></i>
+    </a>  
+
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Các lớp bản đồ công trình</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="accordion accordion-4 accordion--custom" id="">
+        <div class="accordion-item">
+          <div class="accordion-header" id="heading6">
+            <input type="checkbox" class="form-check-input great-grandma" id="thugomdonghai" value="" checked="">
+            <a class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="true" aria-controls="collapse6">
+              <p>Hệ thống thu gom nước thải</p>
+            </a>
+          </div>
+        </div>
+        <div id="collapse6" style="margin-left:24px;" class="accordion-collapse collapse show ml-4" aria-labelledby="" data-bs-parent="">
+          <div class="accordion-item">
+            <div class="accordion-header grandma-container" id="">
+              <input type="checkbox" class="form-check-input grandma" id="" value="" checked="">
+              <a class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#layer-xdtcbktt" aria-expanded="true" aria-controls="">
+                <p title="Xây dựng tuyến cống bao kênh Tấn Tài">Xây dựng tuyến cống bao kênh Tấn Tài</p>
+              </a>
+            </div>
+            <div id="layer-xdtcbktt" style="margin-left:24px;" class="accordion-collapse collapse show ml-4 parent-container" aria-labelledby="" data-bs-parent="">
+              <div class="form-group form-check ">
+                <input type="checkbox" class="form-check-input child" id="" data-layer="ho-ga-tantai" value="" checked="">
+                <label class="form-check-label" for="" onclick="functionlayer.flytoLayer( 'iw_hoga' , 'duan_ref', '4de45510-4c5c-407c-ad50-3469a341961f')">Hố ga Tấn tài</label>
+              </div>
+
+              <div class="form-group form-check ">
+                <input type="checkbox" class="form-check-input child" id="" value="" data-layer="cong-bao-tantai" checked="">
+                <label class="form-check-label" for="" onclick="functionlayer.flytoLayer( 'iw_irrigation_sewer' , 'duan_ref', '4de45510-4c5c-407c-ad50-3469a341961f')">Tuyến cống bao Tấn tài</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header grandma-container" id="">
+              <input type="checkbox" class="form-check-input grandma" id="thu-nuoc-donghai" value="" checked="">
+              <a class="accordion-button  " type="button" data-bs-toggle="collapse" data-bs-target="#xdtcbkcl" aria-expanded="true" aria-controls="">
+                <p title="Xây dựng tuyến cống bao kênh Chà Là">Xây dựng tuyến cống bao kênh Chà Là</p>
+              </a>
+            </div>
+            <div id="xdtcbkcl" style="margin-left:24px;" class="accordion-collapse collapse show ml-4 parent-container" aria-labelledby="" data-bs-parent="#layer-parent-1">
+              <div class="form-group form-check ">
+                <input type="checkbox" class="form-check-input child" id="" data-layer="cong-bao-chala" value="" checked="">
+                <label class="form-check-label" for="" title="Tuyến cống bao Chà là" onclick="functionlayer.flytoLayer( 'iw_irrigation_sewer' , 'ten', 'Tuyến cống Chà Là')">Tuyến cống bao Chà là</label>
+              </div>
+
+              <div class="form-group form-check ">
+                <input type="checkbox" class="form-check-input child" id="" value="" data-layer="ho-ga-bao-chala" checked="">
+                <label class="form-check-label" for="" title="Hố ga Chà Là" onclick="functionlayer.flytoLayer( 'iw_hoga' , 'duan_ref', '9df31015-17ce-4145-8ff9-7695c83b5650')" >Hố ga Chà Là</label>
+              </div>
+
+              <div class="form-group form-check ">
+                <input type="checkbox" class="form-check-input child" id="" value="" data-layer="cong-bao-3-chala" checked="">
+                <label class="form-check-label" for="" title="Tuyến cống cấp 3 Chà Là" onclick="functionlayer.flytoLayer( 'iw_irrigation_sewer' , 'duan_ref', '9df31015-17ce-4145-8ff9-7695c83b5650','capcong','Cấp 3')">Tuyến cống cấp 3 Chà Là</label>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header grandma-container" id="">
+              <input type="checkbox" class="form-check-input grandma" id="" value="" checked="">
+              <a class="accordion-button  " type="button" data-bs-toggle="collapse" data-bs-target="#layer-tcbknp" aria-expanded="true" aria-controls="">
+                <p>Xây dựng tuyến cống bao kênh Nhị Phước</p>
+              </a>
+            </div>
+            <div id="layer-tcbknp" style="margin-left:24px;" class="accordion-collapse collapse show ml-4 parent-container" aria-labelledby="" data-bs-parent="#layer-parent-2">
+              <div class="form-group form-check ">
+                <input type="checkbox" class="form-check-input child" id="" value="" data-layer="cong-bao-nhiphuoc" checked="">
+                <label class="form-check-label" for="" title="Tuyến cống bao kênh Nhị Phước" onclick="functionlayer.flytoLayer( 'iw_irrigation_sewer' , 'ten', 'Tuyến cống Nhị Phước')">Tuyến cống bao kênh Nhị Phước</label>
+              </div>
+              <div class="form-group form-check ">
+                <input type="checkbox" class="form-check-input child" id="" data-layer="ho-ga-nhiphuoc" value="" checked="">
+                <label class="form-check-label" for="" title="Hố ga Nhị Phước" onclick="functionlayer.flytoLayer( 'iw_hoga' , 'ten', 'Hố ga Nhị Phước')">Hố ga Nhị Phước</label>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header grandma-container" id="">
+              <input type="checkbox" class="form-check-input grandma" id="mang-luoi-nc-thai" value="" checked="">
+              <a class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#layer-mltgnt" aria-expanded="true" aria-controls="">
+                <p>Xây dựng mạng lưới thu gom nước thải</p>
+              </a>
+            </div>
+            <div id="layer-mltgnt" style="margin-left:24px;" class="accordion-collapse collapse show parent-container">
+                <div class="accordion-header">
+                  <input type="checkbox" class="form-check-input parent" id="" value="" checked="">
+                  <a class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#layer-xdmltgntpdh" aria-expanded="true" >
+                    <p>Xây dựng mạng lưới thu gom nước thải phường Đồng Hải</p>
+                  </a>
+                </div>
+                <div id="layer-xdmltgntpdh" style="margin-left:24px;" class="accordion-collapse collapse show child-container">
+                  <div class="form-group form-check ">
+                    <input type="checkbox" class="form-check-input child" id="" data-layer="tuyen-cong-donghai" value="" checked="">
+                    <label class="form-check-label" for="" onclick="functionlayer.flytoLayer( 'iw_irrigation_sewer' , 'ten', 'Tuyến công Đông Hải')">Tuyến cống phường Đồng Hải</label>
+                  </div>
+                  <div class="form-group form-check ">
+                    <input type="checkbox" class="form-check-input child" id="" data-layer="ho-ga-phuongdonghai" value="" checked="">
+                    <label class="form-check-label" for="" onclick="functionlayer.flytoLayer( 'iw_hoga' , 'ten', 'Hố ga C3 Đông Hải')">Hố ga phường Đồng Hải </label>
+                  </div>
+                </div>
+
+                <div class="accordion-header">
+                  <input type="checkbox" class="form-check-input parent" id="" value="" checked="">
+                  <a class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#layer-xdmltgnthdh" aria-expanded="true" >
+                    <p>Xây dựng mạng lưới thu gom nước thải hồ Đồng Hải</p>
+                  </a>
+                </div>
+                <div id="layer-xdmltgnthdh" style="margin-left:24px;" class="accordion-collapse collapse show child-container">
+                  <div class="form-group form-check ">
+                    <input type="checkbox" class="form-check-input child" id="" data-layer="tuyen-cong-hodonghai" value="" checked="">
+                    <label class="form-check-label" for="" onclick="functionlayer.flytoLayer( 'iw_irrigation_sewer' , 'ten', 'Cống bao' , 'thuocho' , 'Hồ Đông Hải')">Tuyến cống hồ Đồng Hải</label>
+                  </div>
+                  <div class="form-group form-check ">
+                    <input type="checkbox" class="form-check-input child" id="" data-layer="ho-ga-hodonghai" value="" checked="">
+                    <label class="form-check-label" for="" onclick="functionlayer.flytoLayer( 'iw_hoga' , 'thuocho', 'Hồ Đông Hải')">Hố ga hồ Đồng Hải </label>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header grandma-container" id="layer-parent-2">
+              <input type="checkbox" class="form-check-input grandma" id="nuoc-thai-donghai" value="" checked="">
+              <a class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#calhpde" aria-expanded="true" aria-controls="">
+                <p title="Cống áp lực HPDE">Cống áp lực HPDE</p>
+              </a>
+            </div>
+            <div id="calhpde" style="margin-left:24px;" class="accordion-collapse collapse show ml-4 parent-container" aria-labelledby="" data-bs-parent="#layer-parent-2">
+              <div class="form-group form-check ">
+                <input type="checkbox" class="form-check-input child" id="" data-layer="tuyen-cong-hpde" value="" checked="">
+                <label class="form-check-label" for="" title="Tuyến cống HPDE" onclick="functionlayer.flytoLayer( 'iw_irrigation_sewer' , 'duan_ref', 'abcb545c-1621-4958-a538-70a5f717f675')">Tuyến cống HPDE</label>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header grandma-container" id="layer-parent-2">
+              <input type="checkbox" class="form-check-input grandma" id="nuoc-thai-donghai" value="" checked="">
+              <a class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#nmxlntpr-tc" aria-expanded="true" aria-controls="">
+                <p title="Nhà máy sử lý nước thải Phan Rang - Tháp Chàm">Nhà máy sử lý nước thải Phan Rang - Tháp Chàm</p>
+              </a>
+            </div>
+            <div id="nmxlntpr-tc" style="margin-left:24px;" class="accordion-collapse collapse show ml-4 parent-container" aria-labelledby="" data-bs-parent="#layer-parent-2">
+              <div class="form-group form-check ">
+                <input type="checkbox" class="form-check-input child" id="" value="" data-layer="nha-may-nt" checked="">
+                <label class="form-check-label" for="" title="Nhà máy xử ký nước thải" onclick="functionlayer.flytoLayer( 'iw_nhamayxulynuocthai')">Nhà máy xử ký nước thải</label>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header grandma-container" id="layer-parent-2">
+              <input type="checkbox" class="form-check-input grandma" id="nuoc-thai-donghai" value="" checked="">
+              <a class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#gtnt" aria-expanded="true" aria-controls="">
+                <p title="Giếng tách nước thải">Giếng tách nước thải</p>
+              </a>
+            </div>
+            <div id="gtnt" style="margin-left:24px;" class="accordion-collapse collapse show ml-4 parent-container" aria-labelledby="" data-bs-parent="#layer-parent-2">
+              <div class="form-group form-check ">
+                <input type="checkbox" class="form-check-input child" id="" data-layer="gieng-tach-nc-thai" value="" checked="">
+                <label class="form-check-label" for="" title="Giếng tách nước thải" onclick="functionlayer.flytoLayer( 'iw_gieng')">Giếng tách nước thải</label>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header grandma-container" id="layer-parent-2">
+              <input type="checkbox" class="form-check-input grandma" id="nuoc-thai-donghai" value="" checked="">
+              <a class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#tbnt" aria-expanded="true" aria-controls="">
+                <p title="Trạm bơm nước thải">Trạm bơm nước thải</p>
+              </a>
+            </div>
+            <div id="tbnt" style="margin-left:24px;" class="accordion-collapse collapse show ml-4 parent-container" aria-labelledby="" data-bs-parent="#layer-parent-2">
+              <div class="form-group form-check ">
+                <input type="checkbox" class="form-check-input child" id="" data-layer="bom-nc-thai" value="" checked="">
+                <label class="form-check-label" for="" title="Trạm bơm nước thải" onclick="functionlayer.flytoLayer( 'iw_pump_station','tinh_id','58','ten','TB Tấn Tài')">Trạm bơm nước thải</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion accordion-4 accordion--custom" id="">
+          <div class="accordion-item">
+            <div class="accordion-header" id="heading6">
+              <input type="checkbox" class="form-check-input great-grandma" id="" value="" checked="">
+              <a class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#htkndt" aria-expanded="true" aria-controls="">
+                <p title="Hệ thống kết nối đô thị">Hệ thống kết nối đô thị</p>
+              </a>
+            </div>
+          </div>
+          <div id="htkndt" style="margin-left:24px;" class="accordion-collapse collapse show ml-4" aria-labelledby="" data-bs-parent="">
+            <div class="accordion-item">
+              <div class="accordion-header grandma-container" id="">
+                <input type="checkbox" class="form-check-input grandma" id="" value="" checked="">
+                <a class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#layer-nmd" aria-expanded="true" aria-controls="">
+                  <p title="Nền mặt đường">Nền mặt đường</p>
+                </a>
+              </div>
+              <div id="layer-nmd" style="margin-left:24px;" class="accordion-collapse collapse show ml-4 parent-container" aria-labelledby="" data-bs-parent="">
+                <div class="form-group form-check ">
+                  <input type="checkbox" class="form-check-input child" id="" data-layer="tim-duong" value="" checked="">
+                  <label class="form-check-label" for="" title="Tim đường" onclick="functionlayer.flytoLayer( 'iw_timduong')">Tim đường</label>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-header grandma-container" id="">
+                <input type="checkbox" class="form-check-input grandma" id="thu-nuoc-donghai" value="" checked="">
+                <a class="accordion-button  " type="button" data-bs-toggle="collapse" data-bs-target="#ngt-vdnds" aria-expanded="true" aria-controls="">
+                  <p title="Nút giao thông , vuốt nối đường ngang dân sinh">Nút giao thông , vuốt nối đường ngang dân sinh</p>
+                </a>
+              </div>
+              <div id="ngt-vdnds" style="margin-left:24px;" class="accordion-collapse collapse show ml-4 parent-container" aria-labelledby="" data-bs-parent="#layer-parent-1">
+                <div class="form-group form-check ">
+                  <input type="checkbox" class="form-check-input child" id="" data-layer="vuot-noi" value="" checked="">
+                  <label class="form-check-label" for="" title="Vuốt nối" onclick="functionlayer.flytoLayer( 'iw_vuotnoi')">Vuốt nối</label>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-header grandma-container" id="layer-parent-2">
+                <input type="checkbox" class="form-check-input grandma" id="" value="" checked="">
+                <a class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#layer-bv-vh" aria-expanded="true" aria-controls="">
+                  <p title="Bó vỉa và vỉa hè">Bó vỉa và vỉa hè</p>
+                </a>
+              </div>
+              <div id="layer-bv-vh" style="margin-left:24px;" class="accordion-collapse collapse show ml-4 parent-container" aria-labelledby="" data-bs-parent="#layer-parent-2">
+                <div class="form-group form-check ">
+                  <input type="checkbox" class="form-check-input child" id="" data-layer="boviahe" value="" checked="">
+                  <label class="form-check-label" for="" title="Bó vỉa" onclick="functionlayer.flytoLayer( 'iw_boviaviahe','loaigeom','polygon')">Bó vỉa</label>
+                </div>
+                <div class="form-group form-check ">
+                  <input type="checkbox" class="form-check-input child" id="" data-layer="viahe" value="" checked="">
+                  <label class="form-check-label" for="" title="Vỉa hè" onclick="functionlayer.flytoLayer( 'iw_boviaviahe','loaigeom','line')">Vỉa hè</label>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-header grandma-container" id="">
+                <input type="checkbox" class="form-check-input grandma" id="" value="" checked="">
+                <a class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#layer-cttn" aria-expanded="true" aria-controls="">
+                  <p title="Công trình thoát nước">Công trình thoát nước</p>
+                </a>
+              </div>
+              <div id="layer-cttn" style="margin-left:24px;" class="accordion-collapse collapse show parent-container">
+                  <div class="accordion-header">
+                    <input type="checkbox" class="form-check-input parent" id="" value="" checked="">
+                    <a class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#layer-tnm" aria-expanded="true" >
+                      <p title="Thoát nước mưa">Thoát nước mưa</p>
+                    </a>
+                  </div>
+                  <div id="layer-tnm" style="margin-left:24px;" class="accordion-collapse collapse show child-container">
+                    <div class="form-group form-check ">
+                      <input type="checkbox" class="form-check-input child" id="" data-layer="cong-thoat-nm" value="" checked="">
+                      <label class="form-check-label" for="" title="Cống"  onclick="functionlayer.flytoLayer( 'iw_irrigation_sewer','duan_ref','99bdce55-09ae-4dd7-a654-ffcc0deed782')">Cống</label>
+                    </div>
+                    <div class="form-group form-check ">
+                      <input type="checkbox" class="form-check-input child" id="" data-layer="hoga-thoat-nm" value="" checked="">
+                      <label class="form-check-label" for="" title="Hố ga" onclick="functionlayer.flytoLayer( 'iw_hoga','duan_ref','99bdce55-09ae-4dd7-a654-ffcc0deed782')">Hố ga</label>
+                    </div>
+                  </div>
+
+                  <div class="accordion-header">
+                    <input type="checkbox" class="form-check-input parent" id="" value="" checked="">
+                    <a class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#layer-tnt" aria-expanded="true" >
+                      <p title="Thoát nước thải">Thoát nước thải</p>
+                    </a>
+                  </div>
+                  <div id="layer-tnt" style="margin-left:24px;" class="accordion-collapse collapse show child-container">
+                    <div class="form-group form-check ">
+                      <input type="checkbox" class="form-check-input child" id="" data-layer="cong-thoat-nt" value="" checked="">
+                      <label class="form-check-label" for="" title="Cống" onclick="functionlayer.flytoLayer( 'iw_irrigation_sewer','duan_ref','ca05715f-632f-419f-afca-c3066898534e')">Cống</label>
+                    </div>
+                    <div class="form-group form-check ">
+                      <input type="checkbox" class="form-check-input child" id="" data-layer="hoga-thoat-nt" value="" checked="">
+                      <label class="form-check-label" for="" title="Hố ga" onclick="functionlayer.flytoLayer( 'iw_hoga','duan_ref','ca05715f-632f-419f-afca-c3066898534e')">Hố ga</label>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-header grandma-container" id="layer-parent-2">
+                <input type="checkbox" class="form-check-input grandma" id="nuoc-thai-donghai" value="" checked="">
+                <a class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#cndt" aria-expanded="true" aria-controls="">
+                  <p title="Cấp nước">Cấp nước</p>
+                </a>
+              </div>
+              <div id="cndt" style="margin-left:24px;" class="accordion-collapse collapse show ml-4 parent-container" aria-labelledby="" data-bs-parent="#layer-parent-2">
+                <div class="form-group form-check ">
+                  <input type="checkbox" class="form-check-input child" id="" value="" data-layer="duong-ong" checked="">
+                  <label class="form-check-label" for="" title="Đường ống" onclick="functionlayer.flytoLayer( 'iw_duongong')">Đường ống</label>
+                </div>
+                <div class="form-group form-check ">
+                  <input type="checkbox" class="form-check-input child" id="" data-layer="cong-cap-nc" value="" checked="">
+                  <label class="form-check-label" for="" title="Cống" onclick="functionlayer.flytoLayer( 'iw_irrigation_sewer','duan_ref','0b4942a8-0a66-4823-88a0-a9087e9ea493')">Cống</label>
+                </div>
+                <div class="form-group form-check ">
+                  <input type="checkbox" class="form-check-input child" id="" data-layer="tru-cuu-hoa-nc" value="" checked="">
+                  <label class="form-check-label" for="" title="Trụ cứu hỏa" onclick="functionlayer.flytoLayer( 'iw_trucuuhoa')">Trụ cứu hỏa</label>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-header grandma-container" id="layer-parent-2">
+                <input type="checkbox" class="form-check-input grandma" id="nuoc-thai-donghai" value="" checked="">
+                <a class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#cnkt" aria-expanded="true" aria-controls="">
+                  <p title="Cống ngầm kỹ thuật">Cống ngầm kỹ thuật</p>
+                </a>
+              </div>
+              <div id="cnkt" style="margin-left:24px;" class="accordion-collapse collapse show ml-4 parent-container" aria-labelledby="" data-bs-parent="#layer-parent-2">
+                <div class="form-group form-check ">
+                  <input type="checkbox" class="form-check-input child" id="" value="" data-layer="ho-tham-cnkt" checked="">
+                  <label class="form-check-label" for="" title="Hố thăm" onclick="functionlayer.flytoLayer( 'iw_irrigation_sewer','loaicongten','Hố thăm','duan_ref','9a4aba0a-dc35-4dd2-8ab3-7531b394e58b')">Hố thăm</label>
+                </div>
+                <div class="form-group form-check ">
+                  <input type="checkbox" class="form-check-input child" id="" value="" data-layer="tuyen-cong-cnkt" checked="">
+                  <label class="form-check-label" for="" title="Tuyến cống" onclick="functionlayer.flytoLayer( 'iw_irrigation_sewer','loaicongten','Cống dạng tuyến','duan_ref','9a4aba0a-dc35-4dd2-8ab3-7531b394e58b')">Tuyến cống</label>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-header grandma-container" id="layer-parent-2">
+                <input type="checkbox" class="form-check-input grandma" id="nuoc-thai-donghai" value="" checked="">
+                <a class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#tcx" aria-expanded="true" aria-controls="">
+                  <p title="Trồng cây xanh">Trồng cây xanh</p>
+                </a>
+              </div>
+              <div id="tcx" style="margin-left:24px;" class="accordion-collapse collapse show ml-4 parent-container" aria-labelledby="" data-bs-parent="#layer-parent-2">
+                <div class="form-group form-check ">
+                  <input type="checkbox" class="form-check-input child" id="" data-layer="ho-trong-cay" value="" checked="">
+                  <label class="form-check-label" for="" title="Hố trồng cây" onclick="functionlayer.flytoLayer( 'iw_hotrongcay')">Hố trồng cây</label>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-header grandma-container" id="">
+                <input type="checkbox" class="form-check-input grandma" id="" value="" checked="">
+                <a class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#dcs" aria-expanded="true" aria-controls="">
+                  <p title="Điện chiếu sáng">Điện chiếu sáng</p>
+                </a>
+              </div>
+              <div id="dcs" style="margin-left:24px;" class="accordion-collapse collapse show ml-4 parent-container" aria-labelledby="" data-bs-parent="">
+                <div class="form-group form-check ">
+                  <input type="checkbox" class="form-check-input child" id="" data-layer="duong-chieu-sang" value="" checked="">
+                  <label class="form-check-label" for="" title="Đường dây" onclick="functionlayer.flytoLayer( 'iw_denchieusang','loaiden','1')">Đường dây</label>
+                </div>
+                <div class="form-group form-check ">
+                  <input type="checkbox" class="form-check-input child" id="" data-layer="tram-chieu-sang" value="" checked="">
+                  <label class="form-check-label" for="" title="Trạm biến áp" onclick="functionlayer.flytoLayer( 'iw_denchieusang','loaiden','4')">Trạm biến áp</label>
+                </div>
+                <div class="form-group form-check ">
+                  <input type="checkbox" class="form-check-input child" id="" data-layer="tru-chieu-sang" value="" checked="">
+                  <label class="form-check-label" for="" title="Trụ đèn" onclick="functionlayer.flytoLayer( 'iw_denchieusang','loaiden','2')">Trụ đèn</label>
+                </div>
+                <div class="form-group form-check ">
+                  <input type="checkbox" class="form-check-input child" id="" data-layer="tu-dien-chieu-sang" value="" checked="">
+                  <label class="form-check-label" for="" title="Tủ điện" onclick="functionlayer.flytoLayer( 'iw_denchieusang','loaiden','3')">Tủ điện</label>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <div class="accordion accordion-3 accordion--custom" id="">
+        <div class="accordion-item">
+          <div class="accordion-header" id="">
+            <input type="checkbox" class="form-check-input grandma" id="" value="" checked="">
+            <a class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#htqt" aria-expanded="true" aria-controls="">
+              <p>Hệ thống quan Trắc</p>
+            </a>
+          </div>
+        </div>
+        <div id="htqt" style="margin-left:24px;" class="accordion-collapse collapse show ml-4" aria-labelledby="" data-bs-parent="">
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input child" id="" data-layer="" value="" checked="">
+                <label class="form-check-label" for="" >Mưa quan trắc trạm</label>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input child" id="" data-layer="" value="" checked="">
+                <label class="form-check-label" for="">Mực mức</label>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input child" id="" data-layer="quan-trac-diem-ngap" value="" checked="">
+                <label class="form-check-label" for="" onclick="functionlayer.flytoLayer( 'iw_diemngap')">Quan trắc ngập úng</label>
+            </div>
+        </div>
+      </div>
+
+      <div class="accordion accordion-3 accordion--custom" id="">
+        <div class="accordion-item">
+          <div class="accordion-header" id="heading6">
+            <input type="checkbox" class="form-check-input grandma" id="cb-httnm" value="" checked="">
+            <a class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse6">
+              <p>Hệ thống thoát nước mưa</p>
+            </a>
+          </div>
+        </div>
+        <div id="collapse1" style="margin-left:24px;" class="accordion-collapse collapse show ml-4" aria-labelledby="heading6" data-bs-parent="">
+          <div class="accordion-item">
+            <div class="accordion-header parent-container" id="layer-parent-1">
+              <input type="checkbox" class="form-check-input parent" id="cb-ctktt" value="" checked="">
+              <a class="accordion-button  " type="button" data-bs-toggle="collapse" data-bs-target="#layer-ctktt" aria-expanded="true" aria-controls="">
+                <p>Cải tạo kênh Tấn tài</p>
+              </a>
+            </div>
+            <div id="layer-ctktt" style="margin-left:24px;" class="accordion-collapse collapse show ml-4 child-container" aria-labelledby="" data-bs-parent="#layer-parent-1">
+              <div class="form-group form-check ">
+                <input type="checkbox" class="form-check-input child" data-layer="kenh-tantai" id="" value="" checked="">
+                <label class="form-check-label" for="" onclick="functionlayer.flytoLayer( 'iw_canal','duan_ref','d1ed5711-db87-4ff8-8d22-b248e464b25f')">Kênh Tấn tài</label>
+              </div>
+
+              <div class="form-group form-check ">
+                <input type="checkbox" class="form-check-input child" data-layer="coc-tantai" id="" value="" checked="">
+                <label class="form-check-label" for="" onclick="functionlayer.flytoLayer( 'iw_coc','duan_ref','d1ed5711-db87-4ff8-8d22-b248e464b25f')">Cọc Tấn Tài</label>
+              </div>
+
+              <div class="form-group form-check ">
+                <input type="checkbox" class="form-check-input child" data-layer="cong-tantai" id="" value="" checked="">
+                <label class="form-check-label" for="" onclick="functionlayer.flytoLayer( 'iw_irrigation_sewer','duan_ref','d1ed5711-db87-4ff8-8d22-b248e464b25f')">Cống Tấn Tài</label>
+              </div>
+
+              <div class="form-group form-check ">
+                <input type="checkbox" class="form-check-input child" data-layer="hoga-tantai" id="" value="" checked="">
+                <label class="form-check-label" for="" onclick="functionlayer.flytoLayer( 'iw_hoga','duan_ref','d1ed5711-db87-4ff8-8d22-b248e464b25f')">Hố ga Tấn Tài</label>
+              </div>
+
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header parent-container" id="">
+              <input type="checkbox" class="form-check-input parent" id="cb-ctkcl" value="" checked="">
+              <a class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#layer-ctkcl" aria-expanded="true" aria-controls="">
+                <p>Cải tạo kênh Chà Là</p>
+              </a>
+            </div>
+            <div id="layer-ctkcl" style="margin-left:24px;" class="accordion-collapse collapse show ml-4 child-container" aria-labelledby="" data-bs-parent="">
+              <div class="form-group form-check ">
+                <input type="checkbox" class="form-check-input child" data-layer="kenh-chala" id="" value="" checked="">
+                <label class="form-check-label" for="" onclick="functionlayer.flytoLayer( 'iw_canal','duan_ref','f80f5fcf-0d70-4840-a3a3-119c47f7986d')">Kênh Chà Là</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header parent-container" id="">
+              <input type="checkbox" class="form-check-input parent" id="cb-ctknp" value="" checked="">
+              <a class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#layer-ctkdn" aria-expanded="true" aria-controls="">
+                <p>Cải tạo kênh Đông Nam</p>
+              </a>
+            </div>
+            <div id="layer-ctkdn" style="margin-left:24px;" class="accordion-collapse collapse show ml-4 child-container" aria-labelledby="" data-bs-parent="">
+              <div class="form-group form-check ">
+                <input type="checkbox" class="form-check-input child" id="" data-layer="kenh-dongnam" value="" checked="">
+                <label class="form-check-label" for="" onclick="functionlayer.flytoLayer( 'iw_canal','duan_ref','5b97f8fc-bf56-4332-91ec-e04f14a99685')">Kênh Đông Nam</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header parent-container" id="">
+              <input type="checkbox" class="form-check-input parent" id="cb-ctknp" value="" checked="">
+              <a class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#layer-ctknp" aria-expanded="true" aria-controls="">
+                <p>Cải tạo kênh Nhị Phước</p>
+              </a>
+            </div>
+            <div id="layer-ctknp" style="margin-left:24px;" class="accordion-collapse collapse show ml-4 child-container" aria-labelledby="" data-bs-parent="">
+              <div class="form-group form-check ">
+                <input type="checkbox" class="form-check-input child" id="" data-layer="kenh-nhiphuoc" value="" checked="">
+                <label class="form-check-label" for="" onclick="functionlayer.flytoLayer( 'iw_canal','duan_ref','d795c8b6-8c61-408c-9b12-6fedf87518a2')">Kênh Nhị Phước</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header parent-container" id="">
+              <input type="checkbox" class="form-check-input parent" id="cb-ctth5" value="" checked="">
+              <a class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#layer-ctth5" aria-expanded="true" aria-controls="">
+                <p>Cải tạo kênh TH05</p>
+              </a>
+            </div>
+            <div id="layer-ctth5" style="margin-left:24px;" class="accordion-collapse collapse show ml-4 child-container" aria-labelledby="" data-bs-parent="">
+              <div class="form-group form-check ">
+                <input type="checkbox" class="form-check-input child" id="" data-layer="kenh-th5" value="" checked="">
+                <label class="form-check-label" for="" onclick="functionlayer.flytoLayer( 'iw_canal','ten','Kênh TH5')">Kênh TH05</label>
+              </div>
+              <div class="form-group form-check ">
+                <input type="checkbox" class="form-check-input child" id="" data-layer="cong-th5" value="" checked="">
+                <label class="form-check-label" for="" onclick="functionlayer.flytoLayer( 'iw_irrigation_sewer','duan_ref','50c2ed36-9f8e-4c62-92d1-78a755fc32f1')">Cống TH05</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header parent-container" id="">
+              <input type="checkbox" class="form-check-input parent" id="" value="" checked="">
+              <a class="accordion-button  " type="button" data-bs-toggle="collapse" data-bs-target="#layer-xdhdhtt" aria-expanded="true" aria-controls="">
+                <p>Xây dựng hồ điều hòa trung tâm</p>
+              </a>
+            </div>
+            <div id="layer-xdhdhtt" style="margin-left:24px;" class="accordion-collapse collapse show ml-4 child-container" aria-labelledby="" data-bs-parent="">
+              <div class="form-group form-check ">
+                <input type="checkbox" class="form-check-input child" id="" data-layer="congtrungtam" value="" checked="">
+                <label class="form-check-label" for="" onclick="functionlayer.flytoLayer( 'iw_irrigation_sewer','thuocho','Hồ Trung Tâm')">Cống xả trung tâm</label>
+              </div>
+              <div class="form-group form-check ">
+                <input type="checkbox" class="form-check-input child" id="" data-layer="hotrungtam" value="" checked="">
+                <label class="form-check-label" for="" onclick="functionlayer.flytoLayer( 'iw_reservoir','ten','Hồ Trung Tâm')">Hồ trung tâm</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header parent-container" id="">
+              <input type="checkbox" class="form-check-input parent" id="" value="" checked="">
+              <a class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#layer-cthdh" aria-expanded="true" aria-controls="">
+                <p>Cải tạo Hồ Đông Hải</p>
+              </a>
+            </div>
+            <div id="layer-cthdh" style="margin-left:24px;" class="accordion-collapse collapse show ml-4 child-container" aria-labelledby="" data-bs-parent="">
+              <div class="form-group form-check ">
+                <input type="checkbox" class="form-check-input child" id="" data-layer="hodonghai" value="" checked="">
+                <label class="form-check-label" for="" onclick="functionlayer.flytoLayer( 'iw_reservoir','ten','Hồ Đông Hải')">Hồ Đông Hải</label>
+              </div>
+              <div class="form-group form-check ">
+                <input type="checkbox" class="form-check-input child" id="" data-layer="congdonghai" value="" checked="">
+                <label class="form-check-label" for="" onclick="functionlayer.flytoLayer( 'iw_irrigation_sewer','thuocho','Hồ Đông Hải')">Cống Đông Hải</label>
+              </div>
+              <div class="form-group form-check ">
+                <input type="checkbox" class="form-check-input child" id="" data-layer="hoga-hodonghai" value="" checked="">
+                <label class="form-check-label" for="" onclick="functionlayer.flytoLayer( 'iw_hoga','duan_ref','34fa83a6-3c32-4adf-a0ff-a55c8b8858b0')">Hố ga Đông Hải</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <div class="accordion-header parent-container" id="">
+              <input type="checkbox" class="form-check-input parent" id="" value="" checked="">
+              <a class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#layer-xdctcc2cnu" aria-expanded="true" aria-controls="">
+                <p>Xây dựng các tuyến cống cấp 2 chống ngập úng</p>
+              </a>
+            </div>
+            <div id="layer-xdctcc2cnu" style="margin-left:24px;" class="accordion-collapse collapse show ml-4 child-container" aria-labelledby="" data-bs-parent="">
+              <div class="form-group form-check ">
+                <input type="checkbox" class="form-check-input child" id="" data-layer="congchongngaplutcap2" value="" checked="">
+                <label class="form-check-label" for="" onclick="functionlayer.flytoLayer( 'iw_irrigation_sewer','capcong','Cấp 2')">Tuyến cống chống ngập lụt cấp 2</label>
+              </div>
+              <div class="form-group form-check ">
+                <input type="checkbox" class="form-check-input child" id="" data-layer="congchongngapluthoga" value="" checked="">
+                <label class="form-check-label" for="" onclick="functionlayer.flytoLayer( 'iw_irrigation_sewer','capcong','Cấp 2')">Tuyến cống chống ngập lụt hố ga</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion accordion-3 accordion--custom" id="">
+          <div class="accordion-item">
+            <div class="accordion-header" id="heading9">
+              <input type="checkbox" class="form-check-input grandma" id="lop-nen" value="" checked="">
+              <a class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="true" aria-controls="collapse9">
+                <p>Bản đồ nền</p>
+              </a>
+            </div>
+          </div>
+          <div id="collapse9" style="margin-left:24px;" class="accordion-collapse collapse show ml-4" aria-labelledby="heading9" data-bs-parent="#accordionExample">
+              <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input child" id="" data-layer="province-layer" value="" checked="">
+                  <label class="form-check-label" for="">Tỉnh</label>
+              </div>
+              <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input child" id="" data-layer="district-layer" value="" checked="">
+                  <label class="form-check-label" for="">Huyện</label>
+              </div>
+              <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input child" id="" data-layer="commune-layer" value="" checked="">
+                  <label class="form-check-label" for="">Xã</label>
+              </div>
+          </div>
+      </div>
+
+    </div>
+</div>
+
+
+<div id="index-chitietct" class="dialog" style="display:none;"></div>

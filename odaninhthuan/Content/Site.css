@@ -1,0 +1,225 @@
+﻿/* css cho chọn layer map */
+#style-selector {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1;
+    background: white;
+    padding: 3px;
+    border-radius: 3px;
+}
+#style-selector .style-list {
+    display: none;
+    flex-direction: column;
+}
+#style-selector:hover .style-list {
+    display: flex;
+}
+#style-selector img {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 5px;
+}
+#style-selector img:hover {
+    border-color: #888;
+}
+#style-selector img.selected {
+    border-color: #000;
+}
+
+.mapboxgl-control-container {
+    display: none;
+}
+
+.toggle-layer{
+    position: absolute;
+    top: 20px;
+    left: -60px;
+    z-index: 1;
+}
+.sup-toggle-layer{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1; 
+}
+
+.accordion--custom .accordion-header {
+    display: flex; 
+    align-items: center; 
+    column-gap: 1rem; 
+    padding-left: 1rem;
+}
+
+
+.accordion--custom .accordion-header .accordion-button {
+    padding-left: 0;
+    background: none;
+    text-decoration: none;
+}
+
+.accordion--custom .accordion-button:not(.collapsed) {
+    box-shadow: none;
+}
+.accordion-item{
+    border: none;
+}
+.accordion p {
+    margin: 0px;
+    padding: 0px;
+    margin-right: 10px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+.accordion label{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+
+
+.popup-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+.popup-table th, .popup-table td {
+            border: none;
+            padding: 8px;
+        }
+.popup-table th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+.popup-table tr:hover {
+            background-color: #f5f5f5;
+        }
+.popup-table td {
+            text-align: left;
+        }
+.popup-table tr td:first-child {
+            text-wrap: nowrap;
+        }
+.popup-table tr td:last-child {
+            min-width : 300px;
+            text-align : end;
+        }
+.mapboxgl-popup {
+    max-width : 500px !important;
+}
+.mapboxgl-popup-close-button {
+    font-size : 33px;
+    padding : 8px;
+    margin : 10px;
+}
+.form-ttct .formline {
+    display: flex ; 
+    align-items : center;
+    padding : 5px 10px;
+    border-bottom : 1px solid #000;
+}
+
+.form-ttct .formline label{
+    text-wrap : nowrap;
+}
+.form-ttct .formline .form-control {
+    border: none;
+    border-radius: unset;
+}
+
+.form-ttct .formline label ,  .form-ttct .formline>input.form-control{
+    width : 50%;
+    margin : 0px;
+}
+
+.form-control:disabled {
+    background-color: white;
+    opacity: 1;
+}
+
+
+h3.line-behind {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    
+    span {
+        display: inline-block;
+        vertical-align: baseline;
+        zoom: 1;
+        *display: inline;
+        *vertical-align: auto;
+        position: relative;
+        padding: 5px 20px;
+
+        &:before, &:after {
+            content: '';
+            display: block;
+            width: 1000px;
+            position: absolute;
+            top: 0.73em;
+            border-top: 1px solid black;
+        }
+
+        &:before { right: 100%; }
+        &:after { left: 100%; }
+    }
+}
+
+.savett{
+    float : right;
+    margin-top : 10px;
+}
+
+.durationtime-bd {
+    width : 50%;
+    display : flex;
+    align-items : center;
+}
+
+.durationtime-bd p {
+    text-wrap : nowrap;
+    margin : 0px;
+}
+
+.selectize-control {
+    width : 50%;
+}
+
+.stitlebd {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.stitlebd hr {
+    width : 100%;
+}
+.stitlebd a, .stitlebd h4 {
+    text-wrap : nowrap;
+}
+
+.stitlebd .addnewinfo {
+    background-color : #0d6efd;
+    border-radius : 6px;
+    color : white;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor : pointer;
+    padding : 2px 3px;
+    margin : 0px 2px;
+}
+
+.stitlebd .addnewinfo :hover{
+    color : white
+}
+
+#tinhdtbd, #huyendtbd , #nguonvondtbd{
+    border: none;
+    width: 50%;
+    min-height: 36px;
+}
