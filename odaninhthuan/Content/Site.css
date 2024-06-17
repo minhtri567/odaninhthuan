@@ -130,7 +130,9 @@
     border: none;
     border-radius: unset;
 }
-
+#fduytubd .formline .form-control {
+    border-radius: 0.375rem;
+}
 .form-ttct .formline label ,  .form-ttct .formline>input.form-control{
     width : 50%;
     margin : 0px;
@@ -222,4 +224,17 @@ h3.line-behind {
     border: none;
     width: 50%;
     min-height: 36px;
+}
+#Imagesmanager #Imagesmanager_cm_newfolder {
+    display: none;
+}
+#Imagesmanager #Imagesmanager_navigation, #Imagesmanager .e-split-bar-horizontal {
+    display: none;
+}
+
+#Imagesmanager_largeicons , #filemanager_largeicons {
+    height: auto !important;
+}
+#filemanager_layout, #Imagesmanager_layout {
+    height: 355px !important;
 }

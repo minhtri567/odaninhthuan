@@ -79,6 +79,16 @@ var popupttct = {
 
 var popupdtbd = {
     Duytubaoduong: function (data) {
+        var tableRows = '';
+        for (var i = 0; i < data.length; i++) {
+            tableRows +='<tr>' +
+                '<th scope="row">' + (i + 1) +  '</th>' +
+                '<td>' + data[i].kyhieu + '</td>' +
+                '<td>' + data[i].spqd + '</td>' +
+                '<td>' + data[i].diadiem + '</td>' +
+                '<td>' + data[i].kinhphi + '</td>' +
+                '</tr>';
+        };
         return '<div class="stitlebd"><h4 class="">Duy tu bảo dưỡng công trình</h4><hr><a class="addnewinfo" onclick="Hideshow()">Thêm mới thông tin </a></div>' +
             '<div class="table-responsive table-ttbd">' +
                   '<table class="table">' +
@@ -93,14 +103,7 @@ var popupdtbd = {
                         '</tr>' +
                      '</thead>' +
                       '<tbody>' +
-                        '<tr>' +
-                          '<th scope="row">1</th>' +
-                          '<td>Mark</td>' +
-                          '<td>Otto</td>' +
-                          '<td>@mdo</td>' +
-                          '<td>@mdo</td>' +
-                          '<td>@mdo</td>' +
-                        '</tr>' +
+                            tableRows +
                       '</tbody>' +
                   '</table>' +
                 '</div>' +
@@ -108,7 +111,7 @@ var popupdtbd = {
                 '<fieldset >' +
                     '<div class="formline">' +
                       '<label class="form-label">Ký hiệu</label>' +
-                      '<input type="text" id="kyhieudtbd" class="form-control" value="" />' +
+                      '<input type="text" id="kyhieudtbd" class="form-control" value="" autofocus />' +
                     '</div>' +
                     '<div class="formline">' +
                       '<label class="form-label">Phân loại</label>' +
@@ -183,9 +186,12 @@ var popupdtbd = {
 };
 
 var popuphs = {
-    Hosotailieu: function (data) {
-        return ''
-    }
+    Hosotailieu: function () {
+        return '<div class="" id ="filemanager"></div>';
+    },
+    Hinhanhtl : function () {
+        return '<div id="Imagesmanager"></div>';
+    },
 };
 
 var contenthoga =
@@ -279,7 +285,10 @@ map.on('click', 'ho-ga-tantai', function (e) {
                 $("#thongtinchung").html(popupttct.thongtinhoga(data));
                 $("#duytubaoduong").html(popupdtbd.Duytubaoduong(data));
                 populateTinh();
-
+                $("#hosott").html(popuphs.Hosotailieu());
+                FnFilemanager.Loaddulieu(data);
+                $("#hinhanhtt").html(popuphs.Hinhanhtl());
+                FnFilemanager.Loaddataanh(data);
                 // Open the popup
                 functionlayer.createWindowPopup("index-chitietct", "Thông tin kênh", 'auto', 'auto', $(window).height() - 70, ($(window).width() / 2), true);
 
@@ -307,6 +316,7 @@ map.on('click', 'ho-ga-tantai', function (e) {
                     viewMode: "years",
                     minViewMode: "years"
                 });
+                
 
             } else {
                 alert(response.message);

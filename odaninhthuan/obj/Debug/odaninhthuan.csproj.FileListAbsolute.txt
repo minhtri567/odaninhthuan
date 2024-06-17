@@ -84,6 +84,14 @@ D:\Trungtam\New folder\odaninhthuan\odaninhthuan\bin\ko\System.Spatial.resources
 D:\Trungtam\New folder\odaninhthuan\odaninhthuan\bin\ru\System.Spatial.resources.dll
 D:\Trungtam\New folder\odaninhthuan\odaninhthuan\bin\zh-Hans\System.Spatial.resources.dll
 D:\Trungtam\New folder\odaninhthuan\odaninhthuan\bin\zh-Hant\System.Spatial.resources.dll
-D:\Trungtam\New folder\odaninhthuan\odaninhthuan\obj\Debug\odaninhthuan.csprojResolveAssemblyReference.cache
 D:\Trungtam\New folder\odaninhthuan\odaninhthuan\obj\Debug\odaninhthuan.dll
 D:\Trungtam\New folder\odaninhthuan\odaninhthuan\obj\Debug\odaninhthuan.pdb
+D:\Trungtam\New folder\odaninhthuan\odaninhthuan\obj\Debug\odaninhthuan.csprojAssemblyReference.cache
+D:\Trungtam\New folder\odaninhthuan\odaninhthuan\bin\odaninhthuan.dll.config
+D:\Trungtam\New folder\odaninhthuan\odaninhthuan\bin\Syncfusion.EJ2.dll
+D:\Trungtam\New folder\odaninhthuan\odaninhthuan\bin\Syncfusion.Licensing.dll
+D:\Trungtam\New folder\odaninhthuan\odaninhthuan\bin\Syncfusion.EJ2.xml
+D:\Trungtam\New folder\odaninhthuan\odaninhthuan\obj\Debug\odaninhthuan.csproj.CoreCompileInputs.cache
+D:\Trungtam\New folder\odaninhthuan\odaninhthuan\obj\Debug\odaninhthuan.csproj.CopyComplete
+D:\Trungtam\New folder\odaninhthuan\odaninhthuan\bin\System.IO.Compression.dll
+D:\Trungtam\New folder\odaninhthuan\odaninhthuan\bin\System.IO.Compression.ZipFile.dll

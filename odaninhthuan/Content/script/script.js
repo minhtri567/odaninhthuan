@@ -316,6 +316,7 @@ var popup = new mapboxgl.Popup({
     closeButton: true,
     closeOnClick: true
 });
+
 // Xử lý sự kiện hover
 map.on('mouseenter', 'ho-ga-tantai', function (e) {
     // Thay đổi cursor khi hover vào layer
@@ -324,11 +325,6 @@ map.on('mouseenter', 'ho-ga-tantai', function (e) {
     // Lấy tọa độ và mô tả từ feature
     var coordinates = e.features[0].geometry.coordinates.slice();
     var infor = e.features[0].properties;
-    
-    // Đảm bảo rằng popup hiển thị tại đúng vị trí khi bản đồ bị zoom
-    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-    }
 
     // Thiết lập nội dung và vị trí cho popup
     popup.setLngLat(coordinates)
@@ -355,12 +351,6 @@ map.on('mouseenter', 'ho-ga-bao-chala', function (e) {
 
     var coordinates = e.features[0].geometry.coordinates.slice();
     var infor = e.features[0].properties;
-    
-
-    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-    }
-
 
     popup.setLngLat(coordinates)
         .setHTML( 
@@ -385,12 +375,6 @@ map.on('mouseenter', 'ho-ga-nhiphuoc', function (e) {
 
     var coordinates = e.features[0].geometry.coordinates.slice();
     var infor = e.features[0].properties;
-    
-
-    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-    }
-
 
     popup.setLngLat(coordinates)
         .setHTML( 
